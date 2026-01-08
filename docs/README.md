@@ -123,17 +123,20 @@ seasonScore ≥ p67 → High Season
 **ตัวอย่างคำสั่งสำคัญ:**
 
 ```bash
-# Fetch weather data (5 years)
-npm run fetch:weather -- --start-year=2020 --end-year=2024 --import
+# Fetch daily weather data
+npm run fetch:daily-weather -- --start-date=2020-01-01 --end-date=2025-12-31
+
+# Import daily weather CSV
+npm run import:daily-weather
 
 # Fetch holidays
-npm run fetch:holidays -- --start-year=2024 --end-year=2026 --import
+npm run fetch:holidays -- --start-year=2024 --end-year=2026
+
+# Import holidays CSV
+npm run import:holidays
 
 # Generate mock flights (1 year)
 npm run generate:mock-flights -- --days-back=180 --days-forward=180
-
-# Import weather CSV
-npm run import:weather
 ```
 
 **ดูเพิ่มเติม:** [04-SCRIPTS-REFERENCE.md](./04-SCRIPTS-REFERENCE.md)
@@ -226,10 +229,10 @@ npm run generate:mock-flights -- --days-back=90 --days-forward=270
 TRUNCATE TABLE flight_prices;
 ```
 
-### Import Weather Data
+### Import Daily Weather Data
 ```bash
 cd backend
-npm run import:weather
+npm run import:daily-weather
 ```
 
 ### Check Database

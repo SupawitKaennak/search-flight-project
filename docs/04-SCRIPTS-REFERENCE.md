@@ -19,82 +19,69 @@
 
 Scripts สำหรับดึงข้อมูลจาก External APIs และบันทึกเป็น CSV
 
-### 1. fetch-weather-to-csv.ts
+### 1. fetch-daily-weather.ts
 
-**Purpose:** ดึงข้อมูลสภาพอากาศจาก Open-Meteo Historical API
+**Purpose:** ดึงข้อมูลสภาพอากาศรายวันจาก Open-Meteo Historical API และ OpenWeatherMap Forecast API
 
-**Location:** `backend/src/scripts/fetch-weather-to-csv.ts`
+**Location:** `backend/src/scripts/fetch-daily-weather.ts`
 
-**API Used:** Open-Meteo Archive API (ฟรี, ไม่ต้องใช้ API key)
-- URL: https://archive-api.open-meteo.com/v1/archive
-- Rate Limit: 10,000 requests/day
+**API Used:** 
+- Open-Meteo Archive API (ฟรี, ไม่ต้องใช้ API key) - สำหรับข้อมูลอดีต (2020-01-01 ถึง 2026-01-06)
+- OpenWeatherMap Forecast API (ต้องใช้ API key) - สำหรับข้อมูลอนาคต (5 วันข้างหน้า)
 
 **Features:**
-- ✅ ดึงข้อมูล temperature, precipitation, humidity
+- ✅ ดึงข้อมูลรายวัน (daily data, ไม่ใช่ monthly averages)
 - ✅ รองรับทุกจังหวัดที่มีสนามบิน (31 จังหวัด)
-- ✅ เลือกช่วงเวลาได้ (เดือน/ปี)
+- ✅ เลือกช่วงเวลาได้ (start-date/end-date)
+- ✅ Cache ข้อมูลเพื่อหลีกเลี่ยง duplicates
 - ✅ บันทึกเป็น CSV อัตโนมัติ
-- ✅ Import เข้า database ได้ทันที (optional)
+- ✅ Unified format สำหรับทั้ง 2 APIs
 
 **Usage:**
 
 ```bash
 cd backend
 
-# Fetch ข้อมูล 12 เดือนล่าสุดสำหรับทุกจังหวัด
-npm run fetch:weather
-
-# Fetch และ import เข้า database ทันที
-npm run fetch:weather -- --import
+# Fetch ข้อมูลสำหรับทุกจังหวัด (default date range)
+npm run fetch:daily-weather
 
 # Fetch จังหวัดที่เลือก
-npm run fetch:weather -- --provinces="bangkok,chiang-mai,phuket"
+npm run fetch:daily-weather -- --provinces="bangkok,chiang-mai,phuket"
 
-# Fetch ช่วงปีที่กำหนด
-npm run fetch:weather -- --start-year=2020 --end-year=2024
+# Fetch ช่วงวันที่กำหนด
+npm run fetch:daily-weather -- --start-date=2020-01-01 --end-date=2025-12-31
 
-# Fetch 24 เดือนล่าสุด
-npm run fetch:weather -- --months=24
-
-# Import จาก CSV ที่มีอยู่
-npm run fetch:weather -- --import --csv="./data/weather_data_2024.csv"
+# ระบุไฟล์ CSV output
+npm run fetch:daily-weather -- --csv="./data/daily_weather.csv"
 ```
 
 **Parameters:**
 - `--all-provinces`: ดึงข้อมูลทุกจังหวัด (default: true)
 - `--provinces="..."`: ระบุจังหวัดเฉพาะ (comma-separated)
-- `--start-year=YYYY`: ปีเริ่มต้น (default: current year - 1)
-- `--end-year=YYYY`: ปีสิ้นสุด (default: current year)
-- `--months=N`: จำนวนเดือนย้อนหลัง (default: 12)
-- `--import`: Import เข้า database ทันที
-- `--csv="path"`: ระบุไฟล์ CSV สำหรับ import
+- `--start-date=YYYY-MM-DD`: วันที่เริ่มต้น (default: 2020-01-01)
+- `--end-date=YYYY-MM-DD`: วันที่สิ้นสุด (default: current date + 5 days)
+- `--csv="path"`: ระบุไฟล์ CSV สำหรับ output
 
 **Output:**
-- CSV File: `data/weather_data_YYYY-MM_YYYY-MM_timestamp.csv`
-- Format:
-  ```csv
-  province,period,avgTemperature,avgRainfall,avgHumidity,weatherScore,year,month
-  bangkok,2024-01,28.5,15.2,65.0,75,2024,1
-  chiang-mai,2024-01,22.3,5.8,58.0,85,2024,1
-  ```
+- CSV File: `data/daily_weather_data.csv` (default) หรือตามที่ระบุ
+- Format: Daily weather data (raw data, ไม่มี weather score)
 
 **Example:**
 ```bash
-# ตัวอย่างที่ใช้จริง: ดึงข้อมูล 5 ปีย้อนหลัง
-npm run fetch:weather -- --start-year=2020 --end-year=2024 --import
+# ดึงข้อมูล 5 ปีย้อนหลัง
+npm run fetch:daily-weather -- --start-date=2020-01-01 --end-date=2025-12-31
 
 # Output:
-# ✅ Fetched weather data for 31 provinces
-# ✅ Data range: 2020-01 to 2024-12
-# ✅ Total records: 1,860 (31 provinces × 60 months)
-# ✅ Saved to: data/weather_data_2020-01_2024-12_20241231_120000.csv
-# ✅ Imported to database: 1,860 records
+# ✅ Fetched daily weather data for 31 provinces
+# ✅ Data range: 2020-01-01 to 2025-12-31
+# ✅ Saved to: data/daily_weather_data.csv
 ```
 
 **Notes:**
-- Open-Meteo Archive API รองรับเฉพาะข้อมูลในอดีต (ไม่มีอนาคต)
-- ข้อมูลมีความแม่นยำสูง เนื่องจากใช้ข้อมูลจากสถานีอุตุนิยมวิทยา
-- Script จะคำนวณ `weatherScore` (0-100) อัตโนมัติ
+- Open-Meteo Archive API รองรับข้อมูลอดีต (2020-01-01 ถึง 2026-01-06)
+- OpenWeatherMap Forecast API รองรับข้อมูลอนาคต (5 วันข้างหน้า)
+- ข้อมูลเป็น daily data (ไม่ใช่ monthly averages)
+- ต้อง import เข้า database แยกด้วย `npm run import:daily-weather`
 
 ---
 
@@ -177,19 +164,20 @@ npm run fetch:holidays -- --start-year=2024 --end-year=2026 --import
 
 Scripts สำหรับ import ข้อมูลจาก CSV เข้า database
 
-### 3. import-weather-from-csv.ts
+### 3. import-daily-weather-from-csv.ts
 
-**Purpose:** Import ข้อมูลสภาพอากาศจาก CSV เข้า database
+**Purpose:** Import ข้อมูลสภาพอากาศรายวันจาก CSV เข้า database
 
-**Location:** `backend/src/scripts/import-weather-from-csv.ts`
+**Location:** `backend/src/scripts/import-daily-weather-from-csv.ts`
 
-**Target Table:** `weather_statistics`
+**Target Table:** `daily_weather_data`
 
 **Features:**
 - ✅ Auto-detect ไฟล์ CSV ล่าสุดใน `data/` folder
 - ✅ Upsert (update หรือ insert)
 - ✅ Progress tracking
 - ✅ Error handling
+- ✅ Skip existing records (optional)
 
 **Usage:**
 
@@ -197,37 +185,43 @@ Scripts สำหรับ import ข้อมูลจาก CSV เข้า d
 cd backend
 
 # Auto-detect ไฟล์ล่าสุด
-npm run import:weather
+npm run import:daily-weather
 
 # ระบุไฟล์เอง
-npm run import:weather -- --csv="./data/weather_data_2020-01_2024-12.csv"
+npm run import:daily-weather -- --csv="./data/daily_weather_data.csv"
+
+# Skip existing records (faster)
+npm run import:daily-weather -- --csv="./data/daily_weather_data.csv" --skip-existing
 ```
 
 **Parameters:**
 - `--csv="path"`: ระบุไฟล์ CSV (optional, จะหาล่าสุดเอง)
+- `--skip-existing`: ข้าม records ที่มีอยู่แล้ว (optional)
 
 **CSV Format Required:**
 ```csv
-province,period,avgTemperature,avgRainfall,avgHumidity,weatherScore,year,month
-bangkok,2024-01,28.5,15.2,65.0,75,2024,1
+province,date,temperature,rainfall,humidity
+bangkok,2024-01-01,28.5,15.2,65.0
+chiang-mai,2024-01-01,22.3,5.8,58.0
 ```
 
 **Example:**
 ```bash
-npm run import:weather
+npm run import:daily-weather
 
 # Output:
-# 📂 Auto-detected: ./data/weather_data_2020-01_2024-12_20241231_120000.csv
-# 📊 Total records: 1,860
+# 📂 Auto-detected: ./data/daily_weather_data.csv
+# 📊 Total records: 68,289
 # ✅ Processing: 100%
-# ✅ Successfully imported: 1,860 records
-# ⏱️  Duration: 3.2s
+# ✅ Successfully imported: 68,289 records
+# ⏱️  Duration: 15.3s
 ```
 
 **Notes:**
 - Script จะ skip records ที่มี error
 - ใช้ `UPSERT` operation (ON CONFLICT UPDATE)
 - ปลอดภัยสำหรับรัน multiple times
+- ใช้ `--skip-existing` เพื่อความเร็ว (ถ้าข้อมูลส่วนใหญ่มีอยู่แล้ว)
 
 ---
 
@@ -338,44 +332,27 @@ npm run generate:mock-flights -- --days-back=90 --days-forward=270
 
 Scripts สำหรับจัดการและ sync ข้อมูล
 
-### 5. sync-amadeus-flights.ts
+### 5. validatePriceConsistency.ts
 
-**Purpose:** Sync ข้อมูลเที่ยวบินจาก Amadeus API เข้า database
+**Purpose:** ตรวจสอบความสอดคล้องของราคาในระบบ
 
-**Location:** `backend/src/scripts/sync-amadeus-flights.ts`
-
-**Requirements:** Amadeus API credentials
+**Location:** `backend/src/scripts/validatePriceConsistency.ts`
 
 **Usage:**
 
 ```bash
 cd backend
-npm run sync:amadeus
-```
-
-**Notes:**
-- ต้องการ `AMADEUS_CLIENT_ID` และ `AMADEUS_CLIENT_SECRET`
-- ใช้สำหรับ sync ข้อมูลจริง (ไม่ใช่ mock data)
-
----
-
-### 6. update-airline-names.ts
-
-**Purpose:** อัพเดทชื่อสายการบินในฐานข้อมูล
-
-**Location:** `backend/src/scripts/update-airline-names.ts`
-
-**Usage:**
-
-```bash
-cd backend
-npm run update:airlines
+npm run validate:prices
 ```
 
 **What it does:**
-- อัพเดทชื่อไทยและชื่ออังกฤษของสายการบิน
-- ตรวจสอบ IATA codes
-- เพิ่มสายการบินใหม่ (ถ้ามี)
+- ตรวจสอบความสอดคล้องของราคาใน database
+- ตรวจสอบ price consistency สำหรับ flight analysis
+- แสดงรายงานปัญหาที่พบ (ถ้ามี)
+
+**Notes:**
+- ใช้สำหรับ debugging และ validation
+- รันก่อน deploy เพื่อตรวจสอบข้อมูล
 
 ---
 
@@ -437,23 +414,34 @@ npm run test:api
   "migrate": "tsx src/scripts/run-migrations.ts",
   
   // Data Fetching
-  "fetch:weather": "tsx src/scripts/fetch-weather-to-csv.ts",
+  "fetch:daily-weather": "tsx src/scripts/fetch-daily-weather.ts",
   "fetch:holidays": "tsx src/scripts/fetch-holidays-to-csv.ts",
   
   // Data Import
-  "import:weather": "tsx src/scripts/import-weather-from-csv.ts",
+  "import:daily-weather": "tsx src/scripts/import-daily-weather-from-csv.ts",
+  "import:holidays": "tsx src/scripts/import-holidays-from-csv.ts",
   
   // Data Generation
   "generate:mock-flights": "tsx src/scripts/generate-mock-flights.ts",
   
-  // Sync
-  "sync:amadeus": "tsx src/scripts/sync-amadeus-flights.ts",
-  
   // Maintenance
-  "update:airlines": "tsx src/scripts/update-airline-names.ts",
+  "validate:prices": "tsx src/scripts/validatePriceConsistency.ts",
   
   // Testing
-  "test:api": "tsx src/scripts/test-api-endpoints.ts"
+  "test:api": "tsx src/scripts/test-api-endpoints.ts",
+  "test:price-consistency": "jest src/tests/unit/flightAnalysisService.priceConsistency.test.ts",
+  "test:integration:price-consistency": "jest src/tests/integration/flightController.priceConsistency.test.ts",
+  
+  // Docker
+  "docker:up": "docker-compose up -d",
+  "docker:down": "docker-compose down",
+  "docker:down:volumes": "docker-compose down -v",
+  "docker:logs": "docker-compose logs -f postgres",
+  "docker:logs:tail": "docker-compose logs --tail=50 postgres",
+  "docker:restart": "docker-compose restart",
+  "docker:reset": "docker-compose down -v && docker-compose up -d",
+  "docker:fix": "docker-compose down -v && docker rm -f flight_search_db && docker-compose up -d",
+  "docker:simple": "docker-compose -f docker-compose.simple.yml up -d"
 }
 ```
 
@@ -477,11 +465,17 @@ docker-compose up -d
 # 3. Run Migrations
 npm run migrate
 
-# 4. Fetch Weather Data (5 years)
-npm run fetch:weather -- --start-year=2020 --end-year=2024 --import
+# 4. Fetch Daily Weather Data
+npm run fetch:daily-weather -- --start-date=2020-01-01 --end-date=2025-12-31
 
-# 5. Fetch Holiday Data
-npm run fetch:holidays -- --start-year=2024 --end-year=2026 --import
+# 5. Import Daily Weather Data
+npm run import:daily-weather
+
+# 6. Fetch Holiday Data
+npm run fetch:holidays -- --start-year=2024 --end-year=2026
+
+# 7. Import Holiday Data
+npm run import:holidays
 
 # 6. Generate Mock Flights (1 year)
 npm run generate:mock-flights -- --days-back=180 --days-forward=180
@@ -497,11 +491,11 @@ npm run dev
 ```bash
 cd backend
 
-# Fetch ข้อมูล 12 เดือนล่าสุด
-npm run fetch:weather -- --months=12 --import
+# Fetch ข้อมูลรายวันล่าสุด
+npm run fetch:daily-weather -- --start-date=2024-01-01 --end-date=2025-12-31
 
-# หรือ Fetch ปีล่าสุด
-npm run fetch:weather -- --start-year=2024 --end-year=2024 --import
+# Import เข้า database
+npm run import:daily-weather
 ```
 
 ---
@@ -543,14 +537,13 @@ npm run test:api
 
 ```
 backend/src/scripts/
-├── fetch-weather-to-csv.ts          # Fetch weather from Open-Meteo
+├── fetch-daily-weather.ts           # Fetch daily weather from Open-Meteo & OpenWeatherMap
 ├── fetch-holidays-to-csv.ts         # Fetch holidays from iApp API
-├── import-weather-from-csv.ts       # Import weather CSV to database
+├── import-daily-weather-from-csv.ts # Import daily weather CSV to database
+├── import-holidays-from-csv.ts      # Import holidays CSV to database
 ├── generate-mock-flights.ts         # Generate mock flight data
-├── sync-amadeus-flights.ts          # Sync real flights from Amadeus
-├── update-airline-names.ts          # Update airline information
 ├── test-api-endpoints.ts            # Test all API endpoints
-└── fetch-amadeus-flights.ts         # Fetch flights from Amadeus API
+└── validatePriceConsistency.ts      # Validate price consistency
 ```
 
 ---
@@ -558,9 +551,11 @@ backend/src/scripts/
 ## 💡 Tips & Best Practices
 
 ### 1. Weather Data
+- ✅ Fetch ข้อมูลรายวัน (daily data) ไม่ใช่ monthly averages
 - ✅ Fetch ข้อมูลอย่างน้อย 2-3 ปีย้อนหลัง
 - ✅ Update ทุก 3-6 เดือน
 - ✅ เก็บ CSV ไว้เป็น backup
+- ✅ ใช้ `--skip-existing` เมื่อ import ข้อมูลที่มีอยู่แล้วบางส่วน
 
 ### 2. Holiday Data
 - ✅ Update ทุกปีเมื่อมีประกาศวันหยุดใหม่
@@ -602,8 +597,11 @@ npx tsx --version
 ### Fetch Weather Error
 
 ```bash
-# Error: Rate limit exceeded
+# Error: Rate limit exceeded (Open-Meteo)
 # Solution: รอ 1 ชั่วโมง (10,000 requests/day)
+
+# Error: OpenWeatherMap API key missing
+# Solution: เพิ่ม OPENWEATHERMAP_API_KEY ใน .env (optional, สำหรับ forecast data)
 
 # Error: Invalid province
 # Solution: ตรวจสอบชื่อจังหวัดใน script (ต้องใช้ slug format: chiang-mai)
@@ -649,6 +647,6 @@ docker system df
 
 ---
 
-**Last Updated:** 2025-12-31  
-**Version:** 1.0.0
+**Last Updated:** 2025-12-30  
+**Version:** 1.1.0
 

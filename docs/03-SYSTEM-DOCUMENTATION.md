@@ -23,8 +23,9 @@
 - **Runtime**: Node.js (v18+)
 - **Framework**: Express.js
 - **Language**: TypeScript
-- **Database**: PostgreSQL 14+ with TimescaleDB
+- **Database**: PostgreSQL 18+ with TimescaleDB (optional)
 - **ORM**: None (Raw SQL queries via `pg` library)
+- **Scheduler**: node-cron (optional, via `ENABLE_SCHEDULED_JOBS`)
 
 #### Frontend
 - **Framework**: Next.js 14+ (React)
@@ -589,25 +590,25 @@ SELECT create_hypertable('flight_prices', 'departure_date',
 
 ---
 
-### Weather Statistics Table
+### Daily Weather Data Table
 
 ```sql
-CREATE TABLE weather_statistics (
+CREATE TABLE daily_weather_data (
   id SERIAL PRIMARY KEY,
   province VARCHAR(100) NOT NULL,          -- Province slug (e.g., 'chiang-mai')
-  period VARCHAR(7) NOT NULL,              -- YYYY-MM format
-  avg_temperature DECIMAL(5, 2),           -- Celsius
-  avg_rainfall DECIMAL(8, 2),              -- mm
-  avg_humidity DECIMAL(5, 2),              -- Percentage
-  weather_score INTEGER,                   -- 0-100
+  date DATE NOT NULL,                       -- Date (YYYY-MM-DD)
+  temperature DECIMAL(5, 2),                -- Celsius
+  rainfall DECIMAL(8, 2),                   -- mm
+  humidity DECIMAL(5, 2),                   -- Percentage
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW(),
-  UNIQUE(province, period)
+  UNIQUE(province, date)
 );
 ```
 
-**Data Source:** CSV import from Open-Meteo Historical Weather API
-**Data Volume:** ~2,190 records (31 provinces × ~70 months)
+**Data Source:** CSV import from Open-Meteo Historical API & OpenWeatherMap Forecast API
+**Data Volume:** ~68,289 records (31 provinces × ~2,200 days)
+**Note:** ข้อมูลเป็น daily data (ไม่ใช่ monthly averages)
 
 ---
 
@@ -846,14 +847,27 @@ DB_NAME=flight_search
 DB_USER=postgres
 DB_PASSWORD=your_password
 
+# TimescaleDB (Optional)
+ENABLE_TIMESCALEDB=false  # Set to 'true' if using TimescaleDB
+
 # Server
 PORT=3001
 NODE_ENV=development
+
+# Scheduled Jobs (Optional)
+ENABLE_SCHEDULED_JOBS=false  # Set to 'true' to enable scheduled tasks
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=60000  # 1 minute
+RATE_LIMIT_MAX_REQUESTS=1000  # Development: 1000, Production: 300
 
 # Amadeus API (Optional)
 AMADEUS_CLIENT_ID=your_client_id
 AMADEUS_CLIENT_SECRET=your_client_secret
 AMADEUS_API_BASE_URL=https://test.api.amadeus.com
+
+# OpenWeatherMap API (Optional, for forecast data)
+OPENWEATHERMAP_API_KEY=your_api_key
 
 # CORS
 CORS_ORIGIN=http://localhost:3000
@@ -887,16 +901,38 @@ CREATE INDEX idx_weather_stats_province_period
   ON weather_statistics(province, period);
 ```
 
-### TimescaleDB Benefits
+### TimescaleDB Benefits (Optional)
 
-- **Efficient time-series queries** - `flight_prices` is a hypertable
+TimescaleDB เป็น optional extension ที่สามารถเปิดใช้งานได้ผ่าน environment variable:
+
+```env
+ENABLE_TIMESCALEDB=true
+```
+
+**Benefits:**
+- **Efficient time-series queries** - `flight_prices` can be a hypertable
 - **Automatic data partitioning** by date
 - **Better compression** for historical data
 - **Faster aggregations** on time ranges
 
+**Note:** ระบบทำงานได้ปกติโดยไม่ต้องใช้ TimescaleDB
+
 ---
 
 ## 🚀 Scaling Considerations
+
+### Current Features
+
+1. **Scheduled Jobs** (Optional)
+   - Enable via `ENABLE_SCHEDULED_JOBS=true`
+   - Background tasks for data sync
+   - Pre-calculate popular routes
+
+2. **Rate Limiting**
+   - Configurable per environment
+   - Separate limits for statistics endpoints
+   - Production: 300 requests/minute
+   - Development: 1000 requests/minute
 
 ### Current Limitations
 
@@ -918,7 +954,7 @@ CREATE INDEX idx_weather_stats_province_period
    - Vercel/Cloudflare
    - Edge caching
 
-4. **Background jobs**
+4. **Background jobs** (Partially implemented)
    - Scheduled Amadeus API sync
    - Pre-calculate popular routes
 

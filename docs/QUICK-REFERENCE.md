@@ -108,11 +108,14 @@ npm run generate:mock-flights -- --days-back=0 --days-forward=30
 ```bash
 cd backend
 
-# Import weather data (auto-detect latest CSV)
-npm run import:weather
+# Import daily weather data (auto-detect latest CSV)
+npm run import:daily-weather
 
 # Import specific CSV file
-npm run import:weather -- --csv="./data/weather_data_2020-01_2025-12.csv"
+npm run import:daily-weather -- --csv="./data/daily_weather_data.csv"
+
+# Import holidays
+npm run import:holidays
 ```
 
 ---
@@ -323,7 +326,7 @@ npm run build            # Build for production
 npm run start            # Start production server
 npm run migrate          # Run database migrations
 npm run generate:mock-flights  # Generate mock flight data
-npm run import:weather   # Import weather data from CSV
+npm run import:daily-weather   # Import daily weather data from CSV
 ```
 
 ### Frontend

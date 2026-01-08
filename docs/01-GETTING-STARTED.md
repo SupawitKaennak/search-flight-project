@@ -103,6 +103,8 @@ docker ps
 - Database: `flight_search`
 - User: `postgres`
 - Password: `postgres`
+- PostgreSQL Version: 18
+- TimescaleDB: Included (latest-pg18)
 
 **คำสั่งที่มีประโยชน์:**
 ```bash
@@ -140,7 +142,8 @@ CREATE DATABASE flight_search;
 -- Connect to database
 \c flight_search
 
--- Enable TimescaleDB extension
+-- Enable TimescaleDB extension (optional)
+-- Note: Only needed if ENABLE_TIMESCALEDB=true in .env
 CREATE EXTENSION IF NOT EXISTS timescaledb;
 ```
 
@@ -205,14 +208,27 @@ DB_NAME=flight_search
 DB_USER=postgres
 DB_PASSWORD=your_password
 
+# TimescaleDB (Optional)
+ENABLE_TIMESCALEDB=false  # Set to 'true' if using TimescaleDB
+
 # Server Configuration
 PORT=3001
 NODE_ENV=development
+
+# Scheduled Jobs (Optional)
+ENABLE_SCHEDULED_JOBS=false  # Set to 'true' to enable scheduled tasks
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=60000  # 1 minute
+RATE_LIMIT_MAX_REQUESTS=1000  # Development: 1000, Production: 300
 
 # Amadeus API (optional - มี fallback ไปที่ database)
 AMADEUS_CLIENT_ID=your_client_id
 AMADEUS_CLIENT_SECRET=your_client_secret
 AMADEUS_API_BASE_URL=https://test.api.amadeus.com
+
+# OpenWeatherMap API (Optional, for forecast data)
+OPENWEATHERMAP_API_KEY=your_api_key
 
 # CORS
 CORS_ORIGIN=http://localhost:3000
@@ -258,28 +274,39 @@ Frontend จะรันที่: **http://localhost:3000**
 
 ## 📥 Data Import
 
-### 1. Import Weather Data
+### 1. Import Daily Weather Data
 
 ```bash
 cd backend
 
 # Auto-detect latest CSV file
-npm run import:weather
+npm run import:daily-weather
 
 # Or specify file
-npm run import:weather -- --csv="./data/weather_data_2020-01_2025-12.csv"
+npm run import:daily-weather -- --csv="./data/daily_weather_data.csv"
 ```
 
 **Expected output:**
 ```
 ✅ Import completed!
-📊 Total records: 2190
-✅ Successfully stored: 2190
+📊 Total records: 68,289
+✅ Successfully stored: 68,289
 ```
 
-### 2. Import Holiday Data (Optional)
+### 2. Import Holiday Data
 
-ข้อมูลวันหยุดจะถูก import ผ่าน migration `009_insert_thai_holidays.sql` อัตโนมัติ
+```bash
+cd backend
+
+# Fetch holidays from API
+npm run fetch:holidays -- --start-year=2024 --end-year=2026
+
+# Import holidays from CSV
+npm run import:holidays
+
+# Or specify CSV file
+npm run import:holidays -- --csv="./data/thai_holidays_2024_2026_20251229_163536.csv"
+```
 
 ตรวจสอบข้อมูล:
 
