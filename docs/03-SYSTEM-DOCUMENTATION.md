@@ -60,10 +60,6 @@
 │  │              Services Layer                           │  │
 │  │  - flightAnalysisService (Season Calculation)        │  │
 │  │  - pricePredictionService                             │  │
-│  │  - amadeusFlightOffersService (with DB fallback)     │  │
-│  │  - amadeusCheapestDateService (with DB fallback)     │  │
-│  │  - amadeusInspirationSearchService (with DB fallback)│  │
-│  │  - amadeusPriceAnalysisService (with DB fallback)    │  │
 │  └────────────────┬─────────────────────────────────────┘  │
 │                   │                                          │
 │  ┌────────────────┴─────────────────────────────────────┐  │
@@ -92,12 +88,12 @@
 ┌───────────────────┴──────────────────────────────────────────┐
 │                  EXTERNAL APIS (Optional)                    │
 │                                                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │   Amadeus    │  │  Open-Meteo  │  │   iApp API   │     │
-│  │  Flight API  │  │  Weather API │  │  Holiday API │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-│        ↓                  ↓                   ↓             │
-│   Fallback to DB     Import to DB       Import to DB       │
+│  ┌──────────────┐  ┌──────────────┐     │
+│  │  Open-Meteo  │  │   iApp API   │     │
+│  │  Weather API │  │  Holiday API │     │
+│  └──────────────┘  └──────────────┘     │
+│            ↓                   ↓         │
+│      Import to DB       Import to DB     │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -171,41 +167,28 @@ finalPrice = 1090 × 1.4 × 1.0 × 2.5 × 1.01 = 3853 THB
 #### Multi-Factor Score
 
 ```typescript
-seasonScore = (pricePercentile × 0.4) + 
-              (demandPercentile × 0.3) + 
-              (holidayScore × 0.2) + 
+seasonScore = (pricePercentile × 0.6) + 
+              (holidayScore × 0.3) + 
               (weatherScore × 0.1)
 
 Where:
 - pricePercentile: 0-100 (lower price = lower percentile = low season)
-- demandPercentile: 0-100 (lower demand = lower percentile = low season)
 - holidayScore: 0-100 (more holidays = higher score = high season)
 - weatherScore: 0-100 (better weather = higher score = high season)
 ```
 
+**Note:** Demand factor ถูกถอดออกแล้ว ใช้เฉพาะ Price (60%), Holiday (30%), และ Weather (10%)
+
 #### Price Percentile Calculation
 
 ```typescript
-// Step 1: Calculate average price per month
+// Step 1: Calculate average price per month from database
 avgPricesByMonth[month] = AVG(prices in that month)
 
 // Step 2: Calculate percentiles across all months
-minAvgPrice = MIN(avgPricesByMonth)
-maxAvgPrice = MAX(avgPricesByMonth)
-
+sortedPrices = SORT(allAvgPrices)
 pricePercentile[month] = 
-  ((avgPricesByMonth[month] - minAvgPrice) / (maxAvgPrice - minAvgPrice)) × 100
-```
-
-#### Demand Percentile Calculation
-
-```typescript
-// Based on bookings and travelers count
-demandScore = (bookingsCount × 0.5) + (travelersCount × 0.5)
-
-// Calculate percentile across months
-demandPercentile[month] = 
-  ((demandScore - minDemand) / (maxDemand - minDemand)) × 100
+  (count of prices ≤ avgPrice[month] / total prices) × 100
 ```
 
 #### Holiday Score Calculation
@@ -647,68 +630,13 @@ CREATE TABLE demand_statistics (
 ```
 
 **Data Source:** 
-- Amadeus API (when available)
-- Mock data generator (fallback)
+- Mock data generator
 
 ---
 
 ## 🔌 External APIs
 
-### 1. Amadeus Flight API
-
-**Documentation:** https://developers.amadeus.com/
-
-#### Used Endpoints:
-
-1. **Flight Offers Search**
-   - Endpoint: `/v2/shopping/flight-offers`
-   - Purpose: Search real-time flight prices
-   - **Fallback:** Local database query
-
-2. **Flight Cheapest Date Search**
-   - Endpoint: `/v1/shopping/flight-dates`
-   - Purpose: Find cheapest travel dates
-   - **Fallback:** Query `flight_prices` table
-
-3. **Flight Inspiration Search**
-   - Endpoint: `/v1/shopping/flight-destinations`
-   - Purpose: Discover destinations within budget
-   - **Fallback:** Query `routes` and `flight_prices`
-
-4. **Flight Price Analysis**
-   - Endpoint: `/v1/analytics/itinerary-price-metrics`
-   - Purpose: Price statistics and trends
-   - **Fallback:** Calculate from local data
-
-5. **Airport & City Search**
-   - Endpoint: `/v1/reference-data/locations`
-   - Purpose: Search airports by keyword
-   - **Fallback:** Local province-to-airport mapping
-
-#### Amadeus API Fallback Strategy
-
-**All Amadeus services implement fallback:**
-
-```typescript
-try {
-  // Try Amadeus API first
-  const result = await amadeusAPI.call(params)
-  return result
-} catch (error) {
-  if (error.code === 38189 || isEmpty(result)) {
-    // Amadeus internal error or no data
-    console.log('Falling back to database...')
-    return queryLocalDatabase(params)
-  }
-  throw error
-}
-```
-
-**Benefit:** ระบบทำงานได้โดยไม่ต้องมี Amadeus API key!
-
----
-
-### 2. Open-Meteo Weather API
+### 1. Open-Meteo Weather API
 
 **Documentation:** https://open-meteo.com/
 
@@ -729,7 +657,7 @@ Open-Meteo API → CSV Export → Import Script → weather_statistics table
 
 ---
 
-### 3. iApp Holiday API (Thailand)
+### 2. iApp Holiday API (Thailand)
 
 **Documentation:** https://github.com/snอพcod3/iApp-Holiday-API
 
@@ -751,12 +679,11 @@ iApp API → Manual/Scheduled Import → thai_holidays table
 
 ### Overview
 
-ระบบคำนวณฤดูกาล (Season) โดยใช้ **Multi-Factor Scoring** จาก 4 ปัจจัย:
+ระบบคำนวณฤดูกาล (Season) โดยใช้ **Multi-Factor Scoring** จาก 3 ปัจจัย:
 
-1. **Price (40%)** - ราคาเที่ยวบิน
-2. **Demand (30%)** - ความต้องการ (bookings, travelers)
-3. **Holiday (20%)** - วันหยุดนักขัตฤกษ์
-4. **Weather (10%)** - สภาพอากาศ
+1. **Price (60%)** - ราคาเที่ยวบิน (จาก database)
+2. **Holiday (30%)** - วันหยุดนักขัตฤกษ์ (จาก database หรือ iApp API)
+3. **Weather (10%)** - สภาพอากาศ (จาก database หรือสร้าง mock จากราคา)
 
 ### Calculation Flow
 
@@ -764,31 +691,28 @@ iApp API → Manual/Scheduled Import → thai_holidays table
 ┌─────────────────────────────────────────────────────────┐
 │  1. Collect Data (180-day range)                        │
 │     - Flight prices from database                       │
-│     - Demand data (Amadeus or Mock)                     │
-│     - Weather data from database                        │
-│     - Holiday data from database                        │
+│     - Weather data from database (daily_weather_data)   │
+│     - Holiday data from database (holiday_statistics)   │
 └──────────────────┬──────────────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────────────────────┐
 │  2. Group by Month & Calculate Averages                 │
-│     - avgPrice[month] = AVG(prices)                     │
-│     - demandScore[month] = bookings + travelers         │
+│     - avgPrice[month] = AVG(prices from database)       │
 │     - holidayScore[month] = holidays × 30 + weekends    │
-│     - weatherScore[month] = from database               │
+│     - weatherScore[month] = from database or mock       │
 └──────────────────┬──────────────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────────────────────┐
-│  3. Calculate Percentiles (0-100)                       │
-│     - pricePercentile = normalize(avgPrice)             │
-│     - demandPercentile = normalize(demandScore)         │
-│     - holidayPercentile = holidayScore                  │
-│     - weatherPercentile = weatherScore                  │
+│  3. Calculate Percentiles & Scores (0-100)              │
+│     - pricePercentile = percentile(avgPrice)            │
+│     - holidayScore = from database (0-100)              │
+│     - weatherScore = from database or mock (0-100)      │
 └──────────────────┬──────────────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────────────────────┐
 │  4. Calculate Final Season Score                        │
-│     seasonScore = (price × 0.4) + (demand × 0.3) +     │
-│                   (holiday × 0.2) + (weather × 0.1)     │
+│     seasonScore = (price × 0.6) +                       │
+│                   (holiday × 0.3) + (weather × 0.1)     │
 └──────────────────┬──────────────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────────────────────┐
@@ -829,9 +753,6 @@ iApp API → Manual/Scheduled Import → thai_holidays table
 | Routes | Calculated | Static | N/A |
 | Weather Statistics | CSV Import (Open-Meteo) | Manual | None |
 | Thai Holidays | CSV/Migration | Annual | None |
-| Demand Data | Amadeus API | Real-time | Mock Generator |
-| Flight Offers | Amadeus API | Real-time | Database Query |
-| Airport Search | Amadeus API | Real-time | Local Mapping |
 
 ---
 
@@ -860,11 +781,6 @@ ENABLE_SCHEDULED_JOBS=false  # Set to 'true' to enable scheduled tasks
 # Rate Limiting
 RATE_LIMIT_WINDOW_MS=60000  # 1 minute
 RATE_LIMIT_MAX_REQUESTS=1000  # Development: 1000, Production: 300
-
-# Amadeus API (Optional)
-AMADEUS_CLIENT_ID=your_client_id
-AMADEUS_CLIENT_SECRET=your_client_secret
-AMADEUS_API_BASE_URL=https://test.api.amadeus.com
 
 # OpenWeatherMap API (Optional, for forecast data)
 OPENWEATHERMAP_API_KEY=your_api_key
@@ -955,7 +871,6 @@ ENABLE_TIMESCALEDB=true
    - Edge caching
 
 4. **Background jobs** (Partially implemented)
-   - Scheduled Amadeus API sync
    - Pre-calculate popular routes
 
 ---

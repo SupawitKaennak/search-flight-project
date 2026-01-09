@@ -222,11 +222,6 @@ ENABLE_SCHEDULED_JOBS=false  # Set to 'true' to enable scheduled tasks
 RATE_LIMIT_WINDOW_MS=60000  # 1 minute
 RATE_LIMIT_MAX_REQUESTS=1000  # Development: 1000, Production: 300
 
-# Amadeus API (optional - มี fallback ไปที่ database)
-AMADEUS_CLIENT_ID=your_client_id
-AMADEUS_CLIENT_SECRET=your_client_secret
-AMADEUS_API_BASE_URL=https://test.api.amadeus.com
-
 # OpenWeatherMap API (Optional, for forecast data)
 OPENWEATHERMAP_API_KEY=your_api_key
 
@@ -483,20 +478,6 @@ npm run generate:mock-flights -- --days-back=90 --days-forward=270
    - Verify `NEXT_PUBLIC_API_URL` in `frontend/.env.local`
    - Should be: `http://localhost:3001/api`
 
-### Amadeus API Errors
-
-**Problem:** 500 errors from Amadeus endpoints
-
-**Solution:** ระบบมี fallback ไปที่ database อัตโนมัติ
-
-- `/flights/cheapest-dates` → Query local database
-- `/destinations/inspiration` → Query local database
-- `/flights/search` → Query local database
-- `/flights/price-analysis` → Calculate from local data
-
-ไม่จำเป็นต้องมี Amadeus API key เพื่อพัฒนา!
-
----
 
 ## 📊 Verify Everything Works
 

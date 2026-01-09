@@ -72,7 +72,7 @@ GROUP BY r.id, r.origin, r.destination;
 - 🧮 Calculation Formulas (Price, Season, Distance, Duration)
 - 🌐 API Documentation (All endpoints with examples)
 - 💾 Data Models (Database schema, Table structures)
-- 🔌 External APIs (Amadeus, Open-Meteo, iApp)
+- 🔌 External APIs (Open-Meteo, iApp)
 - 🎯 Season Calculation System (Multi-factor scoring)
 
 **สูตรสำคัญ:**
@@ -84,9 +84,8 @@ price = basePrice × seasonalMultiplier × tripTypeMultiplier × randomVariation
 
 #### 2. Season Score (Multi-Factor)
 ```
-seasonScore = (pricePercentile × 0.4) + 
-              (demandPercentile × 0.3) + 
-              (holidayScore × 0.2) + 
+seasonScore = (pricePercentile × 0.6) + 
+              (holidayScore × 0.3) + 
               (weatherScore × 0.1)
 ```
 
@@ -115,7 +114,6 @@ seasonScore ≥ p67 → High Season
 - 🎲 **Data Generation Scripts**
   - `generate-mock-flights.ts` - สร้าง mock flights
 - 🔄 **Maintenance Scripts**
-  - `sync-amadeus-flights.ts` - Sync จาก Amadeus
   - `update-airline-names.ts` - Update airline info
 - 🧪 **Testing Scripts**
   - `test-api-endpoints.ts` - ทดสอบ API
@@ -299,11 +297,7 @@ cd backend && npm run dev
    - Low/Normal/High season classification
    - Price range for each season
 
-4. **Amadeus API Integration**
-   - With database fallback
-   - Works without API key
-
-5. **Mock Data Generator**
+4. **Mock Data Generator**
    - Realistic price variation
    - Seasonal patterns
    - 130,000+ flight records
@@ -353,7 +347,6 @@ cd backend && npm run dev
 - TimescaleDB Docs: https://docs.timescale.com/
 - Next.js Docs: https://nextjs.org/docs
 - Express.js Docs: https://expressjs.com/
-- Amadeus API: https://developers.amadeus.com/
 
 ---
 
@@ -364,7 +357,6 @@ cd backend && npm run dev
 - ✅ Complete system implementation
 - ✅ Mock data generator with seasonal variation
 - ✅ Multi-factor season calculation
-- ✅ Amadeus API fallback system
 - ✅ Weather and holiday data integration
 
 ---

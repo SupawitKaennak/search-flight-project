@@ -353,9 +353,8 @@ randomVariation = 0.98-1.02 (±2%)
 
 ### Season Score
 ```
-seasonScore = (pricePercentile × 0.4) + 
-              (demandPercentile × 0.3) + 
-              (holidayScore × 0.2) + 
+seasonScore = (pricePercentile × 0.6) + 
+              (holidayScore × 0.3) + 
               (weatherScore × 0.1)
 ```
 
