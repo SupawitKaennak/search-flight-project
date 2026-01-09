@@ -15,7 +15,6 @@ const PROVINCE_TO_AIRPORT_CODE: Record<string, string> = {
   'chiang-rai': 'CEI',
   'phuket': 'HKT',
   'krabi': 'KBV',
-  'samui': 'USM',
   'hat-yai': 'HDY',
   'songkhla': 'HDY',
   'udon-thani': 'UTH',
@@ -66,21 +65,56 @@ export async function convertToAirportCode(
   }
 
   const locationLower = location.toLowerCase().trim();
+  const normalizedLocation = locationLower.replace(/\s+/g, '-');
+  
+  // Special airport code aliases (common mistakes or alternative codes)
+  const airportCodeAliases: Record<string, string> = {
+    'NAN': 'NNT', // Nan province - NAN is sometimes used but NNT is the correct code
+  };
   
   // 1. Check if already airport code (3 uppercase letters)
   if (/^[A-Z]{3}$/.test(location.toUpperCase())) {
+    const locationUpper = location.toUpperCase();
+    
+    // Check if there's an alias for this code
+    if (airportCodeAliases[locationUpper]) {
+      const aliasedCode = airportCodeAliases[locationUpper];
+      // Verify the aliased code exists in database
+      const airport = await AirportModel.getAirportByCode(aliasedCode);
+      if (airport) {
+        return aliasedCode;
+      }
+      // Return aliased code anyway if mapping exists
+      return aliasedCode;
+    }
+    
     // Verify it exists in database
-    const airport = await AirportModel.getAirportByCode(location.toUpperCase());
+    const airport = await AirportModel.getAirportByCode(locationUpper);
     if (airport) {
-      return location.toUpperCase();
+      return locationUpper;
     }
     // If not in database but looks like a valid code, return it anyway
     // (some codes might not be in our database yet)
-    return location.toUpperCase();
+    return locationUpper;
   }
 
-  // 2. Try fallback mapping for Thai provinces first (fastest, no API call)
-  const normalizedLocation = locationLower.replace(/\s+/g, '-');
+  // 2. Handle deprecated/invalid locations (redirect to valid provinces)
+  const deprecatedLocations: Record<string, string> = {
+    'samui': 'surat-thani', // Samui is a district of Surat Thani province, not a province itself
+    'ko-samui': 'surat-thani',
+    'koh-samui': 'surat-thani',
+  };
+  
+  if (deprecatedLocations[normalizedLocation]) {
+    const redirectTo = deprecatedLocations[normalizedLocation];
+    const redirectCode = PROVINCE_TO_AIRPORT_CODE[redirectTo];
+    if (redirectCode) {
+      console.warn(`[AirportCodeConverter] "${location}" is not a province. Redirecting to "${redirectTo}" (${redirectCode}). Samui is a district of Surat Thani province.`);
+      return redirectCode;
+    }
+  }
+
+  // 3. Try fallback mapping for Thai provinces first (fastest, no API call)
   if (PROVINCE_TO_AIRPORT_CODE[normalizedLocation]) {
     const airportCode = PROVINCE_TO_AIRPORT_CODE[normalizedLocation];
     // Verify it exists in database
@@ -92,7 +126,7 @@ export async function convertToAirportCode(
     return airportCode;
   }
 
-  // 3. Try database cache (search by name, city, or code)
+  // 4. Try database cache (search by name, city, or code)
   const cachedAirports = await AirportModel.searchAirports(location);
   if (cachedAirports.length > 0) {
     // Prefer exact code match, then name match
@@ -110,7 +144,7 @@ export async function convertToAirportCode(
     return cachedAirports[0].code;
   }
 
-  // 4. If still no match, throw error
+  // 5. If still no match, throw error
   const fallbackCode = PROVINCE_TO_AIRPORT_CODE[normalizedLocation];
   if (fallbackCode) {
     return fallbackCode;

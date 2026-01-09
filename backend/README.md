@@ -1,12 +1,11 @@
 # Flight Search Backend API
 
-Backend API สำหรับ Flight Search Application ใช้ Node.js + Express + PostgreSQL + TimescaleDB + Amadeus API
+Backend API สำหรับ Flight Search Application ใช้ Node.js + Express + PostgreSQL + TimescaleDB
 
 ## 🚀 Features
 
 - **RESTful API** สำหรับค้นหาและวิเคราะห์ราคาตั๋วเครื่องบิน
-- **Amadeus API Integration** - ใช้ Amadeus API เป็นแหล่งข้อมูลหลักสำหรับข้อมูลเที่ยวบิน
-- **Smart Caching** - ใช้ PostgreSQL/TimescaleDB เป็น cache เพื่อลด API calls และเพิ่มประสิทธิภาพ
+- **Smart Caching** - ใช้ PostgreSQL/TimescaleDB เป็น cache เพื่อเพิ่มประสิทธิภาพ
 - **Automatic Airport Code Conversion** - แปลงชื่อจังหวัด/ประเทศเป็น airport code อัตโนมัติ
 - **Seasonal Price Analysis** - วิเคราะห์ราคาตามฤดูกาลแบบ dynamic จากข้อมูลจริง
 - **Price Prediction** - ทำนายราคาในอนาคตด้วย Linear Regression
@@ -14,13 +13,11 @@ Backend API สำหรับ Flight Search Application ใช้ Node.js + Exp
 - **Input Validation** ด้วย Zod
 - **Rate Limiting** และ security middleware
 - **Database Migrations** สำหรับจัดการ schema
-- **Scheduled Jobs** สำหรับ sync ข้อมูลจาก Amadeus อัตโนมัติ
 
 ## 📋 Prerequisites
 
 - **Node.js** 18+ 
 - **Docker** และ **Docker Compose** (สำหรับ PostgreSQL และ TimescaleDB)
-- **Amadeus API Credentials** - ต้องมี Client ID และ Client Secret
 
 > 💡 **ต้องการคู่มือการเริ่มต้นใช้งานแบบละเอียด?** ดู [GETTING_STARTED.md](./GETTING_STARTED.md)
 
@@ -64,12 +61,7 @@ CORS_ORIGIN=http://localhost:3000
 RATE_LIMIT_WINDOW_MS=60000
 RATE_LIMIT_MAX_REQUESTS=200
 
-# Amadeus API Configuration (Required)
-AMADEUS_CLIENT_ID=your_amadeus_client_id
-AMADEUS_CLIENT_SECRET=your_amadeus_client_secret
-AMADEUS_ENVIRONMENT=test
-
-# Scheduled Jobs
+# Scheduled Jobs (Optional)
 ENABLE_SCHEDULED_JOBS=false
 ```
 
@@ -131,13 +123,6 @@ CREATE EXTENSION IF NOT EXISTS timescaledb;
 ```bash
 npm run migrate
 ```
-
-### 5. Get Amadeus API Credentials
-
-1. ไปที่ [Amadeus Developers](https://developers.amadeus.com)
-2. สมัครสมาชิก (ฟรี)
-3. สร้าง App ใหม่
-4. Copy Client ID และ Client Secret มาใส่ใน `.env`
 
 ## 🏃 Running the Server
 
@@ -349,11 +334,6 @@ GET /api/statistics/price
 - `npm run migrate:up` - Run migrations (up)
 - `npm run migrate:down` - Rollback migrations (down)
 
-### Amadeus Data
-
-- `npm run fetch:amadeus` - Manually fetch flight data from Amadeus
-- `npm run sync:amadeus` - Start scheduled sync service
-
 ### Docker (Optional)
 
 - `npm run docker:up` - Start Docker containers (ใช้ `docker-compose.yml` - **แนะนำ**)
@@ -397,20 +377,11 @@ backend/
 │   │   ├── statisticsRoutes.ts
 │   │   └── index.ts
 │   ├── services/            # Business logic
-│   │   ├── amadeusService.ts
-│   │   ├── amadeusFlightOffersService.ts
-│   │   ├── amadeusAirportService.ts
-│   │   ├── amadeusAirlineService.ts
-│   │   ├── amadeusCheapestDateService.ts
-│   │   ├── amadeusPriceAnalysisService.ts
-│   │   ├── amadeusSyncService.ts
 │   │   ├── flightAnalysisService.ts
 │   │   ├── pricePredictionService.ts
 │   │   ├── cacheService.ts
 │   │   └── schedulerService.ts
 │   ├── scripts/             # Utility scripts
-│   │   ├── fetch-amadeus-flights.ts
-│   │   └── sync-amadeus-flights.ts
 │   ├── types/               # TypeScript types
 │   │   └── index.ts
 │   ├── utils/               # Utility functions
@@ -426,8 +397,8 @@ backend/
 
 ### Tables
 
-- **airports** - ข้อมูลสนามบิน (cache จาก Amadeus)
-- **airlines** - ข้อมูลสายการบิน (cache จาก Amadeus)
+- **airports** - ข้อมูลสนามบิน
+- **airlines** - ข้อมูลสายการบิน
 - **routes** - เส้นทางการบิน
 - **flight_prices** - ราคาตั๋วเครื่องบิน (TimescaleDB hypertable)
 - **flight_prices_history** - ประวัติราคา (TimescaleDB hypertable)
@@ -444,21 +415,6 @@ backend/
 
 ดูรายละเอียดใน [env.example](./env.example)
 
-### Amadeus API
-
-ระบบใช้ Amadeus API เป็นแหล่งข้อมูลหลัก:
-- **Flight Offers Search** - ค้นหาราคาเที่ยวบิน
-- **Airport & City Search** - ค้นหาสนามบิน
-- **Airline Code Lookup** - ข้อมูลสายการบิน
-- **Flight Cheapest Date Search** - หาวันที่ถูกที่สุด
-- **Flight Price Analysis** - วิเคราะห์แนวโน้มราคา
-
-### Scheduled Jobs
-
-เมื่อเปิดใช้งาน (`ENABLE_SCHEDULED_JOBS=true`), ระบบจะ:
-- Sync ข้อมูลเที่ยวบินจาก Amadeus ทุกวันเวลา 02:00 (Bangkok time)
-- Sync routes ที่นิยม (BKK → CNX, BKK → HKT, BKK → KBV)
-
 ## 🔒 Security
 
 - **Helmet.js** สำหรับ security headers
@@ -473,7 +429,6 @@ backend/
 - TimescaleDB เป็น optional แต่แนะนำให้ใช้สำหรับประสิทธิภาพที่ดีขึ้น
 - ถ้าไม่มี TimescaleDB ระบบจะทำงานได้ปกติแต่ไม่มี hypertable features
 - Database migrations ควรรันแยกก่อน start server ใน production
-- Amadeus Test API มี rate limit (2,000 requests/day) - ระบบใช้ caching เพื่อลด API calls
 - ระบบจะแปลงชื่อจังหวัด/ประเทศเป็น airport code อัตโนมัติ
 
 ### Alternative: Manual Installation
@@ -503,12 +458,6 @@ npm run migrate
 # Reset migrations (careful!)
 # Delete schema_migrations table and re-run migrations
 ```
-
-### Amadeus API Issues
-
-- ตรวจสอบว่า Client ID และ Client Secret ถูกต้อง
-- ตรวจสอบว่า API key ยังไม่หมดอายุ
-- ตรวจสอบ rate limit (Test API: 2,000 requests/day)
 
 ## 📚 Documentation
 

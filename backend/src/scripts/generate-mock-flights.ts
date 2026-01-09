@@ -68,7 +68,6 @@ const PROVINCES = [
   { value: 'songkhla', airportCode: 'HDY' },
   { value: 'krabi', airportCode: 'KBV' },
   { value: 'surat-thani', airportCode: 'URT' },
-  { value: 'samui', airportCode: 'USM' },
   { value: 'nakhon-si-thammarat', airportCode: 'NST' },
   { value: 'trang', airportCode: 'TST' },
   { value: 'ranong', airportCode: 'UNN' },
@@ -91,7 +90,7 @@ const AIRLINES = [
 const DISTANCE_MATRIX: Record<string, Record<string, number>> = {
   'BKK': {
     'CNX': 600, 'HKT': 840, 'KBV': 800, 'HDY': 950, 'KKC': 450, 'UTH': 560,
-    'CEI': 780, 'UBP': 630, 'USM': 640, 'URT': 650, 'NST': 780, 'TST': 820,
+    'CEI': 780, 'UBP': 630, 'URT': 650, 'NST': 780, 'TST': 820,
     'UTP': 180, 'TDX': 320, 'HHQ': 280, 'LPT': 600, 'HGN': 900, 'NNT': 680,
     'PRH': 550, 'PHS': 380, 'THS': 430, 'MAQ': 420, 'KOP': 740, 'SNO': 650,
     'ROI': 510, 'LOE': 520, 'BFV': 410, 'NAK': 260, 'UNN': 600, 'CJM': 480,
@@ -126,7 +125,7 @@ function calculateDistance(origin: string, destination: string): number {
     'PRH': 'north', 'PHS': 'north', 'THS': 'north', 'MAQ': 'north',
     'UTH': 'northeast', 'KKC': 'northeast', 'UBP': 'northeast', 'KOP': 'northeast',
     'SNO': 'northeast', 'ROI': 'northeast', 'LOE': 'northeast', 'BFV': 'northeast', 'NAK': 'northeast',
-    'HKT': 'south', 'HDY': 'south', 'KBV': 'south', 'URT': 'south', 'USM': 'south',
+    'HKT': 'south', 'HDY': 'south', 'KBV': 'south', 'URT': 'south',
     'NST': 'south', 'TST': 'south', 'UNN': 'south', 'CJM': 'south', 'NAW': 'south',
   };
   
@@ -169,7 +168,7 @@ function calculateDuration(distance: number): number {
  * NOTE: Season, airline, and holiday multipliers are removed from data generation.
  * The system will calculate season from raw prices (base_price) and apply multipliers
  * dynamically based on:
- * - Multi-factor season calculation (Price 40% + Demand 30% + Holiday 20% + Weather 10%)
+ * - Multi-factor season calculation (Price 60% + Holiday 30% + Weather 10%)
  * - Airline pricing differences
  * - Holiday data from database
  * 

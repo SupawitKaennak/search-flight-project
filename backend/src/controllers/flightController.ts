@@ -437,8 +437,8 @@ export async function getCheapestDates(
     }
 
     // Convert province/country values to airport codes
-    originAirportCode = await convertToAirportCode(origin, airportService);
-    destinationAirportCode = await convertToAirportCode(destination, airportService);
+    originAirportCode = await convertToAirportCode(origin);
+    destinationAirportCode = await convertToAirportCode(destination);
 
     if (!originAirportCode || !destinationAirportCode) {
       res.status(400).json({

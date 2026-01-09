@@ -90,7 +90,6 @@ const provinceImages: Record<string, string> = {
   'songkhla': '/songkhla.jpg',
   'hat-yai': '/hat-yai.jpg',
   'surat-thani': '/surat-thani.jpg',
-  'samui': '/samui.jpg',
   'nakhon-si-thammarat': '/nakhon-si-thammarat.jpg',
   'trang': '/trang.jpg',
   'ranong': '/ranong.jpg',

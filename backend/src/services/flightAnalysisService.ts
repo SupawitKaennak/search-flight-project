@@ -1054,7 +1054,6 @@ export class FlightAnalysisService {
       'CNX': 'chiang-mai',
       'HKT': 'phuket',
       'KBV': 'krabi',
-      'USM': 'samui',
       'HDY': 'hat-yai',
       'UTH': 'udon-thani',
       'KKC': 'khon-kaen',
@@ -1073,6 +1072,17 @@ export class FlightAnalysisService {
       'UTP': 'rayong',
       'TDX': 'trat',
       'HHQ': 'prachuap-khiri-khan',
+      'NNT': 'nan', // Nan province
+      'NAN': 'nan', // Alternative code mapping for Nan (if someone uses NAN instead of NNT)
+      'PRH': 'phrae',
+      'HGN': 'mae-hong-son',
+      'MAQ': 'tak',
+      'URT': 'surat-thani',
+      'NST': 'nakhon-si-thammarat',
+      'TST': 'trang',
+      'UNN': 'ranong',
+      'CJM': 'chumphon',
+      'NAW': 'narathiwat',
     };
     
     return airportToProvince[airportCode] || null;

@@ -15,6 +15,7 @@
     "import:daily-weather": "tsx src/scripts/import-daily-weather-from-csv.ts",
     "import:holidays": "tsx src/scripts/import-holidays-from-csv.ts",
     "generate:mock-flights": "tsx src/scripts/generate-mock-flights.ts",
+    "cleanup:samui-statistics": "tsx src/scripts/cleanup-samui-statistics.ts",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "docker:down:volumes": "docker-compose down -v",

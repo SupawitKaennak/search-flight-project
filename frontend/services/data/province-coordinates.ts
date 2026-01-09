@@ -47,7 +47,6 @@ export const provinceCoordinates: Record<string, ProvinceCoordinates> = {
   'songkhla': { lat: 7.2050, lon: 100.5953, cityName: 'Songkhla' },
   'krabi': { lat: 8.0863, lon: 98.9063, cityName: 'Krabi' },
   'surat-thani': { lat: 9.1386, lon: 99.3336, cityName: 'Surat Thani' },
-  'samui': { lat: 9.5120, lon: 100.0130, cityName: 'Ko Samui' },
   'nakhon-si-thammarat': { lat: 8.4333, lon: 99.9667, cityName: 'Nakhon Si Thammarat' },
   'trang': { lat: 7.5564, lon: 99.6114, cityName: 'Trang' },
   'ranong': { lat: 9.9628, lon: 98.6389, cityName: 'Ranong' },

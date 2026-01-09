@@ -59,7 +59,6 @@ export const PROVINCES = [
   { value: 'songkhla', label: 'สงขลา', airportCode: 'HDY' },
   { value: 'krabi', label: 'กระบี่', airportCode: 'KBV' },
   { value: 'surat-thani', label: 'สุราษฎร์ธานี', airportCode: 'URT' },
-  { value: 'samui', label: 'เกาะสมุย', airportCode: 'USM' },
   { value: 'nakhon-si-thammarat', label: 'นครศรีธรรมราช', airportCode: 'NST' },
   { value: 'trang', label: 'ตรัง', airportCode: 'TST' },
   { value: 'ranong', label: 'ระนอง', airportCode: 'UNN' },

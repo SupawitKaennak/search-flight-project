@@ -50,7 +50,6 @@ const provinceImages: Record<string, string> = {
   'songkhla': '/songkhla.jpg',
   'hat-yai': '/hat-yai.jpg',
   'surat-thani': '/surat-thani.jpg',
-  'samui': '/samui.jpg',
   'nakhon-si-thammarat': '/nakhon-si-thammarat.jpg',
   'trang': '/trang.jpg',
   'ranong': '/ranong.jpg',
@@ -89,7 +88,6 @@ const mockAveragePrices: Record<string, number> = {
   'hat-yai': 2500,
   'krabi': 3000,
   'surat-thani': 2800,
-  'samui': 4200,
   'nakhon-si-thammarat': 2400,
   'trang': 2600,
   'ranong': 2900,
@@ -333,7 +331,7 @@ export function PopularDestinations({ flightPrices, currentSearchParams }: Popul
               const fallbackPrice = (() => {
                 if (provinceValue.includes('chiang') || provinceValue.includes('mae')) {
                   return 3500
-                } else if (provinceValue.includes('phuket') || provinceValue.includes('krabi') || provinceValue.includes('samui')) {
+                } else if (provinceValue.includes('phuket') || provinceValue.includes('krabi')) {
                   return 3200
                 } else if (provinceValue.includes('rayong') || provinceValue.includes('trat') || provinceValue.includes('prachuap')) {
                   return 2200
