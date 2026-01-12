@@ -24,7 +24,11 @@ export interface FlightPrice {
   arrivalTime: string
   duration: number
   flightNumber: string
-  departureDate?: string // ✅ เพิ่มวันที่
+  departureDate?: string
+  airplane?: string | null
+  often_delayed?: boolean
+  carbon_emissions?: string | null
+  legroom?: string | null
 }
 
 export interface AnalyzeFlightPricesRequest {

@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
-import { Plane, Clock, Calendar, Loader2 } from 'lucide-react'
+import { Plane, Clock, Calendar, Loader2, AlertTriangle, Leaf } from 'lucide-react'
 import { FlightSearchParams } from '@/components/flight-search-form'
 import { generateFlightsForAirline, Flight as MockFlight } from '@/services/mock/mock-flights'
 import { THAI_AIRLINES, PROVINCES } from '@/services/data/constants'
@@ -16,6 +16,36 @@ import { flightService } from '@/lib/services/flight-service'
 import { FlightPrice } from '@/lib/api/types'
 import { getFlightDataSource } from '@/lib/services/data-source'
 import { formatDateToUTCString } from '@/lib/utils'
+import { thaiMonthsFull } from '@/services/data/constants'
+
+// Helper function to format date to Thai format (e.g., "16 มกราคม 2569")
+const formatThaiDate = (dateStr: string): string => {
+  if (!dateStr) return ''
+  const date = new Date(dateStr + 'T00:00:00.000Z')
+  const day = date.getUTCDate()
+  const month = thaiMonthsFull[date.getUTCMonth()]
+  const year = date.getUTCFullYear() + 543 // Convert to Buddhist era
+  return `${day} ${month} ${year}`
+}
+
+// Helper function to format time from timestamp (e.g., "2025-01-16T15:50:00.000Z" -> "15:50:00")
+const formatTime = (timestamp: string): string => {
+  if (!timestamp) return ''
+  // If already in HH:MM:SS format, return as is
+  if (/^\d{2}:\d{2}:\d{2}$/.test(timestamp)) {
+    return timestamp
+  }
+  // Otherwise parse as timestamp
+  try {
+    const date = new Date(timestamp)
+    const hours = String(date.getUTCHours()).padStart(2, '0')
+    const minutes = String(date.getUTCMinutes()).padStart(2, '0')
+    const seconds = String(date.getUTCSeconds()).padStart(2, '0')
+    return `${hours}:${minutes}:${seconds}`
+  } catch {
+    return timestamp
+  }
+}
 
 // Use same interface as mock for compatibility
 type Flight = {
@@ -29,6 +59,10 @@ type Flight = {
   date: string
   originAirportCode?: string
   destinationAirportCode?: string
+  airplane?: string | null
+  often_delayed?: boolean
+  carbon_emissions?: string | null
+  legroom?: string | null
 }
 
 interface AirlineFlightsProps {
@@ -51,6 +85,10 @@ interface AirlineFlightsProps {
     flight_number: string
     trip_type: 'one-way' | 'round-trip'
     season: 'high' | 'normal' | 'low'
+    airplane?: string | null
+    often_delayed?: boolean
+    carbon_emissions?: string | null
+    legroom?: string | null
   }>
 }
 
@@ -207,11 +245,15 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
           flightNumber: fp.flight_number,
           departureTime: fp.departure_time,
           arrivalTime: fp.arrival_time,
-          duration: `${Math.floor(fp.duration / 60)}ชม. ${fp.duration % 60} นาที`,
+          duration: `${Math.floor(fp.duration / 60)}ชม. ${fp.duration % 60}นาที`,
           price: Math.round(fp.price * passengerCount),
           date: dateStr,  // ✅ ใช้ UTC date string
           originAirportCode: debouncedSearchParams.origin,
           destinationAirportCode: debouncedSearchParams.destination,
+          airplane: fp.airplane || null,
+          often_delayed: fp.often_delayed || false,
+          carbon_emissions: fp.carbon_emissions || null,
+          legroom: fp.legroom || null,
         }
       })
 
@@ -383,6 +425,10 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                 date: dateStr,
                 originAirportCode: debouncedSearchParams.origin,
                 destinationAirportCode: debouncedSearchParams.destination,
+                airplane: fp.airplane || null,
+                often_delayed: fp.often_delayed || false,
+                carbon_emissions: fp.carbon_emissions || null,
+                legroom: fp.legroom || null,
               }
             })
 
@@ -581,94 +627,122 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                 {sortedFlights.map((flight, index) => {
                 const airlineImage = getAirlineImage(flight.airline)
                 const isCheapest = flight.price === cheapestPrice && cheapestPrice > 0
+                const departureTimeFormatted = formatTime(flight.departureTime)
+                const arrivalTimeFormatted = formatTime(flight.arrivalTime)
+                const thaiDate = formatThaiDate(flight.date)
+                
                 return (
                   <div
                     key={`${flight.airline}-${flight.flightNumber}-${index}`}
-                    className="relative flex items-center justify-between p-4 border rounded-lg hover:bg-secondary/50 transition-colors"
+                    className="relative bg-gray-50 rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow"
                   >
-                    {/* Tag "ถูกสุด" บนมุมซ้าย */}
-                    {isCheapest && (
-                      <div className="absolute top-0 left-0 bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-br-md rounded-tl-md z-10 shadow-md">
-                        {'ถูกสุด'}
-                      </div>
-                    )}
-                    <div className="flex items-center gap-4 flex-1">
-                      <div className="flex items-center gap-2">
+                    {/* Top Row: Flight Number, Duration, Aircraft Type */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="font-semibold text-base">{flight.flightNumber}</span>
+                      <Badge variant="outline" className="text-xs bg-gray-100 text-gray-700 border-gray-300">
+                        {flight.duration}
+                      </Badge>
+                      {flight.airplane && (
+                        <Badge variant="outline" className="text-xs bg-gray-100 text-gray-700 border-gray-300 flex items-center gap-1">
+                          <Plane className="w-3 h-3" />
+                          {flight.airplane}
+                        </Badge>
+                      )}
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      {/* Left Section: Airline Logo and Departure Time */}
+                      <div className="flex items-center gap-3">
                         <img
                           src={airlineImage}
                           alt={flight.airline}
-                          className="w-10 h-10 object-cover flex-shrink-0 bg-muted rounded-full"
+                          className="w-16 h-16 object-cover flex-shrink-0 rounded-full bg-muted"
                           onError={(e) => {
-                            // Fallback to placeholder if image fails to load
                             const target = e.target as HTMLImageElement
-                            // ใช้ relative path แทน absolute path เพื่อหลีกเลี่ยง hydration error
                             if (!target.src.endsWith('/placeholder-logo.png')) {
                               target.src = '/placeholder-logo.png'
                             }
                           }}
                         />
-                        <div className="flex flex-col items-center min-w-[80px]">
-                          <div className="text-sm text-muted-foreground">{'เวลาเดินทาง'}</div>
-                          <div className="text-lg font-bold">{flight.departureTime}</div>
+                        <div className="flex flex-col items-center">
+                          <div className="text-xs text-gray-600 mb-1">{'เวลาเดินทาง'}</div>
+                          <div className="text-2xl font-bold">{departureTimeFormatted}</div>
                         </div>
                       </div>
-                          
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className="font-semibold">{flight.flightNumber}</span>
-                              <Badge variant="outline" className="text-xs">
-                                {flight.duration}
-                              </Badge>
-                            </div>
-                            <div className="text-sm text-muted-foreground">
-                              <span className="font-medium">
-                                {flight.originAirportCode || searchParams.origin} {searchParams.originName}
-                              </span>
-                              {' → '}
-                              <span className="font-medium">
-                                {flight.destinationAirportCode || searchParams.destination} {searchParams.destinationName}
-                              </span>
-                            </div>
-                            <div className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
-                              <Calendar className="w-3 h-3" />
-                              {flight.date}
+
+                      {/* Center Section: Route, Date, CO2, Seat Info */}
+                      <div className="flex-1">
+                        {/* Delay Warning */}
+                        {flight.often_delayed && (
+                          <div className="mb-2">
+                            <div className="inline-flex items-center gap-1 bg-red-600 text-white px-3 py-1 rounded-md text-xs font-medium">
+                              <AlertTriangle className="w-3 h-3" />
+                              {'มักล่าช้า'}
                             </div>
                           </div>
-                          
-                          <div className="flex items-center gap-2">
-                            <Clock className="w-4 h-4 text-muted-foreground" />
-                            <span className="text-sm text-muted-foreground">
-                              {'ถึง '}{flight.arrivalTime}
-                            </span>
-                          </div>
-                        </div>
+                        )}
                         
-                        <div className="ml-6 flex flex-col items-end gap-2">
-                          <div className="text-right">
-                            <div className="text-2xl font-bold text-primary">
-                              {'฿'}{flight.price.toLocaleString()}
-                              {passengerCount > 1 && (
-                                <div className="text-xs text-muted-foreground mt-0.5 font-normal">
-                                  {'฿'}{Math.round(flight.price / passengerCount).toLocaleString()} ต่อคน
-                                </div>
-                              )}
-                            </div>
-                            <div className="text-xs text-muted-foreground mt-1">
-                              {searchParams.tripType === 'one-way' ? 'เที่ยวเดียว' : 'ไป-กลับ'}
-                            </div>
+                        {/* Route */}
+                        <div className="text-sm mb-2">
+                          <span className="font-medium lowercase">
+                            {flight.originAirportCode || searchParams.origin}
+                          </span>
+                          {' '}
+                          <span className="text-gray-600">{searchParams.originName}</span>
+                          {' → '}
+                          <span className="font-medium lowercase">
+                            {flight.destinationAirportCode || searchParams.destination}
+                          </span>
+                          {' '}
+                          <span className="text-gray-600">{searchParams.destinationName}</span>
+                        </div>
+
+                        {/* Date, CO2, Seat Info */}
+                        <div className="flex items-center gap-4 text-xs text-gray-600">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="w-3 h-3" />
+                            {thaiDate}
                           </div>
-                          <Button 
-                            size="sm" 
-                            className="w-full min-w-[100px]"
-                            onClick={() => {
-                              // TODO: Handle booking logic
-                              console.log('Booking flight:', flight)
-                            }}
-                          >
-                            {'เลือก'}
-                          </Button>
+                          {flight.carbon_emissions && (
+                            <div className="flex items-center gap-1 text-green-600">
+                              <Leaf className="w-3 h-3" />
+                              {flight.carbon_emissions} kg CO2
+                            </div>
+                          )}
+                          {flight.legroom && (
+                            <div>
+                              {'ที่นั่ง: '}{flight.legroom}
+                            </div>
+                          )}
                         </div>
                       </div>
+
+                      {/* Right Section: Arrival, Price, Button */}
+                      <div className="flex flex-col items-end gap-2 min-w-[140px]">
+                        <div className="flex items-center gap-1 text-sm">
+                          <Clock className="w-4 h-4 text-gray-600" />
+                          <span>{'ถึง '}{arrivalTimeFormatted}</span>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-2xl font-bold text-blue-600">
+                            {'฿'}{flight.price.toLocaleString()}
+                          </div>
+                          <div className="text-xs text-gray-600 mt-1">
+                            {searchParams.tripType === 'one-way' ? 'เที่ยวเดียว' : 'ไป-กลับ'}
+                          </div>
+                        </div>
+                        <Button 
+                          size="sm" 
+                          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                          onClick={() => {
+                            console.log('Booking flight:', flight)
+                          }}
+                        >
+                          {'เลือก'}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                   )
               })}
               </div>
