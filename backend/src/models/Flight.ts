@@ -43,7 +43,7 @@ export class FlightModel {
    * Get flight prices for a specific route and date range
    */
   static async getFlightPrices(
-    origin: string,
+    origin: string | string[],
     destination: string,
     startDate: Date,
     endDate?: Date,
@@ -104,6 +104,9 @@ export class FlightModel {
       hasTravelClassColumn = false;
     }
 
+    // Handle multiple origins (e.g., Bangkok has BKK and DMK)
+    const originCodes = Array.isArray(origin) ? origin : [origin];
+    
     let query = `
       SELECT 
         fp.*,
@@ -115,14 +118,14 @@ export class FlightModel {
       FROM flight_prices fp
       INNER JOIN routes r ON fp.route_id = r.id
       INNER JOIN airlines a ON fp.airline_id = a.id
-      WHERE r.origin = $1 
+      WHERE r.origin = ANY($1)
         AND r.destination = $2
         AND DATE(fp.departure_date) >= DATE($3)
         AND DATE(fp.departure_date) <= DATE($4)
         AND fp.trip_type = $5
     `;
 
-    const params: any[] = [origin, destination, startDateStr, endDateStr, tripType];
+    const params: any[] = [originCodes, destination, startDateStr, endDateStr, tripType];
     let paramIndex = 6;
 
     // Only filter by travel_class if column exists
@@ -148,7 +151,8 @@ export class FlightModel {
     const result = await pool.query(query, params);
     
     // Log query results for debugging
-    console.log(`[FlightModel.getFlightPrices] Found ${result.rows.length} flights for ${origin} -> ${destination}`);
+    const originStr = Array.isArray(origin) ? origin.join(', ') : origin;
+    console.log(`[FlightModel.getFlightPrices] Found ${result.rows.length} flights for ${originStr} -> ${destination}`);
     
     return result.rows;
   }
@@ -157,19 +161,22 @@ export class FlightModel {
    * Get available airlines for a route
    */
   static async getAvailableAirlines(
-    origin: string,
+    origin: string | string[],
     destination: string
   ): Promise<Airline[]> {
+    // Handle multiple origins (e.g., Bangkok has BKK and DMK)
+    const originCodes = Array.isArray(origin) ? origin : [origin];
+    
     const query = `
       SELECT DISTINCT a.*
       FROM airlines a
       INNER JOIN flight_prices fp ON a.id = fp.airline_id
       INNER JOIN routes r ON fp.route_id = r.id
-      WHERE r.origin = $1 AND r.destination = $2
+      WHERE r.origin = ANY($1) AND r.destination = $2
       ORDER BY a.name
     `;
 
-    const result = await pool.query(query, [origin, destination]);
+    const result = await pool.query(query, [originCodes, destination]);
     return result.rows;
   }
 
@@ -387,15 +394,24 @@ export class FlightModel {
       route_id: number;
       airline_id: number;
       departure_date: Date;
-      return_date: Date | null;
-      price: number;
-      base_price: number;
-      departure_time: string;
-      arrival_time: string;
+      return_date?: Date | null;
+      price?: number | null;
+      base_price?: number | null;
+      departure_time: Date | string;
+      arrival_time: Date | string;
       duration: number;
       flight_number: string;
       trip_type: 'one-way' | 'round-trip';
-      season: 'high' | 'normal' | 'low';
+      season?: 'high' | 'normal' | 'low' | null;
+      travel_class?: string;
+      search_date?: Date | null;
+      airplane?: string | null;
+      stops?: number;
+      carbon_emissions?: number | null;
+      legroom?: string | null;
+      often_delayed?: boolean;
+      lowest_price?: number | null;
+      price_level?: string | null;
     }>
   ): Promise<void> {
     if (flightPrices.length === 0) {
@@ -426,7 +442,16 @@ export class FlightModel {
         placeholdersRow.push(`$${paramIndex++}`); // duration
         placeholdersRow.push(`$${paramIndex++}`); // flight_number
         placeholdersRow.push(`$${paramIndex++}`); // trip_type
+        placeholdersRow.push(`$${paramIndex++}`); // travel_class
         placeholdersRow.push(`$${paramIndex++}`); // season
+        placeholdersRow.push(`$${paramIndex++}`); // search_date
+        placeholdersRow.push(`$${paramIndex++}`); // airplane
+        placeholdersRow.push(`$${paramIndex++}`); // stops
+        placeholdersRow.push(`$${paramIndex++}`); // carbon_emissions
+        placeholdersRow.push(`$${paramIndex++}`); // legroom
+        placeholdersRow.push(`$${paramIndex++}`); // often_delayed
+        placeholdersRow.push(`$${paramIndex++}`); // lowest_price
+        placeholdersRow.push(`$${paramIndex++}`); // price_level
         placeholdersRow.push(`NOW()`); // created_at
         placeholdersRow.push(`NOW()`); // updated_at
         
@@ -436,34 +461,52 @@ export class FlightModel {
           fp.route_id,
           fp.airline_id,
           fp.departure_date,
-          fp.return_date,
-          fp.price,
-          fp.base_price,
+          fp.return_date || null,
+          fp.price ?? null,
+          fp.base_price ?? null,
           fp.departure_time,
           fp.arrival_time,
           fp.duration,
           fp.flight_number,
           fp.trip_type,
-          fp.season
+          fp.travel_class || 'economy',
+          fp.season || null,
+          fp.search_date || null,
+          fp.airplane || null,
+          fp.stops ?? 0,
+          fp.carbon_emissions || null,
+          fp.legroom || null,
+          fp.often_delayed || false,
+          fp.lowest_price || null,
+          fp.price_level || null
         );
       });
 
       const query = `
         INSERT INTO flight_prices (
           route_id, airline_id, departure_date, return_date, price, base_price,
-          departure_time, arrival_time, duration, flight_number, trip_type, season,
-          created_at, updated_at
+          departure_time, arrival_time, duration, flight_number, trip_type, travel_class,
+          season, search_date, airplane, stops, carbon_emissions, legroom, often_delayed,
+          lowest_price, price_level, created_at, updated_at
         )
         VALUES ${placeholders.join(', ')}
-        ON CONFLICT (route_id, airline_id, departure_date, trip_type, flight_number)
+        ON CONFLICT (route_id, airline_id, departure_date, trip_type, flight_number, departure_time)
         DO UPDATE SET
           return_date = EXCLUDED.return_date,
           price = EXCLUDED.price,
           base_price = EXCLUDED.base_price,
-          departure_time = EXCLUDED.departure_time,
           arrival_time = EXCLUDED.arrival_time,
           duration = EXCLUDED.duration,
+          travel_class = EXCLUDED.travel_class,
           season = EXCLUDED.season,
+          search_date = EXCLUDED.search_date,
+          airplane = EXCLUDED.airplane,
+          stops = EXCLUDED.stops,
+          carbon_emissions = EXCLUDED.carbon_emissions,
+          legroom = EXCLUDED.legroom,
+          often_delayed = EXCLUDED.often_delayed,
+          lowest_price = EXCLUDED.lowest_price,
+          price_level = EXCLUDED.price_level,
           updated_at = NOW()
       `;
 

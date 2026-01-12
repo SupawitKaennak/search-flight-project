@@ -62,8 +62,15 @@ export class FlightAnalysisService {
 
     try {
       // Convert province/country values to airport codes
-      const originAirportCode = await convertToAirportCode(origin);
+      let originAirportCode: string | string[] = await convertToAirportCode(origin);
       const destinationAirportCode = await convertToAirportCode(destination);
+
+      // Handle Bangkok: query both BKK and DMK airports
+      // Bangkok has 2 airports: BKK (Suvarnabhumi) and DMK (Don Mueang)
+      if (originAirportCode === 'BKK' || origin.toLowerCase() === 'bangkok') {
+        originAirportCode = ['BKK', 'DMK'];
+        console.log(`[FlightAnalysis] Bangkok origin detected, querying both BKK and DMK`);
+      }
 
       if (!originAirportCode || !destinationAirportCode) {
         throw new Error(
@@ -521,6 +528,9 @@ export class FlightAnalysisService {
           priceMultiplier = toMultiplier / fromMultiplier;
         }
         
+        // Convert carbon_emissions from grams to kg
+        const carbonEmissionsKg = fp.carbon_emissions ? (fp.carbon_emissions / 1000).toFixed(1) : null;
+        
         return {
           id: fp.id,
           airline_id: fp.airline_id,
@@ -538,6 +548,10 @@ export class FlightAnalysisService {
           trip_type: fp.trip_type,
           season: fp.season,
           travel_class: travelClass, // Include travel class in response
+          airplane: fp.airplane || null,
+          often_delayed: fp.often_delayed || false,
+          carbon_emissions: carbonEmissionsKg,
+          legroom: fp.legroom || null,
         };
       }),
     };

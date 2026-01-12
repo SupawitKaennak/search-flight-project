@@ -47,18 +47,28 @@ CREATE TABLE IF NOT EXISTS flight_prices (
   airline_id INTEGER NOT NULL REFERENCES airlines(id) ON DELETE CASCADE,
   departure_date DATE NOT NULL,
   return_date DATE,
-  price DECIMAL(10, 2) NOT NULL,
-  base_price DECIMAL(10, 2) NOT NULL,
-  departure_time TIME NOT NULL,
-  arrival_time TIME NOT NULL,
-  duration INTEGER NOT NULL, -- in minutes
+  price DECIMAL(10, 2),
+  base_price DECIMAL(10, 2),
+  departure_time TIMESTAMP NOT NULL,
+  arrival_time TIMESTAMP NOT NULL,
+  duration INTEGER NOT NULL, -- in minutes (total_duration from JSON)
   flight_number VARCHAR(20) NOT NULL,
-  trip_type VARCHAR(10) NOT NULL CHECK (trip_type IN ('one-way', 'round-trip')),
-  season VARCHAR(10) NOT NULL CHECK (season IN ('high', 'normal', 'low')),
+  trip_type VARCHAR(20) NOT NULL CHECK (trip_type IN ('one-way', 'round-trip', 'One way', 'Round trip')),
+  travel_class VARCHAR(20) DEFAULT 'economy', -- 'economy', 'business', 'first', 'Economy', etc.
+  season VARCHAR(10) CHECK (season IN ('high', 'normal', 'low')),
+  -- New fields from JSON format
+  search_date DATE, -- Date when the search was performed
+  airplane VARCHAR(50), -- Aircraft type (e.g., "ATR 42/72")
+  stops INTEGER DEFAULT 0, -- Number of stops
+  carbon_emissions INTEGER, -- Carbon emissions in grams
+  legroom VARCHAR(20), -- Legroom measurement (e.g., "76 ซม.")
+  often_delayed BOOLEAN DEFAULT FALSE, -- Whether flight is often delayed
+  lowest_price DECIMAL(10, 2), -- Lowest price for the route on that date
+  price_level VARCHAR(20), -- Price level (e.g., "typical", "low", "high")
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   PRIMARY KEY (id, departure_date),
-  UNIQUE(route_id, airline_id, departure_date, trip_type, flight_number)
+  UNIQUE(route_id, airline_id, departure_date, trip_type, flight_number, departure_time)
 );
 
 -- Create search_statistics table
@@ -94,6 +104,10 @@ CREATE INDEX IF NOT EXISTS idx_flight_prices_airline_id ON flight_prices(airline
 CREATE INDEX IF NOT EXISTS idx_flight_prices_departure_date ON flight_prices(departure_date);
 CREATE INDEX IF NOT EXISTS idx_flight_prices_season ON flight_prices(season);
 CREATE INDEX IF NOT EXISTS idx_flight_prices_trip_type ON flight_prices(trip_type);
+CREATE INDEX IF NOT EXISTS idx_flight_prices_travel_class ON flight_prices(travel_class);
+CREATE INDEX IF NOT EXISTS idx_flight_prices_search_date ON flight_prices(search_date);
+CREATE INDEX IF NOT EXISTS idx_flight_prices_price_level ON flight_prices(price_level);
+CREATE INDEX IF NOT EXISTS idx_flight_prices_departure_time ON flight_prices(departure_time);
 CREATE INDEX IF NOT EXISTS idx_routes_origin_destination ON routes(origin, destination);
 CREATE INDEX IF NOT EXISTS idx_airlines_code ON airlines(code);
 CREATE INDEX IF NOT EXISTS idx_airports_code ON airports(code);

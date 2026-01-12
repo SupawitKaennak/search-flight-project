@@ -115,8 +115,15 @@ export async function getFlightPrices(
     } = params;
 
     // Convert province/country values to airport codes
-    const originAirportCode = await convertToAirportCode(origin);
+    let originAirportCode: string | string[] = await convertToAirportCode(origin);
     const destinationAirportCode = await convertToAirportCode(destination);
+
+    // Handle Bangkok: query both BKK and DMK airports
+    // Bangkok has 2 airports: BKK (Suvarnabhumi) and DMK (Don Mueang)
+    if (originAirportCode === 'BKK' || origin.toLowerCase() === 'bangkok') {
+      originAirportCode = ['BKK', 'DMK'];
+      console.log(`[FlightController] Bangkok origin detected, querying both BKK and DMK`);
+    }
 
     // Parse dates - ใช้เฉพาะส่วนวันที่ (ไม่รวมเวลา) เพื่อหลีกเลี่ยง timezone issues
     // Frontend ส่งมาเป็น "2025-12-11" (date-only string)
@@ -133,6 +140,7 @@ export async function getFlightPrices(
     // Get airline IDs if selected
     let airlineIds: number[] | undefined;
     if (selectedAirlines.length > 0) {
+      // originAirportCode might be array for Bangkok, getAvailableAirlines handles it
       const availableAirlines = await FlightModel.getAvailableAirlines(
         originAirportCode,
         destinationAirportCode
@@ -180,6 +188,9 @@ export async function getFlightPrices(
         priceMultiplier = toMultiplier / fromMultiplier;
       }
       
+      // Convert carbon_emissions from grams to kg
+      const carbonEmissionsKg = fp.carbon_emissions ? (fp.carbon_emissions / 1000).toFixed(1) : null;
+      
       return {
         airline: fp.airline_name_th || fp.airline_name,
         airline_code: fp.airline_code || '',
@@ -191,7 +202,11 @@ export async function getFlightPrices(
         duration: fp.duration,
         flightNumber: fp.flight_number,
         travelClass: travelClass,
-        departureDate: fp.departure_date ? new Date(fp.departure_date).toISOString().split('T')[0] : undefined, // ✅ เพิ่มวันที่
+        departureDate: fp.departure_date ? new Date(fp.departure_date).toISOString().split('T')[0] : undefined,
+        airplane: fp.airplane || null,
+        often_delayed: fp.often_delayed || false,
+        carbon_emissions: carbonEmissionsKg,
+        legroom: fp.legroom || null,
       };
     });
 
@@ -234,8 +249,13 @@ export async function getAvailableAirlines(
     };
 
     // Convert province/country values to airport codes
-    const originAirportCode = await convertToAirportCode(origin);
+    let originAirportCode: string | string[] = await convertToAirportCode(origin);
     const destinationAirportCode = await convertToAirportCode(destination);
+
+    // Handle Bangkok: query both BKK and DMK airports
+    if (originAirportCode === 'BKK' || origin.toLowerCase() === 'bangkok') {
+      originAirportCode = ['BKK', 'DMK'];
+    }
 
     const airlines = await FlightModel.getAvailableAirlines(originAirportCode, destinationAirportCode);
 
