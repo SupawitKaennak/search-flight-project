@@ -129,11 +129,10 @@ export class FlightModel {
     let paramIndex = 6;
 
     // Only filter by travel_class if column exists
-    // Always query economy data from DB (since DB currently only has economy)
-    // Service layer will apply multiplier for business/first class
+    // Query data directly from database based on selected travel class
     if (hasTravelClassColumn) {
       query += ` AND COALESCE(fp.travel_class, 'economy') = $${paramIndex}`;
-      params.push('economy'); // Always query economy data, multiplier applied in service layer
+      params.push(travelClass); // Query data for the selected travel class directly from database
       paramIndex++;
     }
 

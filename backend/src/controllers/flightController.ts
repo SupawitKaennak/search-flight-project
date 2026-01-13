@@ -162,31 +162,11 @@ export async function getFlightPrices(
     );
 
     // Transform to response format
-    // Apply travel class multiplier to economy prices
-    // Database currently only has economy data, so always apply multiplier for business/first
-    const travelClassMultipliers: Record<'economy' | 'business' | 'first', number> = {
-      economy: 1.0,
-      business: 2.5,
-      first: 4.0,
-    };
-    
+    // Use prices directly from database based on travel class (no multiplier)
     const flightPrices = flightRecords.map((fp: any) => {
       // fp is from database query which includes JOIN with airlines table
       // So it has: airline_code, airline_name, airline_name_th from the JOIN
-      const fpTravelClass = (fp.travel_class || 'economy') as 'economy' | 'business' | 'first';
-      
-      // Calculate multiplier based on travel class conversion
-      // If DB has the exact travel_class, use 1.0, otherwise convert from economy
-      let priceMultiplier = 1.0;
-      if (fpTravelClass === travelClass) {
-        // Database already has correct travel_class data
-        priceMultiplier = 1.0;
-      } else {
-        // Convert from database travel_class to selected travel_class
-        const fromMultiplier = travelClassMultipliers[fpTravelClass] || 1.0;
-        const toMultiplier = travelClassMultipliers[travelClass] || 1.0;
-        priceMultiplier = toMultiplier / fromMultiplier;
-      }
+      // Database already filtered by travel_class, so use price directly
       
       // Convert carbon_emissions from grams to kg
       const carbonEmissionsKg = fp.carbon_emissions ? (fp.carbon_emissions / 1000).toFixed(1) : null;
@@ -196,12 +176,12 @@ export async function getFlightPrices(
         airline_code: fp.airline_code || '',
         airline_name: fp.airline_name || '',
         airline_name_th: fp.airline_name_th || '',
-        price: Math.round(fp.price * priceMultiplier * passengerCount),
+        price: Math.round(fp.price * passengerCount), // Only multiply by passenger count, no travel class multiplier
         departureTime: fp.departure_time,
         arrivalTime: fp.arrival_time,
         duration: fp.duration,
         flightNumber: fp.flight_number,
-        travelClass: travelClass,
+        travelClass: fp.travel_class || travelClass, // Use travel_class from database
         departureDate: fp.departure_date ? new Date(fp.departure_date).toISOString().split('T')[0] : undefined,
         airplane: fp.airplane || null,
         often_delayed: fp.often_delayed || false,

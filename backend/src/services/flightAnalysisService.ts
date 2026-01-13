@@ -173,9 +173,8 @@ export class FlightAnalysisService {
       });
 
       // Get flight prices for analysis (wider date range for season calculation)
-      // ✅ IMPORTANT: Always query economy class for season calculation
-      // Season is based on DATE, not travel class. Travel class multiplier will be applied later.
-      // This ensures the same season is shown for the same date regardless of travel class selection.
+      // Query data directly from database based on selected travel class
+      // Note: Season calculation will use the same travel class data
       let flightPrices;
       try {
         flightPrices = await FlightModel.getFlightPrices(
@@ -185,7 +184,7 @@ export class FlightAnalysisService {
           analysisEndDate,
           tripType || 'round-trip',
           airlineIds,
-          'economy'  // ✅ Always use economy for season calculation
+          travelClass  // Query data for the selected travel class directly from database
         );
       } catch (dbError: any) {
         logDatabaseError('FlightAnalysisService.getFlightPrices', dbError, {
@@ -211,8 +210,7 @@ export class FlightAnalysisService {
         tripType: tripType || 'round-trip',
         airlineIds: airlineIds?.length || 'all',
         flightCount: flightPrices.length,
-        seasonCalculationTravelClass: 'economy', // ✅ Always economy for season calculation
-        userSelectedTravelClass: travelClass, // User's selected travel class (multiplier applied later)
+        travelClass: travelClass, // Query data for the selected travel class directly from database
       });
 
       // ✅ ใช้ราคาจาก DB โดยตรง (ไม่ต้องคูณ multiplier อีก)
@@ -452,29 +450,23 @@ export class FlightAnalysisService {
             : '',
         // Apply one-way multiplier (0.5) to match seasons calculation
         // recommendedPrice comes from bestDeal.bestDeal.price which is round-trip price from database
-        // Now also includes holiday/festival multiplier and travel class multiplier
-        // Database currently only has economy data, so always apply multiplier for business/first
+        // Database already filtered by travel_class, so use price directly (no travel class multiplier)
         price: Math.round(
           adjustedRecommendedPrice *
             (tripType === 'one-way' ? 0.5 : 1) *
-            passengerCount *
-            this.getTravelClassMultiplier(travelClass)  // Always apply travel class multiplier
+            passengerCount
         ),
         airline: this.getAirlineForDate(flightPrices, recommendedStartDate, tripType || 'round-trip') || bestDeal.bestDeal.airline,
         season: selectedDateSeason, // ✅ Use season of selected date, not best deal season
         savings: Math.round(
           savings *
             (tripType === 'one-way' ? 0.5 : 1) *
-            passengerCount *
-            this.getTravelClassMultiplier(travelClass)  // Always apply travel class multiplier
+            passengerCount
         ),
       },
       // Note: seasons already have multipliers applied because DB prices include multipliers
-      // We just need to apply passengerCount, one-way multiplier, and travel class multiplier.
-      // Database currently only has economy data, so always apply multiplier for business/first
+      // Database already filtered by travel_class, so we just need to apply passengerCount and one-way multiplier
       seasons: (() => {
-        const travelClassMultiplier = this.getTravelClassMultiplier(travelClass);
-        
         return seasons.map((season) => {
         return {
           ...season,
@@ -482,14 +474,12 @@ export class FlightAnalysisService {
             min: Math.round(
               season.priceRange.min *
                 (tripType === 'one-way' ? 0.5 : 1) *
-                passengerCount *
-                travelClassMultiplier
+                passengerCount
             ),
             max: Math.round(
               season.priceRange.max *
                 (tripType === 'one-way' ? 0.5 : 1) *
-                passengerCount *
-                travelClassMultiplier
+                passengerCount
             ),
           },
           bestDeal: {
@@ -497,8 +487,7 @@ export class FlightAnalysisService {
             price: Math.round(
               season.bestDeal.price *
                 (tripType === 'one-way' ? 0.5 : 1) *
-                passengerCount *
-                travelClassMultiplier
+                passengerCount
             ),
           },
         };
@@ -508,26 +497,10 @@ export class FlightAnalysisService {
       priceChartData,
       pricePrediction: pricePrediction || undefined,
       priceTrend: priceTrend || undefined,
-      // ✅ ส่ง flightPrices จาก DB ไปยัง frontend (มี multipliers รวมอยู่แล้ว)
+      // ✅ ส่ง flightPrices จาก DB ไปยัง frontend (ใช้ราคาจาก database โดยตรง ไม่มี multiplier)
       // Note: DB prices = basePrice * seasonMultiplier * holidayMultiplier * priceVariation
-      // Apply travel class multiplier to economy prices
-      // Database currently only has economy data, so we always apply multiplier for business/first
+      // Database already filtered by travel_class, so use price directly
       flightPrices: flightPrices.map((fp: any) => {
-        const fpTravelClass = fp.travel_class || 'economy';
-        
-        // Calculate multiplier based on travel class conversion
-        // If DB has the exact travel_class, use 1.0, otherwise convert from economy
-        let priceMultiplier = 1.0;
-        if (fpTravelClass === travelClass) {
-          // Database already has correct travel_class data
-          priceMultiplier = 1.0;
-        } else {
-          // Convert from database travel_class to selected travel_class
-          const fromMultiplier = this.getTravelClassMultiplier(fpTravelClass as 'economy' | 'business' | 'first');
-          const toMultiplier = this.getTravelClassMultiplier(travelClass);
-          priceMultiplier = toMultiplier / fromMultiplier;
-        }
-        
         // Convert carbon_emissions from grams to kg
         const carbonEmissionsKg = fp.carbon_emissions ? (fp.carbon_emissions / 1000).toFixed(1) : null;
         
@@ -539,7 +512,7 @@ export class FlightAnalysisService {
           airline_name_th: fp.airline_name_th || '',
           departure_date: fp.departure_date,
           return_date: fp.return_date,
-          price: Math.round(fp.price * priceMultiplier), // Apply travel class multiplier
+          price: Math.round(fp.price), // Use price directly from database (no travel class multiplier)
           base_price: fp.base_price,
           departure_time: fp.departure_time,
           arrival_time: fp.arrival_time,
@@ -1829,41 +1802,16 @@ export class FlightAnalysisService {
       return 0;
     }
 
-    // Apply travel class multiplier
-    // Database currently only has economy data, so convert from economy to selected travel class
-    const fpTravelClass = cheapest?.travel_class || 'economy';
-    
-    // Debug: Log travel class info for first few calls
-    if (Math.random() < 0.1) { // Log 10% of calls to avoid spam
-      console.log('[FlightAnalysis.getPriceForDate] Travel class calculation:', {
-        date: dateStr,
-        tripType,
-        selectedTravelClass: travelClass,
-        dbTravelClass: fpTravelClass,
-        originalPrice: price,
-        cheapestHasTravelClass: !!cheapest?.travel_class,
-      });
-    }
-    
-    let priceMultiplier = 1.0;
-    if (fpTravelClass === travelClass) {
-      // Database already has correct travel_class data
-      priceMultiplier = 1.0;
-    } else {
-      // Convert from database travel_class to selected travel_class
-      const fromMultiplier = this.getTravelClassMultiplier(fpTravelClass as 'economy' | 'business' | 'first');
-      const toMultiplier = this.getTravelClassMultiplier(travelClass);
-      priceMultiplier = toMultiplier / fromMultiplier;
-    }
-
-    const finalPrice = price * priceMultiplier;
+    // Use price directly from database (no travel class multiplier)
+    // Database already filtered by travel_class, so use price directly
+    const finalPrice = price;
     
     if (Math.random() < 0.1) { // Log 10% of calls
       console.log('[FlightAnalysis.getPriceForDate] Final price:', {
         originalPrice: price,
-        priceMultiplier,
         finalPrice,
         travelClass,
+        dbTravelClass: cheapest?.travel_class || 'economy',
       });
     }
 
@@ -1958,7 +1906,7 @@ export class FlightAnalysisService {
       // If all prices are 0, differences and percentages remain 0
     }
 
-    // Note: getPriceForDate already applies travel class multiplier, so we only need to multiply by passengerCount
+    // Note: getPriceForDate returns price directly from database (already filtered by travel_class)
     // Ensure all values are numbers (not null, undefined, or NaN)
     // Note: Multiply by passengerCount to match flightPrices display in frontend
     const safeBasePrice = (isNaN(basePrice) || basePrice == null) ? 0 
