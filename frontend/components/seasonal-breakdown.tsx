@@ -222,6 +222,8 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
             difference,
             percentage,
             months: season.months.join(', '),
+            bestDealDates: season.bestDeal.dates, // ✅ เพิ่ม bestDeal dates
+            bestDealAirline: season.bestDeal.airline, // ✅ เพิ่ม bestDeal airline
           }
         })
 
@@ -313,21 +315,40 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
                       </div>
                     {lowSeasonData && (
                         <>
-                          <div className="text-sm text-muted-foreground mb-2">
-                        {'ราคา: ฿'}{lowSeasonData.priceRange.min.toLocaleString()}
-                        {' - ฿'}{lowSeasonData.priceRange.max.toLocaleString()}
-                          </div>
-                          {lowSeasonData.bestDeal?.airline && (
-                            <div className="text-sm text-muted-foreground">
-                              {'สายการบินที่ถูกที่สุด: '}
-                              <span 
-                                className="font-semibold"
+                          {lowSeasonData.bestDeal?.price && lowSeasonData.bestDeal.price > 0 && (
+                            <div className="mb-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                              <div className="text-xs text-muted-foreground mb-1">{'ราคาที่ถูกที่สุด'}</div>
+                              <div 
+                                className="text-xl font-bold mb-1"
                                 style={{ color: '#4bb836' }}
                               >
-                                {lowSeasonData.bestDeal.airline}
-                              </span>
+                                {'฿'}{lowSeasonData.bestDeal.price.toLocaleString()}
+                              </div>
+                              {lowSeasonData.bestDeal.dates && (
+                                <div className="text-xs text-muted-foreground">
+                                  {'ช่วงวันที่: '}
+                                  <span className="font-semibold text-green-700">
+                                    {lowSeasonData.bestDeal.dates}
+                                  </span>
+                                </div>
+                              )}
+                              {lowSeasonData.bestDeal.airline && (
+                                <div className="text-xs text-muted-foreground mt-1">
+                                  {'สายการบิน: '}
+                                  <span 
+                                    className="font-semibold"
+                                    style={{ color: '#4bb836' }}
+                                  >
+                                    {lowSeasonData.bestDeal.airline}
+                                  </span>
+                                </div>
+                              )}
                             </div>
                           )}
+                          <div className="text-sm text-muted-foreground mb-2">
+                        {'ราคาโดยรวม: ฿'}{lowSeasonData.priceRange.min.toLocaleString()}
+                        {' - ฿'}{lowSeasonData.priceRange.max.toLocaleString()}
+                          </div>
                         </>
                       )}
                     </div>
@@ -402,9 +423,30 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
                         <div className="text-xs text-muted-foreground">
                           {'ช่วง: '}{currentSeasonData.months.join(', ')}
                         </div>
+                        {currentSeasonData.bestDeal?.price && currentSeasonData.bestDeal.price > 0 && (
+                          <div className="mt-2 p-2 bg-muted/50 rounded border border-border">
+                            <div className="text-xs font-semibold mb-1">{'ราคาที่ถูกที่สุด'}</div>
+                            <div className="text-sm font-bold" style={{ color: currentSeason === 'low' ? '#4bb836' : undefined }}>
+                              {'฿'}{Math.round(currentSeasonData.bestDeal.price / passengerCount).toLocaleString()}
+                              <span className="text-xs font-normal text-muted-foreground ml-1">ต่อคน</span>
+                            </div>
+                            {currentSeasonData.bestDeal.dates && (
+                              <div className="text-xs text-muted-foreground mt-1">
+                                {'ช่วงวันที่: '}
+                                <span className="font-semibold">{currentSeasonData.bestDeal.dates}</span>
+                              </div>
+                            )}
+                            {currentSeasonData.bestDeal.airline && (
+                              <div className="text-xs text-muted-foreground mt-0.5">
+                                {'สายการบิน: '}
+                                <span className="font-semibold">{currentSeasonData.bestDeal.airline}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
                         {currentSeasonData.priceRange.min > 0 && currentSeasonData.priceRange.max > 0 && (
                           <div className="text-xs text-muted-foreground mt-1">
-                            {'ราคา: ฿'}{Math.round(currentSeasonData.priceRange.min / passengerCount).toLocaleString()}
+                            {'ราคาโดยรวม: ฿'}{Math.round(currentSeasonData.priceRange.min / passengerCount).toLocaleString()}
                             {' - ฿'}{Math.round(currentSeasonData.priceRange.max / passengerCount).toLocaleString()}
                             {' ต่อคน'}
                             {passengerCount > 1 && (
@@ -449,8 +491,27 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
                             {isCheaper ? 'ถูกกว่า' : 'แพงกว่า'} {Math.abs(comp.percentage)}%
                           </span>
                         </div>
+                        {comp.bestDealDates && (
+                          <div className="mt-2 p-2 bg-muted/50 rounded border border-border">
+                            <div className="text-xs font-semibold mb-1">{'ราคาที่ถูกที่สุด'}</div>
+                            <div className={`text-sm font-bold ${compColor}`}>
+                              {'฿'}{comp.price.toLocaleString()}
+                              <span className="text-xs font-normal text-muted-foreground ml-1">ต่อคน</span>
+                            </div>
+                            <div className="text-xs text-muted-foreground mt-1">
+                              {'ช่วงวันที่: '}
+                              <span className="font-semibold">{comp.bestDealDates}</span>
+                            </div>
+                            {comp.bestDealAirline && (
+                              <div className="text-xs text-muted-foreground mt-0.5">
+                                {'สายการบิน: '}
+                                <span className="font-semibold">{comp.bestDealAirline}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
                         <div className="text-xs text-muted-foreground mt-1">
-                          {'ราคา: ฿'}{comp.priceRange.min.toLocaleString()}
+                          {'ราคาโดยรวม: ฿'}{comp.priceRange.min.toLocaleString()}
                           {' - ฿'}{comp.priceRange.max.toLocaleString()}
                           {' ต่อคน'}
                           {passengerCount > 1 && (
@@ -544,20 +605,37 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
                          season === 'normal' ? 'Normal Season' : 
                          'High Season'}
                       </div>
-                      {seasons.find(s => s.type === season) && (
-                        <div 
-                          className="text-xs font-medium"
-                          style={{
-                            color: season === 'high' ? '#f45151' :
-                                   season === 'low' ? '#38B120' :
-                                   '#ffffff'
-                          }}
-                        >
-                          {'฿'}{seasons.find(s => s.type === season)!.priceRange.min.toLocaleString()}
-                          {' - '}
-                          {'฿'}{seasons.find(s => s.type === season)!.priceRange.max.toLocaleString()}
-                        </div>
-                      )}
+                      {seasons.find(s => s.type === season) && (() => {
+                        const seasonInfo = seasons.find(s => s.type === season)!
+                        return (
+                          <>
+                            {seasonInfo.bestDeal?.price && seasonInfo.bestDeal.price > 0 && (
+                              <div 
+                                className="text-xs font-bold mt-1"
+                                style={{
+                                  color: season === 'high' ? '#f45151' :
+                                         season === 'low' ? '#38B120' :
+                                         '#ffffff'
+                                }}
+                              >
+                                {'ราคาถูกสุด: ฿'}{seasonInfo.bestDeal.price.toLocaleString()}
+                              </div>
+                            )}
+                            <div 
+                              className="text-xs font-medium"
+                              style={{
+                                color: season === 'high' ? '#f45151' :
+                                       season === 'low' ? '#38B120' :
+                                       '#ffffff'
+                              }}
+                            >
+                              {'฿'}{seasonInfo.priceRange.min.toLocaleString()}
+                              {' - '}
+                              {'฿'}{seasonInfo.priceRange.max.toLocaleString()}
+                            </div>
+                          </>
+                        )
+                      })()}
                       <div 
                         className="text-xs mt-1"
                         style={{ color: '#87CEEB' }}
@@ -600,6 +678,57 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
                           <div className="space-y-4">
                             {/* Description จาก Backend/Database */}
                             <p className="text-lg text-muted-foreground">{description}</p>
+                            
+                            {/* Best Deal Information */}
+                            {seasonData?.bestDeal && seasonData.bestDeal.price > 0 && (
+                              <div className="p-4 rounded-lg border-2" style={{
+                                borderColor: season === 'low' ? '#4bb836' :
+                                            season === 'normal' ? '#236fb0' :
+                                            '#f45151',
+                                backgroundColor: season === 'low' ? 'rgba(75, 184, 54, 0.05)' :
+                                               season === 'normal' ? 'rgba(35, 111, 176, 0.05)' :
+                                               'rgba(244, 81, 81, 0.05)'
+                              }}>
+                                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                                  <span>ราคาที่ถูกที่สุดใน{seasonTitle}</span>
+                                </h4>
+                                <div className="space-y-2">
+                                  <div className="flex items-baseline gap-2">
+                                    <span className="text-sm text-muted-foreground">ราคา:</span>
+                                    <span 
+                                      className="text-2xl font-bold"
+                                      style={{
+                                        color: season === 'low' ? '#4bb836' :
+                                               season === 'normal' ? '#236fb0' :
+                                               '#f45151'
+                                      }}
+                                    >
+                                      {'฿'}{seasonData.bestDeal.price.toLocaleString()}
+                                    </span>
+                                  </div>
+                                  {seasonData.bestDeal.dates && (
+                                    <div className="flex items-baseline gap-2">
+                                      <span className="text-sm text-muted-foreground">ช่วงวันที่:</span>
+                                      <span className="text-base font-semibold">{seasonData.bestDeal.dates}</span>
+                                    </div>
+                                  )}
+                                  {seasonData.bestDeal.airline && (
+                                    <div className="flex items-baseline gap-2">
+                                      <span className="text-sm text-muted-foreground">สายการบิน:</span>
+                                      <span className="text-base font-semibold">{seasonData.bestDeal.airline}</span>
+                                    </div>
+                                  )}
+                                  {seasonData.priceRange.min > 0 && seasonData.priceRange.max > 0 && (
+                                    <div className="pt-2 mt-2 border-t">
+                                      <div className="text-xs text-muted-foreground">
+                                        {'ราคาโดยรวมในช่วงนี้: ฿'}{seasonData.priceRange.min.toLocaleString()}
+                                        {' - ฿'}{seasonData.priceRange.max.toLocaleString()}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            )}
                             
                             {/* ข้อมูลเพิ่มเติมจาก region-based configs (fallback) */}
                             <div>
