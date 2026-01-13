@@ -636,8 +636,13 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                     key={`${flight.airline}-${flight.flightNumber}-${index}`}
                     className="relative bg-gray-50 rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow"
                   >
-                    {/* Top Row: Flight Number, Duration, Aircraft Type */}
+                    {/* Top Row: Cheapest Tag, Flight Number, Duration, Aircraft Type */}
                     <div className="flex items-center gap-2 mb-3">
+                      {isCheapest && (
+                        <Badge className="bg-green-600 text-white text-xs font-semibold px-2 py-1 shadow-md">
+                          ราคาถูกที่สุด
+                        </Badge>
+                      )}
                       <span className="font-semibold text-base">{flight.flightNumber}</span>
                       <Badge variant="outline" className="text-xs bg-gray-100 text-gray-700 border-gray-300">
                         {flight.duration}
@@ -733,7 +738,8 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                         </div>
                         <Button 
                           size="sm" 
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                          className="w-full text-white hover:opacity-90 transition-opacity"
+                          style={{ backgroundColor: '#0055a4' }}
                           onClick={() => {
                             console.log('Booking flight:', flight)
                           }}

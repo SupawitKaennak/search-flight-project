@@ -720,7 +720,8 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
               <DialogFooter>
                 <Button
                   onClick={() => setIsPassengerDialogOpen(false)}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white"
+                  className="w-full text-white hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: '#0055a4' }}
                 >
                   เสร็จสิ้น
                 </Button>
