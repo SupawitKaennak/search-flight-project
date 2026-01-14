@@ -11,6 +11,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import * as fs from 'fs';
 import { DailyWeatherDataModel } from '../models/DailyWeatherData';
+import { WeatherStatisticsModel } from '../models/WeatherStatistics';
 
 // Load environment variables
 const envPaths = [
@@ -201,7 +202,7 @@ async function importCSVToDatabase(csvFilePath: string, skipExisting: boolean = 
   }
 
   console.log('='.repeat(80));
-  console.log(`✅ Import completed:`);
+  console.log(`✅ Daily weather data import completed:`);
   console.log(`   Total processed: ${totalProcessed}`);
   console.log(`   Successfully stored: ${totalStored}`);
   console.log(`   Skipped: ${totalSkipped}`);
@@ -209,6 +210,102 @@ async function importCSVToDatabase(csvFilePath: string, skipExisting: boolean = 
     console.log(`   Errors: ${totalErrors}`);
   }
   console.log('='.repeat(80));
+
+  // Calculate and store weather statistics (monthly aggregated scores)
+  console.log(`\n📊 Calculating weather statistics and scores...`);
+  console.log('='.repeat(80));
+  await calculateAndStoreWeatherStatistics();
+  console.log('='.repeat(80));
+}
+
+/**
+ * Calculate and store weather statistics (monthly aggregated with scores)
+ */
+async function calculateAndStoreWeatherStatistics(): Promise<void> {
+  try {
+    // Get all unique provinces and periods from daily_weather_data
+    const query = `
+      SELECT DISTINCT 
+        province,
+        TO_CHAR(date, 'YYYY-MM') as period
+      FROM daily_weather_data
+      ORDER BY province, period
+    `;
+
+    const { pool } = require('../config/database');
+    const result = await pool.query(query);
+
+    if (result.rows.length === 0) {
+      console.log('⚠️  No weather data found to aggregate');
+      return;
+    }
+
+    let totalCalculated = 0;
+    let totalErrors = 0;
+
+    console.log(`📊 Processing ${result.rows.length} province-period combinations...\n`);
+
+    for (const row of result.rows) {
+      try {
+        const { province, period } = row;
+
+        // Aggregate daily data to monthly statistics
+        const aggregated = await DailyWeatherDataModel.aggregateToMonthlyStatistics(
+          province,
+          period
+        );
+
+        if (!aggregated) {
+          console.warn(`⚠️  No data found for ${province} (${period})`);
+          continue;
+        }
+
+        // Calculate weather score
+        const weatherScore = WeatherStatisticsModel.calculateWeatherScore(
+          aggregated.avgTemperature,
+          aggregated.avgRainfall,
+          aggregated.avgHumidity
+        );
+
+        // Get days count for this period
+        const daysCountQuery = `
+          SELECT COUNT(*) as count
+          FROM daily_weather_data
+          WHERE province = $1 AND TO_CHAR(date, 'YYYY-MM') = $2
+        `;
+        const daysResult = await pool.query(daysCountQuery, [province, period]);
+        const daysCount = parseInt(daysResult.rows[0].count, 10);
+
+        // Store in weather_statistics table
+        await WeatherStatisticsModel.upsertWeatherStatistics({
+          province,
+          period,
+          avgTemperature: aggregated.avgTemperature,
+          avgRainfall: aggregated.avgRainfall,
+          avgHumidity: aggregated.avgHumidity,
+          weatherScore,
+          daysCount,
+        });
+
+        totalCalculated++;
+        if (totalCalculated % 50 === 0) {
+          console.log(`  Calculated ${totalCalculated} statistics...`);
+        }
+      } catch (error: any) {
+        totalErrors++;
+        console.error(`❌ Error calculating statistics for ${row.province} (${row.period}):`, error.message);
+      }
+    }
+
+    console.log(`\n✅ Weather statistics calculation completed:`);
+    console.log(`   Total calculated: ${totalCalculated}`);
+    if (totalErrors > 0) {
+      console.log(`   Errors: ${totalErrors}`);
+    }
+  } catch (error: any) {
+    console.error(`❌ Error calculating weather statistics:`, error.message);
+    throw error;
+  }
 }
 
 /**

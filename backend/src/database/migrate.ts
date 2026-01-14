@@ -22,6 +22,8 @@ async function getMigrations(): Promise<Migration[]> {
     { name: '007_create_holiday_statistics', file: '007_create_holiday_statistics.sql' },
     { name: '008_add_travel_class', file: '008_add_travel_class.sql' },
     { name: '009_create_daily_weather_data', file: '009_create_daily_weather_data.sql' },
+    { name: '010_create_weather_statistics', file: '010_create_weather_statistics.sql' },
+    { name: '011_create_route_price_statistics', file: '011_create_route_price_statistics.sql' },
   ];
 }
 

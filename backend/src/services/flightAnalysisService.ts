@@ -841,7 +841,7 @@ export class FlightAnalysisService {
     
     // ✅ Always use multi-factor calculation (never fallback to price-only)
     // This ensures season calculation uses all available data sources
-    return this.calculateSeasonsFromFlightPricesWithDemand(
+    return await this.calculateSeasonsFromFlightPricesWithDemand(
       flightPrices,
       route.id,
       weatherDataMap,
@@ -961,8 +961,9 @@ export class FlightAnalysisService {
   }
 
   /**
-   * Get weather data from database (weather_data table)
-   * Calculates weather score based on temperature, rainfall, and humidity
+   * Get weather data from database (weather_statistics table)
+   * First tries to get pre-calculated scores from weather_statistics
+   * Falls back to calculating from daily_weather_data if not available
    */
   private async getWeatherDataFromDatabase(
     destination: string,
@@ -971,59 +972,55 @@ export class FlightAnalysisService {
     const weatherScores = new Map<string, number>();
     
     try {
-      // ✅ Use daily_weather_data as primary source (aggregate to monthly)
-      const { DailyWeatherDataModel } = await import('../models/DailyWeatherData');
-      
-      // 1. Try to get data from daily_weather_data (aggregate to monthly)
-      for (const period of periods) {
-        try {
-          const aggregated = await DailyWeatherDataModel.aggregateToMonthlyStatistics(
-            destination,
-            period
-          );
-          
-          if (aggregated) {
-            // Calculate weather score from aggregated daily data
-            const temp = aggregated.avgTemperature;
-            const rain = aggregated.avgRainfall;
-            const humidity = aggregated.avgHumidity;
+      // ✅ Try to get pre-calculated scores from weather_statistics first
+      const { WeatherStatisticsModel } = await import('../models/WeatherStatistics');
+      const statisticsMap = await WeatherStatisticsModel.getWeatherStatisticsForPeriods(
+        destination,
+        periods
+      );
+
+      // Use pre-calculated scores from weather_statistics
+      statisticsMap.forEach((stats, period) => {
+        if (stats.weather_score !== null && stats.weather_score !== undefined) {
+          weatherScores.set(period, stats.weather_score);
+        }
+      });
+
+      // Find periods that don't have pre-calculated scores
+      const missingPeriods = periods.filter(period => !weatherScores.has(period));
+
+      // Fallback: Calculate from daily_weather_data for missing periods
+      if (missingPeriods.length > 0) {
+        const { DailyWeatherDataModel } = await import('../models/DailyWeatherData');
+        
+        for (const period of missingPeriods) {
+          try {
+            const aggregated = await DailyWeatherDataModel.aggregateToMonthlyStatistics(
+              destination,
+              period
+            );
             
-            // Calculate weather score (0-100)
-            // Good weather (cool, dry) = high score
-            // Bad weather (hot, rainy) = low score
-            let score = 50; // base
-            
-            // Temperature: 20-28°C is optimal
-            if (temp >= 20 && temp <= 28) {
-              score += 20;
-            } else if (temp < 20 || temp > 32) {
-              score -= 20;
+            if (aggregated) {
+              // Calculate weather score from aggregated daily data
+              const temp = aggregated.avgTemperature;
+              const rain = aggregated.avgRainfall;
+              const humidity = aggregated.avgHumidity;
+              
+              // Use the same calculation method as WeatherStatisticsModel
+              const score = WeatherStatisticsModel.calculateWeatherScore(temp, rain, humidity);
+              weatherScores.set(period, score);
             }
-            
-            // Rainfall: less is better
-            if (rain < 50) {
-              score += 15;
-            } else if (rain > 200) {
-              score -= 15;
-            }
-            
-            // Humidity: 50-70% is optimal
-            if (humidity >= 50 && humidity <= 70) {
-              score += 15;
-            } else if (humidity > 80) {
-              score -= 15;
-            }
-            
-            // Clamp to 0-100
-            weatherScores.set(period, Math.max(0, Math.min(100, score)));
+          } catch (error) {
+            // Continue to next period if this one fails
+            console.warn(`[FlightAnalysis] Error aggregating daily weather for ${destination} (${period}):`, error);
           }
-        } catch (error) {
-          // Continue to next period if this one fails
-          console.warn(`[FlightAnalysis] Error aggregating daily weather for ${destination} (${period}):`, error);
         }
       }
       
-      console.log(`[FlightAnalysis] Loaded weather data from database: ${weatherScores.size} periods (from daily_weather_data)`);
+      const fromStatistics = statisticsMap.size;
+      const fromCalculation = missingPeriods.length - (periods.length - weatherScores.size);
+      
+      console.log(`[FlightAnalysis] Loaded weather data from database: ${weatherScores.size} periods (${fromStatistics} from weather_statistics, ${fromCalculation} calculated from daily_weather_data)`);
     } catch (error) {
       console.error('[FlightAnalysis] Error loading weather from database:', error);
     }
@@ -1079,14 +1076,14 @@ export class FlightAnalysisService {
    * Calculate seasons from flight prices with weather and holiday data
    * Multi-factor scoring: Price (60%) + Holiday (30%) + Weather (10%)
    */
-  private calculateSeasonsFromFlightPricesWithDemand(
+  private async calculateSeasonsFromFlightPricesWithDemand(
     flightPrices: any[],
     _routeId: number, // Reserved for future use (e.g., route-specific adjustments)
     weatherData: Map<string, number> = new Map(), // period -> weather score (0-100)
     holidayData: Map<string, number> = new Map(), // period -> holiday score (0-100)
     origin?: string, // Origin airport code for logging
     destination?: string // Destination airport code for logging
-  ): SeasonData[] {
+  ): Promise<SeasonData[]> {
     if (flightPrices.length === 0) {
       return this.getEmptySeasons();
     }
@@ -1176,13 +1173,35 @@ export class FlightAnalysisService {
       });
     }
 
-    // Get all average prices to calculate price percentiles
+    // ✅ Try to get pre-calculated price percentiles from route_price_statistics
+    const { RoutePriceStatisticsModel } = await import('../models/RoutePriceStatistics');
+    const { FlightModel } = await import('../models/Flight');
+    
+    // Get route ID
+    const route = await FlightModel.getRoute(origin, destination);
+    const routeId = route?.id;
+    
+    const pricePercentileMap = new Map<string, number>();
+    if (routeId) {
+      const priceStatsMap = await RoutePriceStatisticsModel.getRoutePriceStatisticsForPeriods(
+        routeId,
+        Object.values(monthPeriods)
+      );
+      
+      priceStatsMap.forEach((stats, period) => {
+        if (stats.price_percentile !== null && stats.price_percentile !== undefined) {
+          pricePercentileMap.set(period, stats.price_percentile);
+        }
+      });
+    }
+
+    // Get all average prices to calculate price percentiles (for fallback or missing periods)
     const allAvgPrices = Object.values(monthAvgPrices);
     if (allAvgPrices.length === 0) {
       return this.getEmptySeasons();
     }
 
-    // Calculate price percentiles for reference (used in percentile calculation)
+    // Calculate price percentiles for reference (used in percentile calculation for missing periods)
     const sortedPrices = [...allAvgPrices].sort((a, b) => a - b);
 
     // Calculate multi-factor season score for each month
@@ -1193,8 +1212,14 @@ export class FlightAnalysisService {
       const avgPrice = monthAvgPrices[month];
       const period = monthPeriods[month];
 
-      // Calculate price percentile (0-100)
-      const pricePercentile = (sortedPrices.filter(p => p <= avgPrice).length / sortedPrices.length) * 100;
+      // ✅ Get price percentile from route_price_statistics, or calculate if not available
+      let pricePercentile: number;
+      if (pricePercentileMap.has(period)) {
+        pricePercentile = pricePercentileMap.get(period)!;
+      } else {
+        // Fallback: Calculate price percentile (0-100)
+        pricePercentile = (sortedPrices.filter(p => p <= avgPrice).length / sortedPrices.length) * 100;
+      }
 
       // Get weather factor (0-100) - default to 50 if not available
       const weatherScore = weatherData.get(period) ?? 50;
@@ -1212,10 +1237,12 @@ export class FlightAnalysisService {
       
       // Log season calculation details for debugging
       if (month === 1) { // Log for January only to avoid too much output
+        const priceSource = pricePercentileMap.has(period) ? 'route_price_statistics' : 'calculated';
         console.log(`[FlightAnalysis] Season calculation for month ${month} (${period}):`, {
           route: `${origin} → ${destination}`,
           avgPrice,
           pricePercentile: pricePercentile.toFixed(2),
+          priceSource,
           weatherScore,
           holidayScore,
           seasonScore: seasonScore.toFixed(2),
@@ -1228,6 +1255,9 @@ export class FlightAnalysisService {
     const scoreLowThreshold = this.percentile(allScores, 33);
     const scoreHighThreshold = this.percentile(allScores, 67);
 
+    const fromStatistics = pricePercentileMap.size;
+    const fromCalculation = Object.keys(monthAvgPrices).length - fromStatistics;
+    console.log(`[FlightAnalysis] 💵 Price percentiles: ${fromStatistics} from route_price_statistics, ${fromCalculation} calculated`);
     console.log(`[FlightAnalysis] 🎯 Season score thresholds: Low ≤ ${scoreLowThreshold.toFixed(2)}, High ≥ ${scoreHighThreshold.toFixed(2)}`);
 
     const monthSeasonMap: Record<number, 'low' | 'normal' | 'high'> = {};

@@ -207,6 +207,45 @@ export class FlightModel {
   }
 
   /**
+   * Get a route by origin and destination
+   */
+  static async getRoute(origin: string, destination: string): Promise<Route | null> {
+    const result = await pool.query(
+      `SELECT id, origin, destination, base_price, avg_duration_minutes AS avg_duration, created_at, updated_at 
+       FROM routes WHERE origin = $1 AND destination = $2`,
+      [origin, destination]
+    );
+
+    return result.rows[0] || null;
+  }
+
+  /**
+   * Get a route by ID
+   */
+  static async getRouteById(routeId: number): Promise<Route | null> {
+    const result = await pool.query(
+      `SELECT id, origin, destination, base_price, avg_duration_minutes AS avg_duration, created_at, updated_at 
+       FROM routes WHERE id = $1`,
+      [routeId]
+    );
+
+    return result.rows[0] || null;
+  }
+
+  /**
+   * Get all routes
+   */
+  static async getAllRoutes(): Promise<Route[]> {
+    const result = await pool.query(
+      `SELECT id, origin, destination, base_price, avg_duration_minutes AS avg_duration, created_at, updated_at 
+       FROM routes 
+       ORDER BY origin, destination`
+    );
+
+    return result.rows;
+  }
+
+  /**
    * Get or create a route
    */
   static async getOrCreateRoute(
@@ -216,14 +255,10 @@ export class FlightModel {
     avgDuration: number
   ): Promise<Route> {
     // Try to get existing route
-    const existingRoute = await pool.query(
-      `SELECT id, origin, destination, base_price, avg_duration_minutes AS avg_duration, created_at, updated_at 
-       FROM routes WHERE origin = $1 AND destination = $2`,
-      [origin, destination]
-    );
+    const existingRoute = await this.getRoute(origin, destination);
 
-    if (existingRoute.rows.length > 0) {
-      return existingRoute.rows[0];
+    if (existingRoute) {
+      return existingRoute;
     }
 
     // Create new route

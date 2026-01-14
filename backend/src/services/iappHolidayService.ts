@@ -272,7 +272,61 @@ export class IAppHolidayService {
   }
 
   /**
+   * Check if a holiday is a major festival (สงกรานต์, ตรุษจีน, ปีใหม่, คริสต์มาส)
+   */
+  private isMajorFestival(holiday: Holiday): boolean {
+    const name = holiday.name.toLowerCase();
+    return (
+      name.includes('สงกรานต์') ||
+      name.includes('ตรุษจีน') ||
+      name.includes('ปีใหม่') ||
+      name.includes('ขื้นปีใหม่') ||
+      name.includes('ขึ้นปีใหม่') ||
+      name.includes('คริสต์มาส') ||
+      name.includes('สิ้นปี')
+    );
+  }
+
+  /**
+   * Check if a holiday is an important public holiday
+   */
+  private isImportantHoliday(holiday: Holiday): boolean {
+    if (!holiday.isPublicHoliday) {
+      return false;
+    }
+    
+    const name = holiday.name.toLowerCase();
+    return (
+      name.includes('มาฆบูชา') ||
+      name.includes('วิสาขบูชา') ||
+      name.includes('อาสาฬหบูชา') ||
+      name.includes('เฉลิมพระชนมพรรษา') ||
+      name.includes('แม่') ||
+      name.includes('พ่อ')
+    );
+  }
+
+  /**
+   * Check if a holiday is a special day/festival
+   */
+  private isSpecialDay(holiday: Holiday): boolean {
+    const name = holiday.name.toLowerCase();
+    return (
+      name.includes('วาเลนไทน์') ||
+      (!holiday.isPublicHoliday && !this.isMajorFestival(holiday))
+    );
+  }
+
+  /**
    * Calculate holiday boost score (0-100) based on holidays in a month
+   * 
+   * Scoring system:
+   * - Major Festivals (สงกรานต์, ตรุษจีน, ปีใหม่, คริสต์มาส): +20 points/day
+   * - Important Public Holidays (มาฆบูชา, วิสาขบูชา, เฉลิมพระชนมพรรษา, วันแม่, วันพ่อ): +10 points/day
+   * - Regular Public Holidays: +8 points/day
+   * - Special Days (วาเลนไทน์, etc.): +5 points/day
+   * - Long Weekend: +5 points/day
+   * - Peak Months (Dec, Jan, Apr): +20 points
    */
   calculateHolidayBoost(holidays: Holiday[]): number {
     let score = 50; // Base score (normal month)
@@ -281,25 +335,48 @@ export class IAppHolidayService {
       return score; // No holidays = normal score
     }
 
-    // Count long weekends
-    const longWeekends = holidays.filter(holiday => {
-      const holidayDate = parseISO(holiday.date);
-      return this.isLongWeekend(holidayDate);
-    }).length;
+    // Separate holidays by category
+    const majorFestivals: Holiday[] = [];
+    const importantHolidays: Holiday[] = [];
+    const regularHolidays: Holiday[] = [];
+    const specialDays: Holiday[] = [];
 
-    // Each holiday adds points
     holidays.forEach(holiday => {
-      if (holiday.isPublicHoliday) {
-        score += 10; // Public holiday adds 10 points
+      if (this.isMajorFestival(holiday)) {
+        majorFestivals.push(holiday);
+      } else if (this.isImportantHoliday(holiday)) {
+        importantHolidays.push(holiday);
+      } else if (this.isSpecialDay(holiday)) {
+        specialDays.push(holiday);
+      } else if (holiday.isPublicHoliday) {
+        regularHolidays.push(holiday);
       } else {
-        score += 5; // Other holidays add 5 points
+        // Default: treat as special day
+        specialDays.push(holiday);
       }
     });
 
-    // Long weekends add extra points
-    score += longWeekends * 5; // Each long weekend adds 5 points
+    // Calculate scores by category
+    // 1. Major Festivals: +20 points/day
+    score += majorFestivals.length * 20;
 
-    // Peak holiday months (Dec, Jan, Apr) get bonus
+    // 2. Important Public Holidays: +10 points/day
+    score += importantHolidays.length * 10;
+
+    // 3. Regular Public Holidays: +8 points/day
+    score += regularHolidays.length * 8;
+
+    // 4. Special Days: +5 points/day
+    score += specialDays.length * 5;
+
+    // 5. Long Weekend: +5 points/day
+    const longWeekends = holidays.filter(holiday => {
+      const holidayDate = parseISO(holiday.date);
+      return this.isLongWeekend(holidayDate);
+    });
+    score += longWeekends.length * 5;
+
+    // 6. Peak holiday months (Dec, Jan, Apr) get bonus
     if (holidays.length > 0) {
       const firstHoliday = parseISO(holidays[0].date);
       const month = firstHoliday.getUTCMonth() + 1; // 1-12
