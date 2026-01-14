@@ -96,6 +96,7 @@ export default function HomePage() {
         <PopularDestinations 
           flightPrices={flightPrices}
           currentSearchParams={searchParams}
+          onDestinationClick={handleSearch}
         />
       </section>
 

@@ -119,6 +119,38 @@ const mockTrends: Record<string, string> = {
   'prachuap-khiri-khan': '+6%',
 }
 
+/**
+ * Parse Thai short date format to Date object
+ * Example: "28 ม.ค. 2569" -> Date(2026, 0, 28)
+ * Note: toLocaleDateString('th-TH') returns year in Buddhist Era (พ.ศ.), so we need to convert to AD (ค.ศ.) by subtracting 543
+ */
+function parseThaiShortDate(dateString: string): Date | null {
+  const thaiShortMonths: Record<string, number> = {
+    'ม.ค.': 0, 'ก.พ.': 1, 'มี.ค.': 2, 'เม.ย.': 3,
+    'พ.ค.': 4, 'มิ.ย.': 5, 'ก.ค.': 6, 'ส.ค.': 7,
+    'ก.ย.': 8, 'ต.ค.': 9, 'พ.ย.': 10, 'ธ.ค.': 11,
+  }
+  
+  // Match pattern: "28 ม.ค. 2569" (year is in Buddhist Era)
+  const match = dateString.match(/(\d+)\s+(.+?)\s+(\d+)/)
+  if (match) {
+    const day = parseInt(match[1])
+    const monthStr = match[2].trim()
+    const buddhistYear = parseInt(match[3]) // ปี พ.ศ.
+    
+    // Convert Buddhist Era to AD (ลบ 543)
+    const adYear = buddhistYear - 543
+    
+    const monthIndex = thaiShortMonths[monthStr]
+    if (monthIndex !== undefined && adYear > 1900 && adYear < 2100) {
+      // Validate year range (1900-2100 AD)
+      return new Date(adYear, monthIndex, day)
+    }
+  }
+  
+  return null
+}
+
 interface PopularDestinationDisplay {
   destination: string
   destinationName: string | null
@@ -153,11 +185,59 @@ interface PopularDestinationsProps {
     destination?: string
   }> | null
   currentSearchParams?: FlightSearchParams | null
+  onDestinationClick?: (params: FlightSearchParams) => void
 }
 
-export function PopularDestinations({ flightPrices, currentSearchParams }: PopularDestinationsProps = {}) {
+export function PopularDestinations({ flightPrices, currentSearchParams, onDestinationClick }: PopularDestinationsProps = {}) {
   const [destinations, setDestinations] = useState<PopularDestinationDisplay[]>([])
   const [loading, setLoading] = useState(true)
+
+  // ฟังก์ชันจัดการการคลิก card
+  const handleCardClick = (dest: PopularDestinationDisplay) => {
+    if (!onDestinationClick) return
+    
+    // หา province data
+    const province = PROVINCES.find(p => p.value === dest.provinceValue || p.label === dest.destinationName)
+    const originProvince = PROVINCES.find(p => p.value === 'bangkok')
+    
+    if (!province || !originProvince) return
+    
+    // Parse วันที่จาก cheapestDate
+    let departureDate: Date | undefined = undefined
+    if (dest.cheapestDate) {
+      const parsedDate = parseThaiShortDate(dest.cheapestDate)
+      if (parsedDate) {
+        departureDate = parsedDate
+      } else {
+        // Fallback: ใช้วันที่ปัจจุบัน + 7 วัน
+        const fallbackDate = new Date()
+        fallbackDate.setDate(fallbackDate.getDate() + 7)
+        departureDate = fallbackDate
+      }
+    } else {
+      // Fallback: ใช้วันที่ปัจจุบัน + 7 วัน
+      const fallbackDate = new Date()
+      fallbackDate.setDate(fallbackDate.getDate() + 7)
+      departureDate = fallbackDate
+    }
+    
+    // สร้าง search params
+    const searchParams: FlightSearchParams = {
+      origin: 'bangkok',
+      originName: originProvince.label,
+      destination: dest.provinceValue,
+      destinationName: dest.destinationName || province.label,
+      durationRange: { min: 3, max: 5 },
+      selectedAirlines: [],
+      startDate: departureDate,
+      endDate: undefined,
+      tripType: 'one-way',
+      passengerCount: 1,
+      travelClass: 'economy',
+    }
+    
+    onDestinationClick(searchParams)
+  }
 
   useEffect(() => {
     const fetchPopularDestinations = async () => {
@@ -425,7 +505,11 @@ export function PopularDestinations({ flightPrices, currentSearchParams }: Popul
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {destinations.map((dest) => (
-          <Card key={dest.destination} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer p-0">
+          <Card 
+            key={dest.destination} 
+            className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer p-0"
+            onClick={() => handleCardClick(dest)}
+          >
             <div className="relative h-48 bg-muted rounded-t-xl">
               <img 
                 src={dest.image || "/placeholder.svg"} 
