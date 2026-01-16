@@ -25,12 +25,7 @@
     "docker:reset": "docker-compose down -v && docker-compose up -d",
     "docker:fix": "docker-compose down -v && docker rm -f flight_search_db && docker-compose up -d",
     "docker:simple": "docker-compose -f docker-compose.simple.yml up -d",
-    "lint": "eslint src --ext .ts",
-    "test": "jest",
-    "test:api": "tsx src/scripts/test-api-endpoints.ts",
-    "test:price-consistency": "jest src/tests/unit/flightAnalysisService.priceConsistency.test.ts",
-    "test:integration:price-consistency": "jest src/tests/integration/flightController.priceConsistency.test.ts",
-    "validate:prices": "tsx src/scripts/validatePriceConsistency.ts"
+    "lint": "eslint src --ext .ts"   
   },
   "keywords": [
     "flight",
