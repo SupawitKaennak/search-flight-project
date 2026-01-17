@@ -8,7 +8,7 @@
 
 services:
   # PostgreSQL Database (Managed Service)
-  - type: pspg
+  - type: pg
     name: flight-search-db
     plan: starter  # Free tier: starter (90 days free trial)
     databaseName: flight_search
