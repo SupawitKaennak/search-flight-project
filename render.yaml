@@ -1,4 +1,4 @@
-# Render Blueprint Configuration
+﻿# Render Blueprint Configuration
 # ใช้สำหรับ deploy บน Render.com
 # วิธีใช้: สร้าง Blueprint จาก GitHub repo นี้
 # 
@@ -78,6 +78,6 @@ databases:
     plan: starter  # Free tier: starter (90 days free trial)
     region: singapore
     databaseName: flight_search
-    user: postgres
+    user: flightsearch_user
     postgresMajorVersion: "18"
     # TimescaleDB extension จะถูก enable ผ่าน migration script
