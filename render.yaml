@@ -7,14 +7,6 @@
 # - Frontend: NEXT_PUBLIC_API_URL (ใช้ backend URL)
 
 services:
-  # PostgreSQL Database (Managed Service)
-  - type: pg
-    name: flight-search-db
-    plan: starter  # Free tier: starter (90 days free trial)
-    databaseName: flight_search
-    user: postgres
-    # TimescaleDB extension จะถูก enable ผ่าน migration script
-
   # Backend API Service
   - type: web
     name: flight-search-backend
@@ -79,3 +71,13 @@ services:
         value: "false"
       - key: NEXT_PUBLIC_OPENWEATHERMAP_API_KEY
         generateValue: true  # Optional: ตั้งค่าถ้าต้องการใช้ weather API
+
+databases:
+  # PostgreSQL Database (Managed Service)
+  - name: flight-search-db
+    plan: starter  # Free tier: starter (90 days free trial)
+    region: singapore
+    databaseName: flight_search
+    user: postgres
+    postgresMajorVersion: "18"
+    # TimescaleDB extension จะถูก enable ผ่าน migration script
