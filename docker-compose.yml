@@ -1,0 +1,96 @@
+# Docker Compose หลักที่รวมทุก service
+# ใช้คำสั่ง: docker-compose up -d
+# หรือ docker-compose up -d --build (เพื่อ build images ใหม่)
+
+services:
+  # Database Service
+  postgres:
+    image: timescale/timescaledb:latest-pg18
+    container_name: flight_search_db
+    restart: unless-stopped
+    env_file:
+      - .env.database
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-flight_search}
+      POSTGRES_INITDB_ARGS: ${POSTGRES_INITDB_ARGS:---encoding=UTF8 --locale=C}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d flight_search"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - flight_network
+
+  # Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: flight_search_backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env.backend
+    environment:
+      PORT: ${PORT:-3001}
+      NODE_ENV: ${NODE_ENV:-production}
+      DB_HOST: ${DB_HOST:-postgres}
+      DB_PORT: ${DB_PORT:-5432}
+      DB_NAME: ${DB_NAME:-flight_search}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      ENABLE_TIMESCALEDB: ${ENABLE_TIMESCALEDB:-true}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:3000}
+      RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-60000}
+      RATE_LIMIT_MAX_REQUESTS: ${RATE_LIMIT_MAX_REQUESTS:-1000}
+      ENABLE_SCHEDULED_JOBS: ${ENABLE_SCHEDULED_JOBS:-false}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - flight_network
+    volumes:
+      # Mount data directory for importing flight data
+      - ./backend/data:/app/data
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001/api}
+        NEXT_PUBLIC_USE_MOCK_DATA: ${NEXT_PUBLIC_USE_MOCK_DATA:-false}
+        NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY:-}
+    container_name: flight_search_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.frontend
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001/api}
+      NEXT_PUBLIC_USE_MOCK_DATA: ${NEXT_PUBLIC_USE_MOCK_DATA:-false}
+      NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY:-}
+    depends_on:
+      - backend
+    networks:
+      - flight_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  flight_network:
+    external: true
+    name: flight_network

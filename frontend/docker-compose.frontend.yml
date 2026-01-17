@@ -1,0 +1,34 @@
+# Docker Compose สำหรับ Frontend เท่านั้น
+# ใช้คำสั่ง: docker-compose -f docker-compose.frontend.yml up -d
+# หมายเหตุ: ต้องมี backend service ทำงานอยู่ก่อน (จาก docker-compose.backend.yml)
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001/api}
+        NEXT_PUBLIC_USE_MOCK_DATA: ${NEXT_PUBLIC_USE_MOCK_DATA:-false}
+        NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY:-}
+    container_name: flight_search_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - ../.env.frontend
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001/api}
+      NEXT_PUBLIC_USE_MOCK_DATA: ${NEXT_PUBLIC_USE_MOCK_DATA:-false}
+      NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY:-}
+    networks:
+      - flight_network
+    # ถ้า backend อยู่ใน Docker network เดียวกัน ใช้:
+    # NEXT_PUBLIC_API_URL: http://backend:3001/api
+    # แต่ถ้า frontend ทำงานใน browser จะต้องใช้ localhost
+
+networks:
+  flight_network:
+    external: true
+    name: flight_network

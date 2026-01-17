@@ -1,0 +1,28 @@
+﻿# Environment variables
+.env
+.env*
+!.env*.example
+# Explicitly ignore actual env files (must be after !.env*.example)
+.env.database
+.env.backend
+.env.frontend
+
+# Docker
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Dependencies
+node_modules/
