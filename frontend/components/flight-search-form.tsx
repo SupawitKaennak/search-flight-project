@@ -395,32 +395,32 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
   }
 
   return (
-    <Card className="p-8 bg-background/80 shadow-xl max-w-7xl mx-auto overflow-hidden">
+    <Card className="p-4 sm:p-6 md:p-8 bg-background/80 shadow-xl max-w-7xl mx-auto overflow-hidden">
       {/* Trip Type Selection Tags */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-2 mb-4 sm:mb-6">
         <Button
           variant={tripType === 'one-way' ? 'default' : 'outline'}
           onClick={() => handleTripTypeChange('one-way')}
-          className="px-6 py-2"
+          className="px-4 sm:px-6 py-2 text-sm sm:text-base flex-1 sm:flex-none"
         >
           เที่ยวเดียว
         </Button>
         <Button
           variant={tripType === 'round-trip' ? 'default' : 'outline'}
           onClick={() => handleTripTypeChange('round-trip')}
-          className="px-6 py-2"
+          className="px-4 sm:px-6 py-2 text-sm sm:text-base flex-1 sm:flex-none"
         >
           ไป-กลับ
         </Button>
       </div>
 
-      <div className="flex items-end gap-3 mb-4 min-w-0">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-end gap-3 sm:gap-3 mb-4 min-w-0">
         {/* Origin, Swap, Destination Group */}
-        <div className="flex items-end gap-3 flex-[2] min-w-0">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-end gap-3 sm:gap-3 flex-[2] min-w-0">
           <div className="space-y-1.5 flex-1 min-w-0">
-            <Label htmlFor="origin" className="text-sm font-medium text-gray-700">{'จังหวัดต้นทาง'}</Label>
+            <Label htmlFor="origin" className="text-xs sm:text-sm font-medium text-gray-700">{'จังหวัดต้นทาง'}</Label>
             <Select value={origin} onValueChange={setOrigin}>
-              <SelectTrigger id="origin" className="bg-white border-gray-300 w-full !h-14 !min-h-[56px] min-w-0">
+              <SelectTrigger id="origin" className="bg-white border-gray-300 w-full !h-12 sm:!h-14 !min-h-[48px] sm:!min-h-[56px] min-w-0 text-sm sm:text-base">
                 <SelectValue placeholder="เลือกจังหวัด" />
               </SelectTrigger>
               <SelectContent>
@@ -439,21 +439,21 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
             variant="outline"
             size="icon"
             onClick={handleSwapOriginDestination}
-            className="rounded-full bg-white border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-colors flex-shrink-0 h-14 w-14 mb-0"
+            className="rounded-full bg-white border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-colors flex-shrink-0 h-12 w-12 sm:h-14 sm:w-14 mb-0 self-center sm:self-end"
             title="สลับจังหวัดต้นทางและปลายทาง"
           >
             <ArrowLeftRight className="h-4 w-4 text-gray-600" />
           </Button>
 
           <div className="relative flex-1 min-w-0">
-            <Label htmlFor="destination" className="text-sm font-medium text-gray-700 mb-1.5 block">
+            <Label htmlFor="destination" className="text-xs sm:text-sm font-medium text-gray-700 mb-1.5 block">
               {'จังหวัดปลายทาง'}
             </Label>
             <Select value={destination} onValueChange={handleDestinationChange}>
               <SelectTrigger 
                 id="destination" 
                 aria-invalid={!!errors.destination}
-                className={`bg-white w-full !h-14 !min-h-[56px] min-w-0 ${
+                className={`bg-white w-full !h-12 sm:!h-14 !min-h-[48px] sm:!min-h-[56px] min-w-0 text-sm sm:text-base ${
                   errors.destination 
                     ? 'border-[#ff6b35] focus-visible:border-[#ff6b35] focus-visible:ring-[#ff6b35]/50' 
                     : 'border-gray-300'
@@ -483,14 +483,14 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
         {/* One-way Date Picker */}
         {tripType === 'one-way' && (
           <div className="relative flex-1 min-w-0">
-            <Label htmlFor="departure-date" className="text-sm font-medium text-gray-700 mb-1.5 block">{'เลือกวันที่ไป'}</Label>
+            <Label htmlFor="departure-date" className="text-xs sm:text-sm font-medium text-gray-700 mb-1.5 block">{'เลือกวันที่ไป'}</Label>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
                   id="departure-date"
                   variant="outline"
                   aria-invalid={!!errors.departureDate}
-                  className={`bg-white justify-start text-left font-normal text-sm overflow-hidden w-full h-14 ${
+                  className={`bg-white justify-start text-left font-normal text-xs sm:text-sm overflow-hidden w-full h-12 sm:h-14 ${
                     errors.departureDate 
                       ? 'border-[#ff6b35] focus-visible:border-[#ff6b35] focus-visible:ring-[#ff6b35]/50' 
                       : 'border-gray-300'
@@ -529,14 +529,14 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
         {/* Round-trip Date Range Picker */}
         {tripType === 'round-trip' && (
           <div className="relative flex-1 min-w-0">
-            <Label htmlFor="date-range" className="text-sm font-medium text-gray-700 mb-1.5 block">{'เลือกวันที่ไป-กลับ'}</Label>
+            <Label htmlFor="date-range" className="text-xs sm:text-sm font-medium text-gray-700 mb-1.5 block">{'เลือกวันที่ไป-กลับ'}</Label>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
                   id="date-range"
                   variant="outline"
                   aria-invalid={!!(errors.dateRangeFrom || errors.dateRangeTo)}
-                  className={`bg-white justify-start text-left font-normal text-sm overflow-hidden w-full h-14 ${
+                  className={`bg-white justify-start text-left font-normal text-xs sm:text-sm overflow-hidden w-full h-12 sm:h-14 ${
                     errors.dateRangeFrom || errors.dateRangeTo
                       ? 'border-[#ff6b35] focus-visible:border-[#ff6b35] focus-visible:ring-[#ff6b35]/50' 
                       : 'border-gray-300'
@@ -582,14 +582,14 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
         )}
 
         <div className="relative flex-1 min-w-0">
-          <Label htmlFor="passengers" className="text-sm font-medium text-gray-700 mb-1.5 block">{'จำนวนผู้โดยสาร'}</Label>
+          <Label htmlFor="passengers" className="text-xs sm:text-sm font-medium text-gray-700 mb-1.5 block">{'จำนวนผู้โดยสาร'}</Label>
           <Dialog open={isPassengerDialogOpen} onOpenChange={setIsPassengerDialogOpen}>
             <DialogTrigger asChild>
               <Button
                 id="passengers"
                 variant="outline"
                 aria-invalid={!!errors.passengerCount}
-                className={`bg-white justify-between text-left font-normal text-sm w-full h-14 ${
+                className={`bg-white justify-between text-left font-normal text-xs sm:text-sm w-full h-12 sm:h-14 ${
                   errors.passengerCount 
                     ? 'border-[#ff6b35] focus-visible:border-[#ff6b35] focus-visible:ring-[#ff6b35]/50' 
                     : 'border-gray-300'
@@ -767,9 +767,9 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
         <div className="flex items-end flex-1 min-w-0">
           <Button 
             onClick={handleSearch} 
-            className="!h-14 !min-h-[56px] px-10 w-full text-base font-semibold min-w-0"
+            className="!h-12 sm:!h-14 !min-h-[48px] sm:!min-h-[56px] px-6 sm:px-10 w-full text-sm sm:text-base font-semibold min-w-0"
           >
-            <Search className="w-5 h-5 mr-2" />
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
             {'ค้นหา'}
           </Button>
         </div>

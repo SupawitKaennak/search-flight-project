@@ -460,15 +460,15 @@ export function PopularDestinations({ flightPrices, currentSearchParams, onSearc
   }
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold mb-2">{'ปลายทางยอดนิยม'}</h2>
-        <p className="text-muted-foreground">
+    <div className="container mx-auto px-4 sm:px-6">
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2">{'ปลายทางยอดนิยม'}</h2>
+        <p className="text-sm sm:text-base text-muted-foreground">
           {'ดูว่าคนอื่นๆ กำลังค้นหาเที่ยวบินไปที่ไหนกัน'}
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {destinations.map((dest) => {
           const handleCardClick = () => {
             if (!onSearch) return

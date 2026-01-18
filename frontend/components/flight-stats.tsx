@@ -292,14 +292,14 @@ export function FlightStats() {
             <h3 className="text-2xl font-bold">{'สถิติการค้นหา'}</h3>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {/* Total Searches */}
             <div className="p-4 bg-background rounded-lg border">
               <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="w-5 h-5 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">{'จำนวนการค้นหาทั้งหมด'}</span>
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+                <span className="text-xs sm:text-sm text-muted-foreground">{'จำนวนการค้นหาทั้งหมด'}</span>
               </div>
-              <div className="text-3xl font-bold text-primary">
+              <div className="text-2xl sm:text-3xl font-bold text-primary">
                 {stats.totalSearches}
               </div>
             </div>
@@ -308,13 +308,13 @@ export function FlightStats() {
             {stats.mostSearchedCountry && (
               <div className="p-4 bg-background rounded-lg border">
                 <div className="flex items-center gap-2 mb-2">
-                  <Globe className="w-5 h-5 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">{'จังหวัดที่ค้นหามากที่สุด'}</span>
+                  <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+                  <span className="text-xs sm:text-sm text-muted-foreground">{'จังหวัดที่ค้นหามากที่สุด'}</span>
                 </div>
-                <div className="text-2xl font-bold">
+                <div className="text-xl sm:text-2xl font-bold break-words">
                   {provinceNames[stats.mostSearchedCountry.country] || stats.mostSearchedCountry.country}
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1">
                   {'ค้นหา '}{stats.mostSearchedCountry.count}{' ครั้ง'}
                 </div>
               </div>
@@ -324,13 +324,13 @@ export function FlightStats() {
             {stats.mostSearchedDuration && (
               <div className="p-4 bg-background rounded-lg border">
                 <div className="flex items-center gap-2 mb-2">
-                  <Calendar className="w-5 h-5 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">{'ระยะเวลาที่นิยมมากที่สุด (ไป-กลับ)'}</span>
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+                  <span className="text-xs sm:text-sm text-muted-foreground">{'ระยะเวลาที่นิยมมากที่สุด (ไป-กลับ)'}</span>
                 </div>
-                <div className="text-2xl font-bold">
+                <div className="text-xl sm:text-2xl font-bold">
                   {stats.mostSearchedDuration.duration}
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1">
                   {'ค้นหา '}{stats.mostSearchedDuration.count}{' ครั้ง'}
                 </div>
               </div>
@@ -358,7 +358,7 @@ export function FlightStats() {
         </div>
 
         {((stats.popularProvinces && stats.popularProvinces.length > 0) || (stats.monthlyStats && stats.monthlyStats.length > 0)) ? (
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {/* Left Section: Popular Provinces */}
             {stats.popularProvinces && stats.popularProvinces.length > 0 ? (
               <div>

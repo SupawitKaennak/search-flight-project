@@ -201,9 +201,9 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
   const RecIcon = recConfig.icon
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold">{'การแบ่งช่วงตามฤดูกาล'}</h3>
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-0">
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
+        <h3 className="text-xl sm:text-2xl font-bold">{'การแบ่งช่วงตามฤดูกาล'}</h3>
       </div>
 
       {/* Best Deal Recommendation - Only show if not already shown in parent component */}
@@ -553,9 +553,9 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
       })()}
 
       {/* Timeline Bar Chart */}
-      <Card className="p-8">
-        <div className="mb-6 flex items-center gap-2">
-          <h4 className="font-semibold">{'การเลือกช่วงเวลา'}</h4>
+      <Card className="p-4 sm:p-6 md:p-8">
+        <div className="mb-4 sm:mb-6 flex items-center gap-2">
+          <h4 className="text-sm sm:text-base font-semibold">{'การเลือกช่วงเวลา'}</h4>
           <Tooltip>
             <TooltipTrigger asChild>
               <button className="p-1 rounded-full hover:bg-secondary transition-colors">
@@ -579,7 +579,7 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
         </div>
 
         {/* Timeline Buttons */}
-        <div className="flex gap-2 overflow-x-auto pb-2 pl-2 pt-2" style={{ scrollbarWidth: 'thin' }}>
+        <div className="flex gap-1 sm:gap-2 overflow-x-auto pb-2 pl-2 pt-2" style={{ scrollbarWidth: 'thin' }}>
           {thaiMonths.map((month, index) => {
             // ✅ Show all months, but use white/gray color for months without data
             const hasData = index in monthSeasonMap
@@ -606,7 +606,7 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
                             setIsDialogOpen(true)
                           }
                         }}
-                        className={`rounded-lg px-6.5 py-3 font-medium text-base min-w-[60px] shrink-0 transition-all ${
+                        className={`rounded-lg px-3 sm:px-4 md:px-6.5 py-2 sm:py-3 font-medium text-xs sm:text-sm md:text-base min-w-[50px] sm:min-w-[60px] shrink-0 transition-all ${
                           hasData 
                             ? 'cursor-pointer text-white hover:opacity-90 hover:scale-105' 
                             : 'cursor-not-allowed text-gray-500 bg-white border-2 border-gray-300 opacity-60'
@@ -939,18 +939,18 @@ export function SeasonalBreakdown({ seasons: propSeasons, recommendedPeriod, des
           </div>
 
           {/* Price Legend */}
-          <div className="flex items-center justify-center gap-6 mt-6">
+          <div className="flex items-center justify-center gap-3 sm:gap-6 mt-4 sm:mt-6 flex-wrap">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-4 rounded" style={{ backgroundColor: '#66CC33' }} />
-              <span className="text-sm font-medium">{'ราคาถูกสุด'}</span>
+              <div className="w-6 h-3 sm:w-8 sm:h-4 rounded" style={{ backgroundColor: '#66CC33' }} />
+              <span className="text-xs sm:text-sm font-medium">{'ราคาถูกสุด'}</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-4 rounded" style={{ backgroundColor: '#3399FF' }} />
-              <span className="text-sm font-medium">{'ราคามาตรฐาน'}</span>
+              <div className="w-6 h-3 sm:w-8 sm:h-4 rounded" style={{ backgroundColor: '#3399FF' }} />
+              <span className="text-xs sm:text-sm font-medium">{'ราคามาตรฐาน'}</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-4 rounded" style={{ backgroundColor: '#FF6666' }} />
-              <span className="text-sm font-medium">{'ราคาสูง'}</span>
+              <div className="w-6 h-3 sm:w-8 sm:h-4 rounded" style={{ backgroundColor: '#FF6666' }} />
+              <span className="text-xs sm:text-sm font-medium">{'ราคาสูง'}</span>
             </div>
           </div>
         </Card>

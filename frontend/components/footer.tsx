@@ -15,8 +15,8 @@ export function Footer() {
     <footer className="mt-auto">
       {/* Main Footer Section - Dark Blue Background */}
       <div className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
             {/* Left Section - Branding */}
             <div className="flex items-center gap-4 md:pl-30">
               <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">

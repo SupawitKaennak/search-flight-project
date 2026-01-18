@@ -47,7 +47,7 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section with Search Form */}
-      <section id="search" className="relative py-16 overflow-hidden">
+      <section id="search" className="relative py-8 sm:py-12 md:py-16 overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0"
@@ -62,12 +62,12 @@ export default function HomePage() {
         {/* Overlay for better text readability - ลด opacity เพื่อให้เห็นรูปภาพมากขึ้น */}
         <div className="absolute inset-0 bg-primary/30 backdrop-blur-[2px]"></div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 text-balance drop-shadow-lg">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-3 sm:mb-4 text-balance drop-shadow-lg">
               {'ค้นหาช่วงเวลาที่ดีที่สุดในการเดินทาง'}
             </h1>
-            <p className="text-lg text-primary-foreground/90 text-pretty drop-shadow-md">
+            <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 text-pretty drop-shadow-md">
               {'วิเคราะห์ราคาตั๋วเครื่องบินตามฤดูกาล แนะนำช่วงที่ถูกที่สุดให้คุณ'}
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
       </section>
 
       {/* Price Analysis Section */}
-      <section id="analysis" className="py-12">
+      <section id="analysis" className="py-6 sm:py-8 md:py-12">
         <PriceAnalysis 
           searchParams={searchParams} 
           onFlightPricesChange={setFlightPrices}
@@ -85,14 +85,14 @@ export default function HomePage() {
       </section>
 
       {/* Flight Statistics Section */}
-      <section className="pt-0 pb-12">
-        <div className="container mx-auto px-4 -mt-6">
+      <section className="pt-0 pb-6 sm:pb-8 md:pb-12">
+        <div className="container mx-auto px-4 sm:px-6 -mt-4 sm:-mt-6">
           <FlightStats />
         </div>
       </section>
 
       {/* Popular Destinations Section */}
-      <section id="destinations" className="py-12 bg-secondary/30">
+      <section id="destinations" className="py-6 sm:py-8 md:py-12 bg-secondary/30">
         <PopularDestinations 
           flightPrices={flightPrices}
           currentSearchParams={searchParams}

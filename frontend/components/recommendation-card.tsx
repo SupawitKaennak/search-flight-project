@@ -195,9 +195,9 @@ export function RecommendationCard({ recommendedPeriod, seasons, currentSeason, 
   
   return (
     <Card 
-      className={`p-8 border-2 h-full ${getCardClassName()}`}
+      className={`p-4 sm:p-6 md:p-8 border-2 h-full ${getCardClassName()}`}
     >
-      <div className="flex items-start gap-6">
+      <div className="flex items-start gap-4 sm:gap-6">
         {(isLowSeason || isHighSeason || isNormalSeason) && (
           <div 
             className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 ${
@@ -216,9 +216,9 @@ export function RecommendationCard({ recommendedPeriod, seasons, currentSeason, 
             )}
           </div>
         )}
-        <div className="flex-1 w-full">
-          <div className="flex items-center gap-2 mb-2">
-            <h3 className="text-xl font-bold">{'คำแนะนำของเรา'}</h3>
+        <div className="flex-1 w-full min-w-0">
+          <div className="flex items-center gap-2 mb-2 flex-wrap">
+            <h3 className="text-lg sm:text-xl font-bold">{'คำแนะนำของเรา'}</h3>
             <Popover>
               <PopoverTrigger asChild>
                 <button
@@ -327,10 +327,10 @@ export function RecommendationCard({ recommendedPeriod, seasons, currentSeason, 
           
           {currentSeason === 'low' ? (
             <>
-              <p className="text-lg mb-4 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg mb-4 leading-relaxed">
                 {'ตอนนี้อยู่ในช่วง Low Season ราคาตั๋วเครื่องบินต่ำสุด เหมาะสำหรับการจองทันที'}
               </p>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-5 bg-background rounded-lg border">
                   <div className="text-sm text-muted-foreground mb-2">{'ราคาวันนี้ (Low Season)'}</div>
                   {(currentPrice > 0 || recommendedPeriod.price > 0) ? (
@@ -380,13 +380,13 @@ export function RecommendationCard({ recommendedPeriod, seasons, currentSeason, 
             </>
           ) : (
             <>
-              <p className="text-lg mb-4 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg mb-4 leading-relaxed">
                 {currentSeason === 'high' 
                   ? 'ตอนนี้อยู่ในช่วง High Season ราคาตั๋วเครื่องบินสูงสุด แนะนำให้จองในช่วง Low Season เพื่อประหยัดค่าใช้จ่าย'
                   : 'ตอนนี้อยู่ในช่วง Normal Season แนะนำให้จองในช่วง Low Season เพื่อประหยัดค่าใช้จ่ายมากขึ้น'}
               </p>
               {currentSeason === 'high' ? (
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-5 bg-background rounded-lg border">
                     <div className="text-sm text-muted-foreground mb-2">{'แนะนำจองในช่วง Low Season'}</div>
                     {lowSeasonData && (
@@ -446,7 +446,7 @@ export function RecommendationCard({ recommendedPeriod, seasons, currentSeason, 
                   </div>
                 </div>
               ) : (
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-5 bg-background rounded-lg border">
                     <div className="text-sm text-muted-foreground mb-2">{'แนะนำจองในช่วง Low Season'}</div>
                     {lowSeasonData && (

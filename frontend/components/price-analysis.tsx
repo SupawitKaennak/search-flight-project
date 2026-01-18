@@ -230,16 +230,16 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
   const recommendedSeason = seasons.find(s => s.type === recommendedPeriod.season)
 
   return (
-    <div className="container mx-auto px-4 md:px-6 lg:px-35">
-      <div className="mb-8 px-0 md:px-11">
-        <h2 className="text-3xl font-bold mb-3">
+    <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8">
+      <div className="mb-6 sm:mb-8 px-0 md:px-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
           <span className="inline-block">{'การวิเคราะห์ราคา'}</span>
-          <span className="mx-2 text-muted-foreground">{' - '}</span>
-          <span className="inline-block">{searchParams.originName}</span>
-          <span className="mx-2 text-primary">{' → '}</span>
-          <span className="inline-block">{searchParams.destinationName}</span>
+          <span className="mx-1 sm:mx-2 text-muted-foreground">{' - '}</span>
+          <span className="inline-block break-words">{searchParams.originName}</span>
+          <span className="mx-1 sm:mx-2 text-primary">{' → '}</span>
+          <span className="inline-block break-words">{searchParams.destinationName}</span>
         </h2>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-muted-foreground text-sm sm:text-base md:text-lg">
           {searchParams.tripType === 'one-way' ? (
             <>
               <span className="font-medium">{'เที่ยวเดียว'}</span>
@@ -300,7 +300,7 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
       </div>
 
       {/* Divider */}
-      <div className="border-t border-border my-8 w-full max-w-6xl -ml-4 md:-ml-6 lg:ml-11"></div>
+      <div className="border-t border-border my-6 sm:my-8 w-full max-w-6xl -ml-4 sm:-ml-4 md:-ml-6 lg:ml-4"></div>
 
       {/* Recommendation Card & Weather Display - Side by Side */}
       {recommendedPeriod && searchParams?.destination && (() => {
@@ -324,8 +324,8 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
         })()
 
         return (
-          <div className="mb-12 w-full max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6">
+          <div className="mb-8 sm:mb-10 md:mb-12 w-full max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {/* Recommendation Card - Left Side (2/3 width) */}
               <div className="md:col-span-2">
                 <RecommendationCard
@@ -352,7 +352,7 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
       })()}
 
       {/* Seasonal Breakdown (without Recommendation Card) */}
-      <div className="mb-12">
+      <div className="mb-8 sm:mb-10 md:mb-12">
         <SeasonalBreakdown
           seasons={seasons}
           recommendedPeriod={recommendedPeriod}  // ✅ ส่ง recommendedPeriod เพื่อให้ใช้ recommendedPeriod.season ได้
@@ -364,13 +364,13 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
       </div>
 
       {/* Price Comparison - If Go Before/After */}
-      <div className="w-full max-w-6xl mx-auto grid md:grid-cols-2 gap-4 mb-8">
-        <Card className="p-6 border-2 border-orange-200 bg-orange-50/50">
-          <div className="flex items-center justify-between gap-6">
-            <div className="flex-1 space-y-2">
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-4 mb-6 sm:mb-8">
+        <Card className="p-4 sm:p-6 border-2 border-orange-200 bg-orange-50/50">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+            <div className="flex-1 space-y-2 w-full sm:w-auto">
               <div className="flex items-center gap-2">
-                <ArrowLeft className="w-5 h-5 text-orange-600 flex-shrink-0" />
-                <h3 className="text-2xl font-bold">{'ถ้าคุณไปก่อน'}</h3>
+                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 flex-shrink-0" />
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold">{'ถ้าคุณไปก่อน'}</h3>
               </div>
               {priceComparison?.ifGoBefore?.date ? (
                 searchParams?.tripType === 'round-trip' && priceComparison.ifGoBefore.date.includes(' - ') ? (
@@ -390,12 +390,12 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
               )}
             </div>
             {priceComparison?.ifGoBefore?.price != null && priceComparison.ifGoBefore.price > 0 && (
-              <div className="flex-shrink-0 w-1/2 px-4 py-4 bg-white rounded border border-gray-200">
+              <div className="flex-shrink-0 w-full sm:w-1/2 px-4 py-4 bg-white rounded border border-gray-200">
                 <div className="space-y-2 text-center">
-                  <div className="text-4xl font-bold text-orange-600">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-600">
                     {`฿${priceComparison.ifGoBefore.price.toLocaleString()}`}
                   </div>
-                  <div className="text-base">
+                  <div className="text-sm sm:text-base">
                     <span className="text-muted-foreground">
                       {(priceComparison.ifGoBefore.difference || 0) >= 0 ? 'แพงกว่า ' : 'ถูกกว่า '}
                     </span>
@@ -412,12 +412,12 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
           </div>
         </Card>
 
-        <Card className="p-6 border-2 border-blue-200 bg-blue-50/50">
-          <div className="flex items-center justify-between gap-6">
-            <div className="flex-1 space-y-2">
+        <Card className="p-4 sm:p-6 border-2 border-blue-200 bg-blue-50/50">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+            <div className="flex-1 space-y-2 w-full sm:w-auto">
               <div className="flex items-center gap-2">
-                <ArrowRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                <h3 className="text-2xl font-bold">{'ถ้าคุณไปหลัง'}</h3>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold">{'ถ้าคุณไปหลัง'}</h3>
               </div>
               {priceComparison?.ifGoAfter?.date ? (
                 searchParams?.tripType === 'round-trip' && priceComparison.ifGoAfter.date.includes(' - ') ? (
@@ -437,12 +437,12 @@ export function PriceAnalysis({ searchParams, onFlightPricesChange }: PriceAnaly
               )}
             </div>
             {priceComparison?.ifGoAfter?.price != null && priceComparison.ifGoAfter.price > 0 && (
-              <div className="flex-shrink-0 w-1/2 px-4 py-4 bg-white rounded border border-gray-200">
+              <div className="flex-shrink-0 w-full sm:w-1/2 px-4 py-4 bg-white rounded border border-gray-200">
                 <div className="space-y-2 text-center">
-                  <div className="text-4xl font-bold text-blue-600">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">
                     {`฿${priceComparison.ifGoAfter.price.toLocaleString()}`}
                   </div>
-                  <div className="text-base">
+                  <div className="text-sm sm:text-base">
                     <span className="text-muted-foreground">
                       {(priceComparison.ifGoAfter.difference || 0) >= 0 ? 'แพงกว่า ' : 'ถูกกว่า '}
                     </span>

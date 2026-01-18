@@ -536,14 +536,14 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 mt-8">
-      <h3 className="text-2xl font-bold mb-6">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 mt-6 sm:mt-8">
+      <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
         {'เที่ยวบินตามสายการบิน'}
       </h3>
       
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
         {/* Sidebar - Airline Selection */}
-        <div className="w-64 flex-shrink-0">
+        <div className="w-full lg:w-64 flex-shrink-0">
           <Card className="p-4">
             <div className="mb-4">
               <h4 className="text-lg font-semibold mb-2">{'สายการบิน'}</h4>
@@ -604,8 +604,8 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
         </div>
 
         {/* Main Content - Flights */}
-        <div className="flex-1">
-          <Card className="p-6">
+        <div className="flex-1 min-w-0">
+          <Card className="p-4 sm:p-6">
             {loading && (
               <div className="flex items-center justify-center py-12">
                 <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -637,16 +637,16 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                 return (
                   <div
                     key={`${flight.airline}-${flight.flightNumber}-${index}`}
-                    className="relative bg-gray-50 rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow"
+                    className="relative bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 hover:shadow-md transition-shadow"
                   >
                     {/* Top Row: Cheapest Tag, Flight Number, Duration, Aircraft Type */}
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
                       {isCheapest && (
                         <Badge className="bg-green-600 text-white text-xs font-semibold px-2 py-1 shadow-md">
                           ราคาถูกที่สุด
                         </Badge>
                       )}
-                      <span className="font-semibold text-base">{flight.flightNumber}</span>
+                      <span className="font-semibold text-sm sm:text-base">{flight.flightNumber}</span>
                       <Badge variant="outline" className="text-xs bg-gray-100 text-gray-700 border-gray-300">
                         {flight.duration}
                       </Badge>
@@ -658,13 +658,13 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                       )}
                     </div>
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4">
                       {/* Left Section: Airline Logo and Departure Time */}
                       <div className="flex items-center gap-3">
                         <img
                           src={airlineImage}
                           alt={flight.airline}
-                          className="w-16 h-16 object-cover flex-shrink-0 rounded-full bg-muted"
+                          className="w-12 h-12 sm:w-16 sm:h-16 object-cover flex-shrink-0 rounded-full bg-muted"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement
                             if (!target.src.endsWith('/placeholder-logo.png')) {
@@ -674,16 +674,16 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                         />
                         <div className="flex flex-col items-center">
                           <div className="text-xs text-gray-600 mb-1">{'เวลาเดินทาง'}</div>
-                          <div className="text-2xl font-bold">{departureTimeFormatted}</div>
+                          <div className="text-xl sm:text-2xl font-bold">{departureTimeFormatted}</div>
                         </div>
                       </div>
 
                       {/* Center Section: Route, Date, CO2, Seat Info */}
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         {/* Delay Warning */}
                         {flight.often_delayed && (
                           <div className="mb-2">
-                            <div className="inline-flex items-center gap-1 bg-red-600 text-white px-3 py-1 rounded-md text-xs font-medium">
+                            <div className="inline-flex items-center gap-1 bg-red-600 text-white px-2 sm:px-3 py-1 rounded-md text-xs font-medium">
                               <AlertTriangle className="w-3 h-3" />
                               {'มักล่าช้า'}
                             </div>
@@ -691,14 +691,14 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                         )}
                         
                         {/* Route */}
-                        <div className="text-sm mb-2">
+                        <div className="text-xs sm:text-sm mb-2 break-words">
                           <span className="font-medium uppercase">
                             {flight.originAirportCode || airportCodes[searchParams.origin] || searchParams.origin}
                           </span>
                           {' '}
                           <span className="font-medium lowercase">{searchParams.origin}</span>
                           {' '}
-                          <span className="text-gray-600">{searchParams.originName}</span>
+                          <span className="text-gray-600 hidden sm:inline">{searchParams.originName}</span>
                           {' → '}
                           <span className="font-medium uppercase">
                             {flight.destinationAirportCode || airportCodes[searchParams.destination] || searchParams.destination}
@@ -706,11 +706,11 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                           {' '}
                           <span className="font-medium lowercase">{searchParams.destination}</span>
                           {' '}
-                          <span className="text-gray-600">{searchParams.destinationName}</span>
+                          <span className="text-gray-600 hidden sm:inline">{searchParams.destinationName}</span>
                         </div>
 
                         {/* Date, CO2, Seat Info */}
-                        <div className="flex items-center gap-4 text-xs text-gray-600">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-gray-600">
                           <div className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
                             {thaiDate}
@@ -730,23 +730,23 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                       </div>
 
                       {/* Right Section: Arrival, Price, Button */}
-                      <div className="flex flex-col items-end gap-2 min-w-[140px]">
-                        <div className="flex items-center gap-1 text-sm">
-                          <Clock className="w-4 h-4 text-gray-600" />
+                      <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 sm:gap-2 w-full sm:w-auto sm:min-w-[140px]">
+                        <div className="flex items-center gap-1 text-xs sm:text-sm">
+                          <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" />
                           <span>{'ถึง '}{arrivalTimeFormatted}</span>
                         </div>
-                        <div className="text-right">
-                          <div className="text-2xl font-bold text-blue-600">
+                        <div className="text-right sm:text-right">
+                          <div className="text-xl sm:text-2xl font-bold text-blue-600">
                             {/* {'฿'}{flight.price.toLocaleString()} */}
                             {'฿'}{typeof flight.price === 'number' ? flight.price.toLocaleString() : '-'}
                           </div>
-                          <div className="text-xs text-gray-600 mt-1">
+                          <div className="text-xs text-gray-600 mt-1 hidden sm:block">
                             {searchParams.tripType === 'one-way' ? 'เที่ยวเดียว' : 'ไป-กลับ'}
                           </div>
                         </div>
                         <Button 
                           size="sm" 
-                          className="w-full text-white hover:opacity-90 transition-opacity"
+                          className="w-full sm:w-full text-white hover:opacity-90 transition-opacity text-xs sm:text-sm"
                           style={{ backgroundColor: '#0055a4' }}
                           onClick={() => {
                             console.log('Booking flight:', flight)
