@@ -637,122 +637,132 @@ export function AirlineFlights({ searchParams, selectedAirlines, onAirlinesChang
                 return (
                   <div
                     key={`${flight.airline}-${flight.flightNumber}-${index}`}
-                    className="relative bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 hover:shadow-md transition-shadow"
+                    className="relative bg-white rounded-xl p-4 sm:p-5 border-2 border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all duration-200"
                   >
-                    {/* Top Row: Cheapest Tag, Flight Number, Duration, Aircraft Type */}
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                    {/* Top Section: Badges and Flight Info */}
+                    <div className="flex flex-wrap items-center gap-2 mb-4 pb-3 border-b border-gray-100">
                       {isCheapest && (
-                        <Badge className="bg-green-600 text-white text-xs font-semibold px-2 py-1 shadow-md">
-                          ราคาถูกที่สุด
+                        <Badge className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold px-3 py-1 shadow-md">
+                          ⭐ ราคาถูกที่สุด
                         </Badge>
                       )}
-                      <span className="font-semibold text-sm sm:text-base">{flight.flightNumber}</span>
-                      <Badge variant="outline" className="text-xs bg-gray-100 text-gray-700 border-gray-300">
+                      {flight.often_delayed && (
+                        <Badge className="bg-red-500 text-white text-xs font-semibold px-2 py-1 flex items-center gap-1">
+                          <AlertTriangle className="w-3 h-3" />
+                          มักล่าช้า
+                        </Badge>
+                      )}
+                      <span className="font-bold text-sm sm:text-base text-gray-900">{flight.flightNumber}</span>
+                      <Badge variant="outline" className="text-xs bg-blue-50 text-blue-700 border-blue-200">
                         {flight.duration}
                       </Badge>
                       {flight.airplane && (
-                        <Badge variant="outline" className="text-xs bg-gray-100 text-gray-700 border-gray-300 flex items-center gap-1">
+                        <Badge variant="outline" className="text-xs bg-gray-50 text-gray-700 border-gray-200 flex items-center gap-1">
                           <Plane className="w-3 h-3" />
                           {flight.airplane}
                         </Badge>
                       )}
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4">
-                      {/* Left Section: Airline Logo and Departure Time */}
-                      <div className="flex items-center gap-3">
-                        <img
-                          src={airlineImage}
-                          alt={flight.airline}
-                          className="w-12 h-12 sm:w-16 sm:h-16 object-cover flex-shrink-0 rounded-full bg-muted"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement
-                            if (!target.src.endsWith('/placeholder-logo.png')) {
-                              target.src = '/placeholder-logo.png'
-                            }
-                          }}
-                        />
-                        <div className="flex flex-col items-center">
-                          <div className="text-xs text-gray-600 mb-1">{'เวลาเดินทาง'}</div>
-                          <div className="text-xl sm:text-2xl font-bold">{departureTimeFormatted}</div>
+                    {/* Main Content */}
+                    <div className="space-y-4">
+                      {/* Flight Route Section */}
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        {/* Airline Logo */}
+                        <div className="flex-shrink-0">
+                          <img
+                            src={airlineImage}
+                            alt={flight.airline}
+                            className="w-14 h-14 sm:w-16 sm:h-16 object-cover rounded-full bg-gray-50 border-2 border-gray-100 shadow-sm"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement
+                              if (!target.src.endsWith('/placeholder-logo.png')) {
+                                target.src = '/placeholder-logo.png'
+                              }
+                            }}
+                          />
                         </div>
-                      </div>
 
-                      {/* Center Section: Route, Date, CO2, Seat Info */}
-                      <div className="flex-1 min-w-0">
-                        {/* Delay Warning */}
-                        {flight.often_delayed && (
+                        {/* Route Info */}
+                        <div className="flex-1 min-w-0">
                           <div className="mb-2">
-                            <div className="inline-flex items-center gap-1 bg-red-600 text-white px-2 sm:px-3 py-1 rounded-md text-xs font-medium">
-                              <AlertTriangle className="w-3 h-3" />
-                              {'มักล่าช้า'}
+                            <div className="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-900">
+                              <span className="text-lg sm:text-xl font-bold text-primary">
+                                {departureTimeFormatted}
+                              </span>
+                              <span className="text-gray-400">→</span>
+                              <span className="text-base sm:text-lg font-bold text-gray-700">
+                                {arrivalTimeFormatted}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-500 mt-1">
+                              <Clock className="w-3 h-3" />
+                              <span>ถึงเวลา {arrivalTimeFormatted}</span>
                             </div>
                           </div>
-                        )}
-                        
-                        {/* Route */}
-                        <div className="text-xs sm:text-sm mb-2 break-words">
-                          <span className="font-medium uppercase">
-                            {flight.originAirportCode || airportCodes[searchParams.origin] || searchParams.origin}
-                          </span>
-                          {' '}
-                          <span className="font-medium lowercase">{searchParams.origin}</span>
-                          {' '}
-                          <span className="text-gray-600 hidden sm:inline">{searchParams.originName}</span>
-                          {' → '}
-                          <span className="font-medium uppercase">
-                            {flight.destinationAirportCode || airportCodes[searchParams.destination] || searchParams.destination}
-                          </span>
-                          {' '}
-                          <span className="font-medium lowercase">{searchParams.destination}</span>
-                          {' '}
-                          <span className="text-gray-600 hidden sm:inline">{searchParams.destinationName}</span>
-                        </div>
+                          
+                          <div className="text-xs sm:text-sm text-gray-700 mb-2">
+                            <span className="font-semibold uppercase text-primary">
+                              {flight.originAirportCode || airportCodes[searchParams.origin] || searchParams.origin}
+                            </span>
+                            <span className="mx-1 text-gray-400">→</span>
+                            <span className="font-semibold uppercase text-primary">
+                              {flight.destinationAirportCode || airportCodes[searchParams.destination] || searchParams.destination}
+                            </span>
+                            <span className="text-gray-500 ml-1 hidden sm:inline">
+                              ({searchParams.originName} → {searchParams.destinationName})
+                            </span>
+                          </div>
 
-                        {/* Date, CO2, Seat Info */}
-                        <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-gray-600">
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-3 h-3" />
-                            {thaiDate}
+                          {/* Additional Info */}
+                          <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
+                            <div className="flex items-center gap-1.5 bg-gray-50 px-2 py-1 rounded-md">
+                              <Calendar className="w-3.5 h-3.5" />
+                              <span className="font-medium">{thaiDate}</span>
+                            </div>
+                            {flight.carbon_emissions && (
+                              <div className="flex items-center gap-1.5 bg-green-50 text-green-700 px-2 py-1 rounded-md">
+                                <Leaf className="w-3.5 h-3.5" />
+                                <span className="font-medium">{flight.carbon_emissions} kg CO₂</span>
+                              </div>
+                            )}
+                            {flight.legroom && (
+                              <div className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-2 py-1 rounded-md">
+                                <span className="font-medium">ที่นั่ง: {flight.legroom}</span>
+                              </div>
+                            )}
                           </div>
-                          {flight.carbon_emissions && (
-                            <div className="flex items-center gap-1 text-green-600">
-                              <Leaf className="w-3 h-3" />
-                              {flight.carbon_emissions} kg CO2
-                            </div>
-                          )}
-                          {flight.legroom && (
-                            <div>
-                              {'ที่นั่ง: '}{flight.legroom}
-                            </div>
-                          )}
                         </div>
                       </div>
 
-                      {/* Right Section: Arrival, Price, Button */}
-                      <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 sm:gap-2 w-full sm:w-auto sm:min-w-[140px]">
-                        <div className="flex items-center gap-1 text-xs sm:text-sm">
-                          <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" />
-                          <span>{'ถึง '}{arrivalTimeFormatted}</span>
-                        </div>
-                        <div className="text-right sm:text-right">
-                          <div className="text-xl sm:text-2xl font-bold text-blue-600">
-                            {/* {'฿'}{flight.price.toLocaleString()} */}
-                            {'฿'}{typeof flight.price === 'number' ? flight.price.toLocaleString() : '-'}
+                      {/* Price and Action Section */}
+                      <div className="flex items-center justify-between gap-4 pt-3 border-t border-gray-100">
+                        <div className="flex-1">
+                          <div className="text-xs text-gray-500 mb-1">
+                            {searchParams.tripType === 'one-way' ? 'เที่ยวเดียว' : 'ไป-กลับ'} 
+                            {searchParams.passengerCount && searchParams.passengerCount > 1 && (
+                              <span> • {searchParams.passengerCount} คน</span>
+                            )}
                           </div>
-                          <div className="text-xs text-gray-600 mt-1 hidden sm:block">
-                            {searchParams.tripType === 'one-way' ? 'เที่ยวเดียว' : 'ไป-กลับ'}
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-2xl sm:text-3xl font-bold text-primary">
+                              ฿{typeof flight.price === 'number' ? flight.price.toLocaleString() : '-'}
+                            </span>
+                            {searchParams.passengerCount && searchParams.passengerCount > 1 && (
+                              <span className="text-sm text-gray-500">
+                                / {Math.round(flight.price / searchParams.passengerCount).toLocaleString()} ต่อคน
+                              </span>
+                            )}
                           </div>
                         </div>
                         <Button 
-                          size="sm" 
-                          className="w-full sm:w-full text-white hover:opacity-90 transition-opacity text-xs sm:text-sm"
-                          style={{ backgroundColor: '#0055a4' }}
+                          size="lg" 
+                          className="px-6 sm:px-8 h-12 sm:h-14 text-base font-semibold shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary"
                           onClick={() => {
                             console.log('Booking flight:', flight)
                           }}
                         >
-                          {'เลือก'}
+                          เลือกเที่ยวบิน
                         </Button>
                       </div>
                     </div>
