@@ -30,10 +30,15 @@ services:
       dockerfile: Dockerfile
     container_name: flight_search_backend
     restart: unless-stopped
+    # Load environment variables from .env file (if exists)
+    # Values in environment: section below will override .env file values
+    env_file:
+      - ./backend/.env
     environment:
+      # Docker-specific overrides (these take precedence over .env file)
       PORT: 3001
       NODE_ENV: production
-      DB_HOST: postgres
+      DB_HOST: postgres  # Use service name in Docker network
       DB_PORT: 5432
       DB_NAME: flight_search
       DB_USER: postgres
@@ -66,15 +71,19 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_API_URL: http://localhost:3001/api
+        # IMPORTANT: NEXT_PUBLIC_* variables must be set at BUILD TIME, not runtime!
+        # Docker Compose reads from root .env file automatically via ${VARIABLE_NAME}
+        # Priority: root .env > system env vars > default
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001/api}
         NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY:-}
     container_name: flight_search_frontend
     restart: unless-stopped
+    # Note: env_file is for reference only - NEXT_PUBLIC_* must be in build args above
+    # Docker Compose automatically reads root .env file for ${VARIABLE_NAME} syntax
     environment:
       NODE_ENV: production
-      NEXT_PUBLIC_API_URL: http://localhost:3001/api
-      NEXT_PUBLIC_USE_MOCK_DATA: "false"
-      NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY:-}
+      # NEXT_PUBLIC_* variables are embedded at BUILD TIME via build args
+      # ⚠️ If you change API key, you MUST rebuild: docker-compose build frontend
     ports:
       - "3000:3000"
     depends_on:
@@ -89,3 +98,5 @@ volumes:
 networks:
   flight_search_network:
     driver: bridge
+
+
