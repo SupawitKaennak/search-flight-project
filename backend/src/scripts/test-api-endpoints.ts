@@ -67,7 +67,7 @@ async function testEndpoint(
 
     const response = await fetch(fullUrl, options);
     const responseTime = Date.now() - startTime;
-    const data = await response.json().catch(() => ({}));
+    const data = await response.json().catch(() => ({})) as any;
 
     return {
       endpoint,

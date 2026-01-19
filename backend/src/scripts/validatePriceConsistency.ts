@@ -146,7 +146,7 @@ async function validatePriceConsistency() {
       if (result.priceComparison.basePrice) {
         const { priceComparison } = result;
 
-        if (priceComparison.ifGoBefore.price) {
+        if (priceComparison.ifGoBefore.price && priceComparison.basePrice) {
           const expectedDiff =
             priceComparison.ifGoBefore.price - priceComparison.basePrice;
           if (priceComparison.ifGoBefore.difference !== expectedDiff) {
@@ -158,7 +158,7 @@ async function validatePriceConsistency() {
           }
         }
 
-        if (priceComparison.ifGoAfter.price) {
+        if (priceComparison.ifGoAfter.price && priceComparison.basePrice) {
           const expectedDiff =
             priceComparison.ifGoAfter.price - priceComparison.basePrice;
           if (priceComparison.ifGoAfter.difference !== expectedDiff) {

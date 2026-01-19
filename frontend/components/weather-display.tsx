@@ -72,9 +72,22 @@ export function WeatherDisplay({ destination, destinationName, flightDate }: Wea
     fetchWeatherData()
   }, [destination])
 
-  // Don't render if weather service is not available
+  // Show message if weather service is not available
   if (!weatherService.isAvailable()) {
-    return null
+    return (
+      <Card className={`${weatherCardConfig.padding} ${weatherCardConfig.borderWidth} border-blue-200 bg-blue-50/50`}>
+        <div className="flex flex-col items-center justify-center text-center py-6">
+          <AlertCircle className="w-8 h-8 text-blue-500 mb-2" />
+          <h3 className="font-semibold text-sm mb-1 text-blue-900">ข้อมูลสภาพอากาศ</h3>
+          <p className="text-xs text-blue-700">
+            ต้องการ API Key จาก OpenWeatherMap
+          </p>
+          <p className="text-xs text-blue-600 mt-1">
+            ตั้งค่า NEXT_PUBLIC_OPENWEATHERMAP_API_KEY
+          </p>
+        </div>
+      </Card>
+    )
   }
 
   // Get min height style
