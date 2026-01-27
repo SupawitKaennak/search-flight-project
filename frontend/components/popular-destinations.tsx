@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { Card } from '@/components/ui/card'
-import { TrendingUp, TrendingDown, Users } from 'lucide-react'
+import { Users } from 'lucide-react'
 import { statisticsApi } from '@/lib/api/statistics-api'
 import { destinationApi } from '@/lib/api/destination-api'
 import { flightApi } from '@/lib/api/flight-api'
+import { airportApi } from '@/lib/api/airport-api'
 import { PROVINCES, thaiMonths } from '@/services/data/constants'
 import { FlightSearchParams } from '@/components/flight-search-form'
 import { formatDateToUTCString } from '@/lib/utils'
@@ -130,7 +131,6 @@ interface PopularDestinationDisplay {
   cheapestPrice: string
   airlineName: string | null
   cheapestDate: string | null // ✅ เพิ่มวันที่ของราคาต่ำสุด
-  trend: string
   popular: boolean
 }
 
@@ -202,6 +202,130 @@ function extractPrice(priceString: string): number | null {
   }
 }
 
+/**
+ * Extract airport code from destination name or destination value
+ * Format: "Khon Kaen (KKC)" -> "KKC" or "KKC" -> "KKC"
+ */
+function extractAirportCode(destination: string, destinationName: string | null): string {
+  // If destination is already an airport code (3 uppercase letters)
+  if (/^[A-Z]{3}$/.test(destination)) {
+    return destination.toUpperCase()
+  }
+  
+  // Try to extract from destination_name format: "City Name (CODE)"
+  if (destinationName) {
+    const match = destinationName.match(/\(([A-Z]{3})\)/)
+    if (match && match[1]) {
+      return match[1]
+    }
+  }
+  
+  // Fallback: use destination as is (might be airport code)
+  return destination.toUpperCase()
+}
+
+/**
+ * Convert city name to province value (kebab-case)
+ * Format: "Khon Kaen" -> "khon-kaen", "Chiang Mai" -> "chiang-mai"
+ */
+function cityNameToProvinceValue(cityName: string): string {
+  return cityName
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+}
+
+/**
+ * Mapping from city names (from CSV) to province values
+ * This helps match city names from airport data to our province image files
+ */
+const cityToProvinceMapping: Record<string, string> = {
+  // Direct city name mappings (from CSV format)
+  'khon-kaen': 'khon-kaen',
+  'chiang-mai': 'chiang-mai',
+  'chiang-rai': 'chiang-rai',
+  'phuket': 'phuket',
+  'krabi': 'krabi',
+  'bangkok': 'bangkok',
+  'rayong': 'rayong',
+  'trat': 'trat',
+  'udon-thani': 'udon-thani',
+  'hat-yai': 'hat-yai',
+  'songkhla': 'songkhla',
+  'surat-thani': 'surat-thani',
+  // Add more mappings as needed
+}
+
+/**
+ * Get image path for destination using airport code
+ * First tries to get city from airport API, then converts to province value
+ */
+async function getImagePathForDestination(
+  destination: string,
+  destinationName: string | null
+): Promise<string> {
+  try {
+    // Extract airport code
+    const airportCode = extractAirportCode(destination, destinationName)
+    
+    // Get airport details from API
+    const airportDetails = await airportApi.getAirportDetails(airportCode)
+    
+    if (airportDetails?.city) {
+      // Convert city name to province value (kebab-case)
+      const cityKey = cityNameToProvinceValue(airportDetails.city)
+      
+      // First, try direct mapping from cityToProvinceMapping
+      const mappedProvinceValue = cityToProvinceMapping[cityKey]
+      if (mappedProvinceValue && provinceImages[mappedProvinceValue]) {
+        return provinceImages[mappedProvinceValue]
+      }
+      
+      // Check if converted city name matches a province value directly
+      if (provinceImages[cityKey]) {
+        return provinceImages[cityKey]
+      }
+      
+      // Try to find matching province by city name
+      const matchingProvince = PROVINCES.find(p => {
+        const provinceCityName = cityNameToProvinceValue(p.label)
+        const airportCityName = cityNameToProvinceValue(airportDetails.city || '')
+        return provinceCityName === airportCityName || 
+               airportDetails.city?.toLowerCase().includes(p.label.toLowerCase()) ||
+               p.label.toLowerCase().includes(airportDetails.city?.toLowerCase() || '')
+      })
+      
+      if (matchingProvince && provinceImages[matchingProvince.value]) {
+        return provinceImages[matchingProvince.value]
+      }
+    }
+    
+    // Fallback: try to find province by airport code
+    const provinceByCode = PROVINCES.find(p => p.airportCode === airportCode)
+    if (provinceByCode && provinceImages[provinceByCode.value]) {
+      return provinceImages[provinceByCode.value]
+    }
+    
+    // Final fallback: use placeholder
+    return `${basePath}/placeholder.svg`
+  } catch (error) {
+    console.warn(`[PopularDestinations] Failed to get image for ${destination}:`, error)
+    
+    // Fallback: try to find province by destination value
+    const province = PROVINCES.find(p => 
+      p.value === destination || 
+      p.airportCode === destination.toUpperCase()
+    )
+    
+    if (province && provinceImages[province.value]) {
+      return provinceImages[province.value]
+    }
+    
+    return `${basePath}/placeholder.svg`
+  }
+}
+
 export function PopularDestinations({ flightPrices, currentSearchParams, onSearch }: PopularDestinationsProps = {}) {
   const [destinations, setDestinations] = useState<PopularDestinationDisplay[]>([])
   const [loading, setLoading] = useState(true)
@@ -216,10 +340,14 @@ export function PopularDestinations({ flightPrices, currentSearchParams, onSearc
         const destinationsDataPromises = stats.popularDestinations
           .slice(0, 4) // แสดงแค่ 4 อันดับแรก
           .map(async (dest, index) => {
+            // ดึงข้อมูลรูปภาพจาก airport code
+            const imagePath = await getImagePathForDestination(dest.destination, dest.destination_name)
+            
             // หา province value จาก destination name หรือ destination value
             const province = PROVINCES.find(p => 
               p.label === dest.destination_name || 
               p.value === dest.destination ||
+              p.airportCode === dest.destination.toUpperCase() ||
               dest.destination_name?.includes(p.label) ||
               p.label.includes(dest.destination_name || '')
             )
@@ -231,7 +359,6 @@ export function PopularDestinations({ flightPrices, currentSearchParams, onSearc
             let cheapestPrice: number | null = null
             let airlineName: string | null = null
             let cheapestDate: string | null = null // ✅ เพิ่มวันที่ของราคาต่ำสุด
-            let trend = '0%' // ✅ ไม่ใช้ mockTrends แล้ว ใช้ 0% เป็นค่าเริ่มต้น
             
             // ✅ ตรวจสอบว่ามีข้อมูล flightPrices จาก airline-flights หรือไม่ (ถ้าปลายทางตรงกัน)
             // เปรียบเทียบทั้ง destination value และ province value
@@ -334,45 +461,6 @@ export function PopularDestinations({ flightPrices, currentSearchParams, onSearc
               }
             }
             
-            // ✅ ดึง search trend (จำนวนคนค้นหาเพิ่มขึ้น/ลดลง) จาก statistics API
-            try {
-              const priceStats = await statisticsApi.getPriceStatistics('bangkok', dest.destination)
-              console.log(`[PopularDestinations] ${dest.destination} - priceStats:`, {
-                searchTrend: priceStats.searchTrend,
-                priceTrend: priceStats.priceTrend,
-              })
-              // ใช้ searchTrend แทน priceTrend (จำนวนคนค้นหาเพิ่มขึ้น/ลดลง)
-              if (priceStats.searchTrend) {
-                const { trend: trendType, percentage } = priceStats.searchTrend
-                console.log(`[PopularDestinations] ${dest.destination} - Using searchTrend: ${trendType} ${percentage}%`)
-                if (trendType === 'up') {
-                  trend = `+${percentage}%`
-                } else if (trendType === 'down') {
-                  trend = `-${percentage}%`
-                } else {
-                  trend = '0%'
-                }
-              } else if (priceStats.priceTrend) {
-                // Fallback: ถ้าไม่มี searchTrend ใช้ priceTrend (ราคา)
-                console.log(`[PopularDestinations] ${dest.destination} - Using priceTrend (fallback):`, priceStats.priceTrend)
-                const { trend: trendType, percentage } = priceStats.priceTrend
-                if (trendType === 'up') {
-                  trend = `+${percentage}%`
-                } else if (trendType === 'down') {
-                  trend = `-${percentage}%`
-                } else {
-                  trend = '0%'
-                }
-              } else {
-                console.log(`[PopularDestinations] ${dest.destination} - No trend data, using 0%`)
-                trend = '0%' // ✅ แสดง 0% เมื่อไม่มีข้อมูลจาก API
-              }
-            } catch (trendError) {
-              // ถ้าไม่มี trend data แสดง 0%
-              console.warn(`[PopularDestinations] No trend data for ${dest.destination}, using 0%`, trendError)
-              trend = '0%' // ✅ แสดง 0% เมื่อเกิด error
-            }
-            
             // ถ้ายังไม่มีราคา ให้ใช้ค่า default ตามระยะทางคร่าวๆ
             if (cheapestPrice === null) {
               const fallbackPrice = (() => {
@@ -398,11 +486,10 @@ export function PopularDestinations({ flightPrices, currentSearchParams, onSearc
               destinationName: displayName,
               count: dest.count,
               provinceValue,
-              image: provinceImages[provinceValue] || `${basePath}/placeholder.svg`,
+              image: imagePath, // ✅ ใช้รูปภาพจาก airport code
               cheapestPrice: `฿${Math.round(cheapestPrice).toLocaleString()}`,
               airlineName: airlineName,
               cheapestDate: cheapestDate, // ✅ เพิ่มวันที่
-              trend: trend,
               popular: index === 0,
             }
           })
@@ -551,24 +638,10 @@ export function PopularDestinations({ flightPrices, currentSearchParams, onSearc
               <h3 className="font-bold text-lg mb-3">{dest.destinationName || dest.destination}</h3>
               
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center">
                   <div className="flex items-center gap-1 text-sm text-muted-foreground">
                     <Users className="w-4 h-4" />
                     <span>{dest.count.toLocaleString()} {'ครั้ง'}</span>
-                  </div>
-                  <div className={`flex items-center gap-1 text-sm ${
-                    dest.trend.startsWith('-') 
-                      ? 'text-red-600' 
-                      : dest.trend.startsWith('+') 
-                        ? 'text-green-600' 
-                        : 'text-muted-foreground'
-                  }`}>
-                    {dest.trend.startsWith('-') ? (
-                      <TrendingDown className="w-4 h-4" />
-                    ) : (
-                      <TrendingUp className="w-4 h-4" />
-                    )}
-                    <span>{dest.trend}</span>
                   </div>
                 </div>
                 
