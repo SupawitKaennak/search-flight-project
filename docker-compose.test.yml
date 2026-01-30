@@ -1,0 +1,73 @@
+services:
+  postgres:
+    image: timescale/timescaledb:latest-pg18
+    container_name: flight_search_db_test   # 🔴
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: flight_search_test       # 🔴
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      - "5434:5432"                         # 🔴
+    volumes:
+      - postgres_data_test:/var/lib/postgresql   # 🔴
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d flight_search_test"]
+    networks:
+      - flight_search_network_test           # 🔴
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: flight_search_backend_test   # 🔴
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env.test                     # 🔴
+    environment:
+      PORT: 3101                                # 🔴
+      NODE_ENV: development                    # 🔴
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: flight_search_test               # 🔴
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      ENABLE_TIMESCALEDB: "true"
+      CORS_ORIGIN: http://localhost:3100        # 🔴
+    ports:
+      - "3101:3101"                             # 🔴
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/data:/app/data:ro
+    networks:
+      - flight_search_network_test              # 🔴
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:3101/api   # 🔴
+        NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}
+        NEXT_PUBLIC_BASE_PATH: ""
+    container_name: flight_search_frontend_test          # 🔴
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development                              # 🔴
+    ports:
+      - "3100:3000"                                      # 🔴
+    depends_on:
+      - backend
+    networks:
+      - flight_search_network_test                       # 🔴
+
+volumes:
+  postgres_data_test:     # 🔴
+    driver: local
+
+networks:
+  flight_search_network_test:   # 🔴
+    driver: bridge
