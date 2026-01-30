@@ -20,6 +20,7 @@ interface DestinationSelectProps {
     className?: string
     error?: string
     excludeCode?: string // Airport code to exclude from results (e.g., the other field's value)
+    disabled?: boolean
 }
 
 export function DestinationSelect({
@@ -28,7 +29,8 @@ export function DestinationSelect({
     placeholder = 'ค้นหาเมือง หรือ สนามบิน',
     className,
     error,
-    excludeCode
+    excludeCode,
+    disabled = false
 }: DestinationSelectProps) {
     const [search, setSearch] = useState('')
     const [results, setResults] = useState<Airport[]>([])
@@ -149,6 +151,7 @@ export function DestinationSelect({
     }
 
     const handleOpenChange = (open: boolean) => {
+        if (disabled && open) return
         setIsPopoverOpen(open)
         // When closing, reset search if nothing was selected
         if (!open && !value) {
@@ -175,7 +178,9 @@ export function DestinationSelect({
                 <PopoverTrigger asChild>
                     <div
                         className={cn(
-                            "relative flex items-center bg-white border rounded-md transition-all h-12 sm:h-14 overflow-hidden cursor-pointer",
+                            "relative flex items-center bg-white border rounded-md transition-all h-12 sm:h-14 overflow-hidden",
+                            !disabled && "cursor-pointer",
+                            disabled && "pointer-events-none opacity-50 bg-muted/30",
                             error ? "border-red-500 ring-1 ring-red-500/20" : "border-gray-300 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/10",
                             isPopoverOpen && "border-blue-500 ring-2 ring-blue-500/10 shadow-md"
                         )}
