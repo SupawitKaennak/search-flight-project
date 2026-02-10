@@ -1,0 +1,1204 @@
+date,origin_group,dep_airport,arr_airport,destination,airline,airline_code,dep_time,arr_time,duration,stops,price_value,price_text,scraped_at,source
+2026-01-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,2138,"฿2,138",2026-01-25 16:42:40,airpaz.com
+2026-01-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:50,17:15,1ชม.25นาที,Direct,2195,"฿2,195",2026-01-25 16:42:40,airpaz.com
+2026-01-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,2778,"฿2,778",2026-01-25 16:42:40,airpaz.com
+2026-01-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,5036,"฿5,036",2026-01-25 16:42:40,airpaz.com
+2026-01-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1389,"฿1,389",2026-01-25 16:42:43,airpaz.com
+2026-01-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1734,"฿1,734",2026-01-25 16:42:43,airpaz.com
+2026-01-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,2138,"฿2,138",2026-01-25 16:42:44,airpaz.com
+2026-01-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:50,17:15,1ชม.25นาที,Direct,2195,"฿2,195",2026-01-25 16:42:44,airpaz.com
+2026-01-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,2778,"฿2,778",2026-01-25 16:42:44,airpaz.com
+2026-01-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,5036,"฿5,036",2026-01-25 16:42:44,airpaz.com
+2026-01-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1097,"฿1,097",2026-01-25 16:43:12,airpaz.com
+2026-01-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1164,"฿1,164",2026-01-25 16:43:12,airpaz.com
+2026-01-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:15,19:40,1ชม.25นาที,Direct,1283,"฿1,283",2026-01-25 16:43:12,airpaz.com
+2026-01-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,16:35,18:00,1ชม.25นาที,Direct,1318,"฿1,318",2026-01-25 16:43:12,airpaz.com
+2026-01-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,2138,"฿2,138",2026-01-25 16:43:12,airpaz.com
+2026-01-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,2194,"฿2,194",2026-01-25 16:43:12,airpaz.com
+2026-02-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 16:43:41,airpaz.com
+2026-02-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1194,"฿1,194",2026-01-25 16:43:41,airpaz.com
+2026-02-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1283,"฿1,283",2026-01-25 16:43:41,airpaz.com
+2026-02-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,19:05,20:30,1ชม.25นาที,Direct,1758,"฿1,758",2026-01-25 16:43:41,airpaz.com
+2026-02-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:25,11:45,1ชม.20นาที,Direct,2194,"฿2,194",2026-01-25 16:43:41,airpaz.com
+2026-02-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:45,17:00,1ชม.15นาที,Direct,2195,"฿2,195",2026-01-25 16:43:41,airpaz.com
+2026-02-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:45,20:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:44:11,airpaz.com
+2026-02-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 16:44:11,airpaz.com
+2026-02-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,16:20,17:45,1ชม.25นาที,Direct,1170,"฿1,170",2026-01-25 16:44:11,airpaz.com
+2026-02-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 16:44:11,airpaz.com
+2026-02-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 16:44:11,airpaz.com
+2026-02-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:44:40,airpaz.com
+2026-02-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:44:40,airpaz.com
+2026-02-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:44:40,airpaz.com
+2026-02-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,856,฿856,2026-01-25 16:44:40,airpaz.com
+2026-02-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:44:40,airpaz.com
+2026-02-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 16:44:40,airpaz.com
+2026-02-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:45:09,airpaz.com
+2026-02-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:45:09,airpaz.com
+2026-02-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:45:09,airpaz.com
+2026-02-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,856,฿856,2026-01-25 16:45:09,airpaz.com
+2026-02-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:25,11:40,1ชม.15นาที,Direct,1169,"฿1,169",2026-01-25 16:45:09,airpaz.com
+2026-02-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:45,17:05,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 16:45:09,airpaz.com
+2026-02-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:45:38,airpaz.com
+2026-02-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:45:38,airpaz.com
+2026-02-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,856,฿856,2026-01-25 16:45:38,airpaz.com
+2026-02-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,1170,"฿1,170",2026-01-25 16:45:38,airpaz.com
+2026-02-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 16:45:38,airpaz.com
+2026-02-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:30,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 16:45:38,airpaz.com
+2026-02-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,19:15,20:30,1ชม.15นาที,Direct,1140,"฿1,140",2026-01-25 16:46:07,airpaz.com
+2026-02-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 16:46:07,airpaz.com
+2026-02-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:30,11:50,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 16:46:07,airpaz.com
+2026-02-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:20,16:45,1ชม.25นาที,Direct,1415,"฿1,415",2026-01-25 16:46:07,airpaz.com
+2026-02-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 16:46:09,airpaz.com
+2026-02-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,19:15,20:30,1ชม.15นาที,Direct,1140,"฿1,140",2026-01-25 16:46:09,airpaz.com
+2026-02-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1194,"฿1,194",2026-01-25 16:46:09,airpaz.com
+2026-02-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 16:46:09,airpaz.com
+2026-02-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:30,11:50,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 16:46:09,airpaz.com
+2026-02-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:20,16:45,1ชม.25นาที,Direct,1415,"฿1,415",2026-01-25 16:46:09,airpaz.com
+2026-02-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:46:38,airpaz.com
+2026-02-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:46:38,airpaz.com
+2026-02-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:46:38,airpaz.com
+2026-02-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,856,฿856,2026-01-25 16:46:38,airpaz.com
+2026-02-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 16:46:38,airpaz.com
+2026-02-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:45,17:05,1ชม.20นาที,Direct,1805,"฿1,805",2026-01-25 16:46:38,airpaz.com
+2026-02-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:47:07,airpaz.com
+2026-02-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:47:07,airpaz.com
+2026-02-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:47:07,airpaz.com
+2026-02-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:45,20:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:47:07,airpaz.com
+2026-02-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,16:20,17:45,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:47:07,airpaz.com
+2026-02-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 16:47:07,airpaz.com
+2026-02-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:47:36,airpaz.com
+2026-02-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:47:36,airpaz.com
+2026-02-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:47:36,airpaz.com
+2026-02-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:47:36,airpaz.com
+2026-02-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:48:05,airpaz.com
+2026-02-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:48:05,airpaz.com
+2026-02-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:48:05,airpaz.com
+2026-02-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:15,19:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:48:05,airpaz.com
+2026-02-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,16:20,17:45,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:48:05,airpaz.com
+2026-02-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:25,11:40,1ชม.15นาที,Direct,1169,"฿1,169",2026-01-25 16:48:05,airpaz.com
+2026-02-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:48:34,airpaz.com
+2026-02-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:48:34,airpaz.com
+2026-02-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:15,19:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:48:34,airpaz.com
+2026-02-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,9:55,11:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 16:48:34,airpaz.com
+2026-02-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 16:48:34,airpaz.com
+2026-02-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,1170,"฿1,170",2026-01-25 16:48:34,airpaz.com
+2026-02-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:49:03,airpaz.com
+2026-02-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:49:03,airpaz.com
+2026-02-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:49:03,airpaz.com
+2026-02-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:49:03,airpaz.com
+2026-02-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 16:49:03,airpaz.com
+2026-02-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:30,16:55,1ชม.25นาที,Direct,1170,"฿1,170",2026-01-25 16:49:03,airpaz.com
+2026-02-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 16:49:32,airpaz.com
+2026-02-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,1415,"฿1,415",2026-01-25 16:49:32,airpaz.com
+2026-02-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 16:49:32,airpaz.com
+2026-02-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,1971,"฿1,971",2026-01-25 16:49:32,airpaz.com
+2026-02-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:50:00,airpaz.com
+2026-02-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:50:00,airpaz.com
+2026-02-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 16:50:00,airpaz.com
+2026-02-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 16:50:00,airpaz.com
+2026-02-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,1414,"฿1,414",2026-01-25 16:50:00,airpaz.com
+2026-02-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,1415,"฿1,415",2026-01-25 16:50:00,airpaz.com
+2026-02-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:50:29,airpaz.com
+2026-02-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:50:29,airpaz.com
+2026-02-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:50:29,airpaz.com
+2026-02-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:50:29,airpaz.com
+2026-02-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:50:29,airpaz.com
+2026-02-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,1169,"฿1,169",2026-01-25 16:50:29,airpaz.com
+2026-02-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:50:58,airpaz.com
+2026-02-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:50:58,airpaz.com
+2026-02-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:50:58,airpaz.com
+2026-02-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:50:58,airpaz.com
+2026-02-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:50:58,airpaz.com
+2026-02-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,1169,"฿1,169",2026-01-25 16:50:58,airpaz.com
+2026-02-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:51:27,airpaz.com
+2026-02-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:51:27,airpaz.com
+2026-02-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:51:27,airpaz.com
+2026-02-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:51:27,airpaz.com
+2026-02-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:53:15,airpaz.com
+2026-02-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:53:15,airpaz.com
+2026-02-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:53:15,airpaz.com
+2026-02-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 16:53:15,airpaz.com
+2026-02-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:53:17,airpaz.com
+2026-02-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:53:18,airpaz.com
+2026-02-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:53:18,airpaz.com
+2026-02-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:53:18,airpaz.com
+2026-02-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:53:18,airpaz.com
+2026-02-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 16:53:18,airpaz.com
+2026-02-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:53:46,airpaz.com
+2026-02-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:53:46,airpaz.com
+2026-02-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:53:46,airpaz.com
+2026-02-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 16:53:46,airpaz.com
+2026-02-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,1169,"฿1,169",2026-01-25 16:53:46,airpaz.com
+2026-02-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 16:53:46,airpaz.com
+2026-02-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:54:15,airpaz.com
+2026-02-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:54:15,airpaz.com
+2026-02-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:54:15,airpaz.com
+2026-02-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:54:15,airpaz.com
+2026-02-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,1169,"฿1,169",2026-01-25 16:54:15,airpaz.com
+2026-02-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,1170,"฿1,170",2026-01-25 16:54:15,airpaz.com
+2026-02-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:54:44,airpaz.com
+2026-02-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:54:44,airpaz.com
+2026-02-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:54:44,airpaz.com
+2026-02-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:54:44,airpaz.com
+2026-02-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 16:54:44,airpaz.com
+2026-02-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:54:44,airpaz.com
+2026-02-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:55:13,airpaz.com
+2026-02-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:55:13,airpaz.com
+2026-02-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:55:13,airpaz.com
+2026-02-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,856,฿856,2026-01-25 16:55:13,airpaz.com
+2026-02-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:55,12:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 16:55:13,airpaz.com
+2026-02-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,16:10,17:30,1ชม.20นาที,Direct,879,฿879,2026-01-25 16:55:13,airpaz.com
+2026-02-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:55:42,airpaz.com
+2026-02-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:55:42,airpaz.com
+2026-02-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:55:42,airpaz.com
+2026-02-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,856,฿856,2026-01-25 16:55:42,airpaz.com
+2026-02-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,16:20,17:45,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:55:42,airpaz.com
+2026-02-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:25,11:40,1ชม.15นาที,Direct,1169,"฿1,169",2026-01-25 16:55:42,airpaz.com
+2026-02-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:56:11,airpaz.com
+2026-02-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:56:11,airpaz.com
+2026-02-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:56:11,airpaz.com
+2026-02-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:20,19:40,1ชม.20นาที,Direct,856,฿856,2026-01-25 16:56:11,airpaz.com
+2026-02-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:30,1ชม.20นาที,Direct,878,฿878,2026-01-25 16:56:11,airpaz.com
+2026-02-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,16:45,18:00,1ชม.15นาที,Direct,879,฿879,2026-01-25 16:56:11,airpaz.com
+2026-02-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:56:39,airpaz.com
+2026-02-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:56:39,airpaz.com
+2026-02-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,19:15,20:30,1ชม.15นาที,Direct,856,฿856,2026-01-25 16:56:39,airpaz.com
+2026-02-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:30,11:50,1ชม.20นาที,Direct,878,฿878,2026-01-25 16:56:39,airpaz.com
+2026-02-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:20,16:45,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:56:39,airpaz.com
+2026-02-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 16:56:39,airpaz.com
+2026-02-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:57:08,airpaz.com
+2026-02-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:15,19:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:57:08,airpaz.com
+2026-02-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:55,17:15,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 16:57:08,airpaz.com
+2026-02-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 16:57:08,airpaz.com
+2026-02-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:30,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 16:57:08,airpaz.com
+2026-03-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:57:37,airpaz.com
+2026-03-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:57:37,airpaz.com
+2026-03-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:57:37,airpaz.com
+2026-03-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:57:37,airpaz.com
+2026-03-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 16:57:37,airpaz.com
+2026-03-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,1169,"฿1,169",2026-01-25 16:57:37,airpaz.com
+2026-03-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:58:05,airpaz.com
+2026-03-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:58:05,airpaz.com
+2026-03-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:58:05,airpaz.com
+2026-03-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:58:05,airpaz.com
+2026-03-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:58:05,airpaz.com
+2026-03-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:58:05,airpaz.com
+2026-03-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:58:34,airpaz.com
+2026-03-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:58:34,airpaz.com
+2026-03-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:58:34,airpaz.com
+2026-03-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:58:34,airpaz.com
+2026-03-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:58:34,airpaz.com
+2026-03-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:58:34,airpaz.com
+2026-03-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:59:03,airpaz.com
+2026-03-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:59:03,airpaz.com
+2026-03-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:59:03,airpaz.com
+2026-03-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:59:03,airpaz.com
+2026-03-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:59:03,airpaz.com
+2026-03-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:59:03,airpaz.com
+2026-03-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:59:32,airpaz.com
+2026-03-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:59:32,airpaz.com
+2026-03-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:59:32,airpaz.com
+2026-03-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:59:32,airpaz.com
+2026-03-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 16:59:34,airpaz.com
+2026-03-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 16:59:34,airpaz.com
+2026-03-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:59:34,airpaz.com
+2026-03-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 16:59:34,airpaz.com
+2026-03-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 16:59:34,airpaz.com
+2026-03-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 16:59:34,airpaz.com
+2026-03-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:00:03,airpaz.com
+2026-03-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:00:03,airpaz.com
+2026-03-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:00:03,airpaz.com
+2026-03-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:00:03,airpaz.com
+2026-03-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:00:03,airpaz.com
+2026-03-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:00:03,airpaz.com
+2026-03-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:00:32,airpaz.com
+2026-03-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:00:32,airpaz.com
+2026-03-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:00:32,airpaz.com
+2026-03-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:00:32,airpaz.com
+2026-03-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:00:32,airpaz.com
+2026-03-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:00:32,airpaz.com
+2026-03-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:01:01,airpaz.com
+2026-03-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:01:01,airpaz.com
+2026-03-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:01:01,airpaz.com
+2026-03-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:01:01,airpaz.com
+2026-03-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:01:01,airpaz.com
+2026-03-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:01:01,airpaz.com
+2026-03-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:01:29,airpaz.com
+2026-03-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:01:29,airpaz.com
+2026-03-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:01:29,airpaz.com
+2026-03-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:01:29,airpaz.com
+2026-03-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:01:29,airpaz.com
+2026-03-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:01:29,airpaz.com
+2026-03-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:01:59,airpaz.com
+2026-03-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:01:59,airpaz.com
+2026-03-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:01:59,airpaz.com
+2026-03-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:01:59,airpaz.com
+2026-03-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:01:59,airpaz.com
+2026-03-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:01:59,airpaz.com
+2026-03-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:02:28,airpaz.com
+2026-03-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:02:28,airpaz.com
+2026-03-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:02:28,airpaz.com
+2026-03-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:02:28,airpaz.com
+2026-03-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:02:28,airpaz.com
+2026-03-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:02:28,airpaz.com
+2026-03-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:02:57,airpaz.com
+2026-03-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:02:57,airpaz.com
+2026-03-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:02:57,airpaz.com
+2026-03-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:02:57,airpaz.com
+2026-03-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:02:57,airpaz.com
+2026-03-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:02:57,airpaz.com
+2026-03-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:03:25,airpaz.com
+2026-03-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:03:25,airpaz.com
+2026-03-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:03:25,airpaz.com
+2026-03-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:03:25,airpaz.com
+2026-03-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:03:26,airpaz.com
+2026-03-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:03:26,airpaz.com
+2026-03-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:03:54,airpaz.com
+2026-03-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:03:54,airpaz.com
+2026-03-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:03:54,airpaz.com
+2026-03-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:03:54,airpaz.com
+2026-03-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:05:40,airpaz.com
+2026-03-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:05:40,airpaz.com
+2026-03-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:05:41,airpaz.com
+2026-03-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:05:41,airpaz.com
+2026-03-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:05:41,airpaz.com
+2026-03-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:05:41,airpaz.com
+2026-03-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:06:09,airpaz.com
+2026-03-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:06:09,airpaz.com
+2026-03-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:06:09,airpaz.com
+2026-03-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:06:09,airpaz.com
+2026-03-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:06:09,airpaz.com
+2026-03-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:06:10,airpaz.com
+2026-03-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:06:38,airpaz.com
+2026-03-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:06:38,airpaz.com
+2026-03-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:06:38,airpaz.com
+2026-03-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:06:38,airpaz.com
+2026-03-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:06:38,airpaz.com
+2026-03-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:06:38,airpaz.com
+2026-03-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:07:07,airpaz.com
+2026-03-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:07:07,airpaz.com
+2026-03-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:07:07,airpaz.com
+2026-03-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:07:07,airpaz.com
+2026-03-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:07:07,airpaz.com
+2026-03-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:07:07,airpaz.com
+2026-03-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:07:36,airpaz.com
+2026-03-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:07:36,airpaz.com
+2026-03-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:07:36,airpaz.com
+2026-03-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:07:36,airpaz.com
+2026-03-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:07:36,airpaz.com
+2026-03-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 17:07:36,airpaz.com
+2026-03-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:08:05,airpaz.com
+2026-03-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:08:05,airpaz.com
+2026-03-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:08:05,airpaz.com
+2026-03-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:08:05,airpaz.com
+2026-03-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:08:05,airpaz.com
+2026-03-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 17:08:05,airpaz.com
+2026-03-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:08:34,airpaz.com
+2026-03-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:08:34,airpaz.com
+2026-03-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:08:34,airpaz.com
+2026-03-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:08:34,airpaz.com
+2026-03-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:08:34,airpaz.com
+2026-03-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:08:34,airpaz.com
+2026-03-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:03,airpaz.com
+2026-03-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:03,airpaz.com
+2026-03-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:09:03,airpaz.com
+2026-03-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:09:03,airpaz.com
+2026-03-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:09:05,airpaz.com
+2026-03-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:09:05,airpaz.com
+2026-03-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:05,airpaz.com
+2026-03-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:05,airpaz.com
+2026-03-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:09:05,airpaz.com
+2026-03-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:25,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:09:05,airpaz.com
+2026-03-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:34,airpaz.com
+2026-03-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:34,airpaz.com
+2026-03-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:09:34,airpaz.com
+2026-03-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:09:34,airpaz.com
+2026-03-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:09:37,airpaz.com
+2026-03-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:09:37,airpaz.com
+2026-03-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:37,airpaz.com
+2026-03-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:09:37,airpaz.com
+2026-03-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:09:37,airpaz.com
+2026-03-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:09:37,airpaz.com
+2026-03-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:10:06,airpaz.com
+2026-03-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:10:06,airpaz.com
+2026-03-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:10:06,airpaz.com
+2026-03-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:10:06,airpaz.com
+2026-03-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:10:06,airpaz.com
+2026-03-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:10:06,airpaz.com
+2026-03-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:10:09,airpaz.com
+2026-03-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:10:09,airpaz.com
+2026-03-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:15,8:40,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:10:09,airpaz.com
+2026-03-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,18:05,19:30,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:10:09,airpaz.com
+2026-03-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,10:10,11:35,1ชม.25นาที,Direct,878,฿878,2026-01-25 17:10:09,airpaz.com
+2026-03-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:25,16:50,1ชม.25นาที,Direct,879,฿879,2026-01-25 17:10:09,airpaz.com
+2026-03-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:10:38,airpaz.com
+2026-03-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:10:38,airpaz.com
+2026-03-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:10:38,airpaz.com
+2026-03-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:10:38,airpaz.com
+2026-03-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:10:38,airpaz.com
+2026-03-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:10:38,airpaz.com
+2026-03-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:11:07,airpaz.com
+2026-03-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:11:07,airpaz.com
+2026-03-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:11:07,airpaz.com
+2026-03-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:11:07,airpaz.com
+2026-03-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:11:07,airpaz.com
+2026-03-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:11:07,airpaz.com
+2026-03-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:11:35,airpaz.com
+2026-03-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:11:35,airpaz.com
+2026-03-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:11:35,airpaz.com
+2026-03-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:11:36,airpaz.com
+2026-03-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:11:36,airpaz.com
+2026-03-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:11:36,airpaz.com
+2026-04-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:12:04,airpaz.com
+2026-04-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:12:04,airpaz.com
+2026-04-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:12:04,airpaz.com
+2026-04-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:12:04,airpaz.com
+2026-04-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:12:08,airpaz.com
+2026-04-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:12:08,airpaz.com
+2026-04-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:12:08,airpaz.com
+2026-04-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:12:08,airpaz.com
+2026-04-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:12:08,airpaz.com
+2026-04-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:12:08,airpaz.com
+2026-04-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:12:36,airpaz.com
+2026-04-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:12:36,airpaz.com
+2026-04-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:12:36,airpaz.com
+2026-04-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:12:36,airpaz.com
+2026-04-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:12:36,airpaz.com
+2026-04-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:12:36,airpaz.com
+2026-04-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:13:05,airpaz.com
+2026-04-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1097,"฿1,097",2026-01-25 17:13:05,airpaz.com
+2026-04-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:13:05,airpaz.com
+2026-04-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1164,"฿1,164",2026-01-25 17:13:05,airpaz.com
+2026-04-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:13:05,airpaz.com
+2026-04-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1415,"฿1,415",2026-01-25 17:13:05,airpaz.com
+2026-04-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:13:34,airpaz.com
+2026-04-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:13:34,airpaz.com
+2026-04-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:13:34,airpaz.com
+2026-04-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:13:34,airpaz.com
+2026-04-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:13:34,airpaz.com
+2026-04-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1415,"฿1,415",2026-01-25 17:13:34,airpaz.com
+2026-04-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:14:03,airpaz.com
+2026-04-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:14:03,airpaz.com
+2026-04-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:14:03,airpaz.com
+2026-04-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:14:03,airpaz.com
+2026-04-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:14:03,airpaz.com
+2026-04-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:14:03,airpaz.com
+2026-04-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:14:32,airpaz.com
+2026-04-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:14:32,airpaz.com
+2026-04-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:14:32,airpaz.com
+2026-04-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:14:32,airpaz.com
+2026-04-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1415,"฿1,415",2026-01-25 17:14:32,airpaz.com
+2026-04-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 17:14:32,airpaz.com
+2026-04-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:15:01,airpaz.com
+2026-04-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1097,"฿1,097",2026-01-25 17:15:01,airpaz.com
+2026-04-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:15:01,airpaz.com
+2026-04-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:15:01,airpaz.com
+2026-04-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:15:01,airpaz.com
+2026-04-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:15:01,airpaz.com
+2026-04-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1164,"฿1,164",2026-01-25 17:15:30,airpaz.com
+2026-04-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:15:30,airpaz.com
+2026-04-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:15:30,airpaz.com
+2026-04-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1415,"฿1,415",2026-01-25 17:15:30,airpaz.com
+2026-04-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1584,"฿1,584",2026-01-25 17:15:30,airpaz.com
+2026-04-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 17:15:30,airpaz.com
+2026-04-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:17:13,airpaz.com
+2026-04-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:17:13,airpaz.com
+2026-04-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1415,"฿1,415",2026-01-25 17:17:13,airpaz.com
+2026-04-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 17:17:13,airpaz.com
+2026-04-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:17:17,airpaz.com
+2026-04-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:17:17,airpaz.com
+2026-04-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1415,"฿1,415",2026-01-25 17:17:17,airpaz.com
+2026-04-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1544,"฿1,544",2026-01-25 17:17:17,airpaz.com
+2026-04-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1779,"฿1,779",2026-01-25 17:17:17,airpaz.com
+2026-04-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 17:17:17,airpaz.com
+2026-04-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1779,"฿1,779",2026-01-25 17:17:46,airpaz.com
+2026-04-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 17:17:46,airpaz.com
+2026-04-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 17:17:46,airpaz.com
+2026-04-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,2019,"฿2,019",2026-01-25 17:17:46,airpaz.com
+2026-04-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,2340,"฿2,340",2026-01-25 17:17:46,airpaz.com
+2026-04-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,2340,"฿2,340",2026-01-25 17:17:46,airpaz.com
+2026-04-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1194,"฿1,194",2026-01-25 17:18:15,airpaz.com
+2026-04-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:18:15,airpaz.com
+2026-04-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1415,"฿1,415",2026-01-25 17:18:15,airpaz.com
+2026-04-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1734,"฿1,734",2026-01-25 17:18:15,airpaz.com
+2026-04-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 17:18:15,airpaz.com
+2026-04-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 17:18:15,airpaz.com
+2026-04-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1164,"฿1,164",2026-01-25 17:18:44,airpaz.com
+2026-04-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1194,"฿1,194",2026-01-25 17:18:44,airpaz.com
+2026-04-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:18:44,airpaz.com
+2026-04-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:18:44,airpaz.com
+2026-04-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:18:44,airpaz.com
+2026-04-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 17:18:44,airpaz.com
+2026-04-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:19:12,airpaz.com
+2026-04-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 17:19:12,airpaz.com
+2026-04-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1194,"฿1,194",2026-01-25 17:19:12,airpaz.com
+2026-04-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:19:12,airpaz.com
+2026-04-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:19:12,airpaz.com
+2026-04-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:19:13,airpaz.com
+2026-04-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:19:41,airpaz.com
+2026-04-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:19:41,airpaz.com
+2026-04-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:19:41,airpaz.com
+2026-04-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:19:41,airpaz.com
+2026-04-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:19:44,airpaz.com
+2026-04-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:19:44,airpaz.com
+2026-04-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:19:44,airpaz.com
+2026-04-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:19:44,airpaz.com
+2026-04-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:19:44,airpaz.com
+2026-04-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:19:44,airpaz.com
+2026-04-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:20:13,airpaz.com
+2026-04-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:20:13,airpaz.com
+2026-04-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:20:13,airpaz.com
+2026-04-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:20:13,airpaz.com
+2026-04-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:20:15,airpaz.com
+2026-04-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:20:15,airpaz.com
+2026-04-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:20:15,airpaz.com
+2026-04-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1097,"฿1,097",2026-01-25 17:20:15,airpaz.com
+2026-04-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:20:15,airpaz.com
+2026-04-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1414,"฿1,414",2026-01-25 17:20:15,airpaz.com
+2026-04-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:20:44,airpaz.com
+2026-04-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:20:44,airpaz.com
+2026-04-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:20:44,airpaz.com
+2026-04-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:20:44,airpaz.com
+2026-04-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:20:44,airpaz.com
+2026-04-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:20:44,airpaz.com
+2026-04-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:21:13,airpaz.com
+2026-04-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:21:13,airpaz.com
+2026-04-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:21:13,airpaz.com
+2026-04-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:21:13,airpaz.com
+2026-04-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:21:13,airpaz.com
+2026-04-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:21:13,airpaz.com
+2026-04-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:21:41,airpaz.com
+2026-04-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:21:41,airpaz.com
+2026-04-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:21:41,airpaz.com
+2026-04-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:21:42,airpaz.com
+2026-04-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:21:42,airpaz.com
+2026-04-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:21:42,airpaz.com
+2026-04-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:22:11,airpaz.com
+2026-04-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:22:11,airpaz.com
+2026-04-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:22:11,airpaz.com
+2026-04-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:22:11,airpaz.com
+2026-04-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:22:11,airpaz.com
+2026-04-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:22:11,airpaz.com
+2026-04-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:22:40,airpaz.com
+2026-04-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:22:40,airpaz.com
+2026-04-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:22:40,airpaz.com
+2026-04-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1097,"฿1,097",2026-01-25 17:22:40,airpaz.com
+2026-04-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:22:40,airpaz.com
+2026-04-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:22:40,airpaz.com
+2026-04-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:23:09,airpaz.com
+2026-04-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:23:09,airpaz.com
+2026-04-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:23:09,airpaz.com
+2026-04-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:23:09,airpaz.com
+2026-04-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:23:09,airpaz.com
+2026-04-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:23:09,airpaz.com
+2026-04-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:23:38,airpaz.com
+2026-04-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:23:38,airpaz.com
+2026-04-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:23:38,airpaz.com
+2026-04-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:23:38,airpaz.com
+2026-04-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:23:38,airpaz.com
+2026-04-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:23:38,airpaz.com
+2026-04-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:24:07,airpaz.com
+2026-04-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:24:07,airpaz.com
+2026-04-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:24:07,airpaz.com
+2026-04-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:24:07,airpaz.com
+2026-04-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:24:07,airpaz.com
+2026-04-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:24:07,airpaz.com
+2026-04-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:24:36,airpaz.com
+2026-04-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:24:36,airpaz.com
+2026-04-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:24:36,airpaz.com
+2026-04-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:24:36,airpaz.com
+2026-04-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:24:36,airpaz.com
+2026-04-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:24:36,airpaz.com
+2026-04-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:25:05,airpaz.com
+2026-04-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:25:05,airpaz.com
+2026-04-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:25:05,airpaz.com
+2026-04-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:25:05,airpaz.com
+2026-04-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:25:05,airpaz.com
+2026-04-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:25:05,airpaz.com
+2026-04-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:25:34,airpaz.com
+2026-04-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:25:34,airpaz.com
+2026-04-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:25:34,airpaz.com
+2026-04-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:25:34,airpaz.com
+2026-05-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:25:37,airpaz.com
+2026-05-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:25:37,airpaz.com
+2026-05-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:25:37,airpaz.com
+2026-05-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:25:37,airpaz.com
+2026-05-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:25:37,airpaz.com
+2026-05-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:25:37,airpaz.com
+2026-05-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:26:06,airpaz.com
+2026-05-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:26:06,airpaz.com
+2026-05-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:26:06,airpaz.com
+2026-05-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:26:06,airpaz.com
+2026-05-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:26:06,airpaz.com
+2026-05-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:26:06,airpaz.com
+2026-05-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:26:35,airpaz.com
+2026-05-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:26:35,airpaz.com
+2026-05-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:26:35,airpaz.com
+2026-05-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:26:35,airpaz.com
+2026-05-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:26:35,airpaz.com
+2026-05-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:26:35,airpaz.com
+2026-05-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:27:04,airpaz.com
+2026-05-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:27:04,airpaz.com
+2026-05-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,903,฿903,2026-01-25 17:27:04,airpaz.com
+2026-05-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,903,฿903,2026-01-25 17:27:04,airpaz.com
+2026-05-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:27:04,airpaz.com
+2026-05-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,927,฿927,2026-01-25 17:27:04,airpaz.com
+2026-05-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:28:37,airpaz.com
+2026-05-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:28:37,airpaz.com
+2026-05-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:28:37,airpaz.com
+2026-05-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:28:37,airpaz.com
+2026-05-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:28:37,airpaz.com
+2026-05-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:28:37,airpaz.com
+2026-05-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:29:06,airpaz.com
+2026-05-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:29:06,airpaz.com
+2026-05-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:29:06,airpaz.com
+2026-05-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:29:06,airpaz.com
+2026-05-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:29:06,airpaz.com
+2026-05-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:29:06,airpaz.com
+2026-05-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:29:35,airpaz.com
+2026-05-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:29:35,airpaz.com
+2026-05-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:29:35,airpaz.com
+2026-05-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:29:35,airpaz.com
+2026-05-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:29:35,airpaz.com
+2026-05-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:29:35,airpaz.com
+2026-05-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:30:04,airpaz.com
+2026-05-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:30:04,airpaz.com
+2026-05-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:30:04,airpaz.com
+2026-05-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:30:04,airpaz.com
+2026-05-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:30:04,airpaz.com
+2026-05-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:30:04,airpaz.com
+2026-05-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:30:33,airpaz.com
+2026-05-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:30:33,airpaz.com
+2026-05-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:30:33,airpaz.com
+2026-05-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:30:33,airpaz.com
+2026-05-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:30:33,airpaz.com
+2026-05-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:30:33,airpaz.com
+2026-05-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:31:01,airpaz.com
+2026-05-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:31:02,airpaz.com
+2026-05-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:31:02,airpaz.com
+2026-05-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:31:02,airpaz.com
+2026-05-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:31:02,airpaz.com
+2026-05-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:31:02,airpaz.com
+2026-05-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:31:30,airpaz.com
+2026-05-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:31:30,airpaz.com
+2026-05-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:31:30,airpaz.com
+2026-05-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:31:30,airpaz.com
+2026-05-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:31:30,airpaz.com
+2026-05-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:31:30,airpaz.com
+2026-05-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:31:59,airpaz.com
+2026-05-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:31:59,airpaz.com
+2026-05-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:31:59,airpaz.com
+2026-05-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:31:59,airpaz.com
+2026-05-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:31:59,airpaz.com
+2026-05-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:31:59,airpaz.com
+2026-05-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:32:28,airpaz.com
+2026-05-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:32:28,airpaz.com
+2026-05-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:32:28,airpaz.com
+2026-05-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:32:28,airpaz.com
+2026-05-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:32:28,airpaz.com
+2026-05-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:32:28,airpaz.com
+2026-05-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:32:57,airpaz.com
+2026-05-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:32:57,airpaz.com
+2026-05-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:32:57,airpaz.com
+2026-05-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:32:57,airpaz.com
+2026-05-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:32:57,airpaz.com
+2026-05-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:32:57,airpaz.com
+2026-05-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:33:26,airpaz.com
+2026-05-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:33:26,airpaz.com
+2026-05-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:33:26,airpaz.com
+2026-05-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:33:26,airpaz.com
+2026-05-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:33:26,airpaz.com
+2026-05-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:33:26,airpaz.com
+2026-05-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:33:55,airpaz.com
+2026-05-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:33:55,airpaz.com
+2026-05-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:33:55,airpaz.com
+2026-05-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:33:55,airpaz.com
+2026-05-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:33:55,airpaz.com
+2026-05-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:33:55,airpaz.com
+2026-05-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:34:24,airpaz.com
+2026-05-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:34:24,airpaz.com
+2026-05-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:34:24,airpaz.com
+2026-05-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:34:24,airpaz.com
+2026-05-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:34:24,airpaz.com
+2026-05-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:34:24,airpaz.com
+2026-05-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:34:53,airpaz.com
+2026-05-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:34:53,airpaz.com
+2026-05-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:34:53,airpaz.com
+2026-05-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:34:53,airpaz.com
+2026-05-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:34:53,airpaz.com
+2026-05-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:34:53,airpaz.com
+2026-05-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:35:22,airpaz.com
+2026-05-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:35:22,airpaz.com
+2026-05-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:35:22,airpaz.com
+2026-05-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:35:22,airpaz.com
+2026-05-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:35:22,airpaz.com
+2026-05-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:35:22,airpaz.com
+2026-05-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:35:51,airpaz.com
+2026-05-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:35:51,airpaz.com
+2026-05-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:35:51,airpaz.com
+2026-05-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:35:51,airpaz.com
+2026-05-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:35:55,airpaz.com
+2026-05-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:35:55,airpaz.com
+2026-05-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:35:55,airpaz.com
+2026-05-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:35:55,airpaz.com
+2026-05-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:35:55,airpaz.com
+2026-05-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:35:55,airpaz.com
+2026-05-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:36:24,airpaz.com
+2026-05-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:36:24,airpaz.com
+2026-05-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:36:24,airpaz.com
+2026-05-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:36:24,airpaz.com
+2026-05-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:36:24,airpaz.com
+2026-05-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:36:24,airpaz.com
+2026-05-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:36:53,airpaz.com
+2026-05-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:36:53,airpaz.com
+2026-05-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:36:53,airpaz.com
+2026-05-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:36:53,airpaz.com
+2026-05-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:36:53,airpaz.com
+2026-05-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1170,"฿1,170",2026-01-25 17:36:53,airpaz.com
+2026-05-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:37:22,airpaz.com
+2026-05-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:37:22,airpaz.com
+2026-05-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:37:22,airpaz.com
+2026-05-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:37:22,airpaz.com
+2026-05-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:37:22,airpaz.com
+2026-05-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:37:22,airpaz.com
+2026-05-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:37:51,airpaz.com
+2026-05-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:37:51,airpaz.com
+2026-05-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:37:51,airpaz.com
+2026-05-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:37:51,airpaz.com
+2026-05-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:37:52,airpaz.com
+2026-05-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:37:52,airpaz.com
+2026-05-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:38:20,airpaz.com
+2026-05-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:38:20,airpaz.com
+2026-05-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:38:20,airpaz.com
+2026-05-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:38:20,airpaz.com
+2026-05-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:38:20,airpaz.com
+2026-05-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:38:20,airpaz.com
+2026-05-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:38:49,airpaz.com
+2026-05-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:38:49,airpaz.com
+2026-05-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:38:49,airpaz.com
+2026-05-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:38:49,airpaz.com
+2026-05-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:38:49,airpaz.com
+2026-05-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:38:49,airpaz.com
+2026-05-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:39:18,airpaz.com
+2026-05-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:39:18,airpaz.com
+2026-05-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:39:18,airpaz.com
+2026-05-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:39:18,airpaz.com
+2026-05-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:39:18,airpaz.com
+2026-05-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:39:18,airpaz.com
+2026-05-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:39:47,airpaz.com
+2026-05-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:39:47,airpaz.com
+2026-05-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:39:47,airpaz.com
+2026-05-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:39:47,airpaz.com
+2026-05-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:39:47,airpaz.com
+2026-05-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:39:47,airpaz.com
+2026-05-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:41:35,airpaz.com
+2026-05-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:41:35,airpaz.com
+2026-05-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:41:35,airpaz.com
+2026-05-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:41:35,airpaz.com
+2026-05-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:41:35,airpaz.com
+2026-05-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1378,"฿1,378",2026-01-25 17:41:35,airpaz.com
+2026-05-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:42:04,airpaz.com
+2026-05-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:42:04,airpaz.com
+2026-05-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:42:04,airpaz.com
+2026-05-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:42:04,airpaz.com
+2026-05-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:42:04,airpaz.com
+2026-05-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:42:04,airpaz.com
+2026-06-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:42:33,airpaz.com
+2026-06-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:42:33,airpaz.com
+2026-06-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:42:33,airpaz.com
+2026-06-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 17:42:33,airpaz.com
+2026-06-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 17:42:33,airpaz.com
+2026-06-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:43:02,airpaz.com
+2026-06-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:43:02,airpaz.com
+2026-06-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:43:02,airpaz.com
+2026-06-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 17:43:02,airpaz.com
+2026-06-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 17:43:02,airpaz.com
+2026-06-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:43:30,airpaz.com
+2026-06-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:43:31,airpaz.com
+2026-06-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:43:31,airpaz.com
+2026-06-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 17:43:31,airpaz.com
+2026-06-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 17:43:31,airpaz.com
+2026-06-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:43:59,airpaz.com
+2026-06-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:43:59,airpaz.com
+2026-06-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:43:59,airpaz.com
+2026-06-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:44:28,airpaz.com
+2026-06-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:44:28,airpaz.com
+2026-06-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:44:28,airpaz.com
+2026-06-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:44:34,airpaz.com
+2026-06-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:44:34,airpaz.com
+2026-06-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:44:34,airpaz.com
+2026-06-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:44:34,airpaz.com
+2026-06-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:44:34,airpaz.com
+2026-06-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:45:03,airpaz.com
+2026-06-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:45:03,airpaz.com
+2026-06-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:45:03,airpaz.com
+2026-06-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:45:03,airpaz.com
+2026-06-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:45:03,airpaz.com
+2026-06-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:45:32,airpaz.com
+2026-06-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:45:32,airpaz.com
+2026-06-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:45:32,airpaz.com
+2026-06-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:46:01,airpaz.com
+2026-06-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:46:01,airpaz.com
+2026-06-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:46:01,airpaz.com
+2026-06-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:46:01,airpaz.com
+2026-06-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:46:01,airpaz.com
+2026-06-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:46:30,airpaz.com
+2026-06-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:46:30,airpaz.com
+2026-06-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:46:30,airpaz.com
+2026-06-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:46:30,airpaz.com
+2026-06-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:46:30,airpaz.com
+2026-06-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:46:59,airpaz.com
+2026-06-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:46:59,airpaz.com
+2026-06-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:46:59,airpaz.com
+2026-06-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:46:59,airpaz.com
+2026-06-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:46:59,airpaz.com
+2026-06-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:47:27,airpaz.com
+2026-06-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:47:27,airpaz.com
+2026-06-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:47:28,airpaz.com
+2026-06-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:47:56,airpaz.com
+2026-06-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:47:56,airpaz.com
+2026-06-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:47:56,airpaz.com
+2026-06-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:48:00,airpaz.com
+2026-06-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:48:00,airpaz.com
+2026-06-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:48:00,airpaz.com
+2026-06-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:48:00,airpaz.com
+2026-06-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1140,"฿1,140",2026-01-25 17:48:00,airpaz.com
+2026-06-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:48:29,airpaz.com
+2026-06-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:48:29,airpaz.com
+2026-06-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:48:29,airpaz.com
+2026-06-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1140,"฿1,140",2026-01-25 17:48:29,airpaz.com
+2026-06-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1169,"฿1,169",2026-01-25 17:48:29,airpaz.com
+2026-06-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:48:57,airpaz.com
+2026-06-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:48:57,airpaz.com
+2026-06-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:48:57,airpaz.com
+2026-06-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:49:01,airpaz.com
+2026-06-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:49:01,airpaz.com
+2026-06-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:49:01,airpaz.com
+2026-06-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:49:01,airpaz.com
+2026-06-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:49:01,airpaz.com
+2026-06-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:49:30,airpaz.com
+2026-06-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:49:30,airpaz.com
+2026-06-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:49:30,airpaz.com
+2026-06-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:49:33,airpaz.com
+2026-06-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:49:33,airpaz.com
+2026-06-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:49:33,airpaz.com
+2026-06-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:49:33,airpaz.com
+2026-06-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:49:33,airpaz.com
+2026-06-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:50:02,airpaz.com
+2026-06-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:50:02,airpaz.com
+2026-06-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:50:02,airpaz.com
+2026-06-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:50:02,airpaz.com
+2026-06-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1378,"฿1,378",2026-01-25 17:50:02,airpaz.com
+2026-06-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:50:30,airpaz.com
+2026-06-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:50:30,airpaz.com
+2026-06-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:50:30,airpaz.com
+2026-06-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:50:30,airpaz.com
+2026-06-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:50:30,airpaz.com
+2026-06-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:50:59,airpaz.com
+2026-06-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:50:59,airpaz.com
+2026-06-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:50:59,airpaz.com
+2026-06-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:50:59,airpaz.com
+2026-06-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:50:59,airpaz.com
+2026-06-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:51:28,airpaz.com
+2026-06-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:51:28,airpaz.com
+2026-06-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:51:28,airpaz.com
+2026-06-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:52:28,airpaz.com
+2026-06-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:52:28,airpaz.com
+2026-06-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:52:28,airpaz.com
+2026-06-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:52:57,airpaz.com
+2026-06-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:52:57,airpaz.com
+2026-06-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:52:57,airpaz.com
+2026-06-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:52:57,airpaz.com
+2026-06-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:52:57,airpaz.com
+2026-06-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:53:26,airpaz.com
+2026-06-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:53:26,airpaz.com
+2026-06-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:53:26,airpaz.com
+2026-06-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:53:26,airpaz.com
+2026-06-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:53:26,airpaz.com
+2026-06-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:53:54,airpaz.com
+2026-06-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:53:54,airpaz.com
+2026-06-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:53:54,airpaz.com
+2026-06-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:53:54,airpaz.com
+2026-06-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:53:54,airpaz.com
+2026-06-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:54:23,airpaz.com
+2026-06-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:54:23,airpaz.com
+2026-06-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:54:23,airpaz.com
+2026-06-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:54:23,airpaz.com
+2026-06-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:54:23,airpaz.com
+2026-06-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:54:52,airpaz.com
+2026-06-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:54:52,airpaz.com
+2026-06-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:54:52,airpaz.com
+2026-06-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:54:52,airpaz.com
+2026-06-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:54:52,airpaz.com
+2026-06-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:55:21,airpaz.com
+2026-06-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:55:21,airpaz.com
+2026-06-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:55:21,airpaz.com
+2026-06-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:55:21,airpaz.com
+2026-06-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:55:21,airpaz.com
+2026-07-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:55:49,airpaz.com
+2026-07-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:55:50,airpaz.com
+2026-07-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:55:50,airpaz.com
+2026-07-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:55:50,airpaz.com
+2026-07-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:56:18,airpaz.com
+2026-07-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:56:18,airpaz.com
+2026-07-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:56:18,airpaz.com
+2026-07-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:56:18,airpaz.com
+2026-07-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:56:18,airpaz.com
+2026-07-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:56:18,airpaz.com
+2026-07-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:56:47,airpaz.com
+2026-07-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:56:47,airpaz.com
+2026-07-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:56:47,airpaz.com
+2026-07-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:56:47,airpaz.com
+2026-07-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:56:47,airpaz.com
+2026-07-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:56:47,airpaz.com
+2026-07-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:57:16,airpaz.com
+2026-07-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:57:16,airpaz.com
+2026-07-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:57:16,airpaz.com
+2026-07-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:57:16,airpaz.com
+2026-07-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:57:16,airpaz.com
+2026-07-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:57:16,airpaz.com
+2026-07-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:57:45,airpaz.com
+2026-07-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:57:45,airpaz.com
+2026-07-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:57:45,airpaz.com
+2026-07-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:57:45,airpaz.com
+2026-07-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:57:45,airpaz.com
+2026-07-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:57:45,airpaz.com
+2026-07-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:58:14,airpaz.com
+2026-07-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:58:14,airpaz.com
+2026-07-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:58:14,airpaz.com
+2026-07-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:58:14,airpaz.com
+2026-07-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:58:14,airpaz.com
+2026-07-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:58:14,airpaz.com
+2026-07-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:58:43,airpaz.com
+2026-07-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:58:43,airpaz.com
+2026-07-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:58:43,airpaz.com
+2026-07-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:58:43,airpaz.com
+2026-07-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:58:43,airpaz.com
+2026-07-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:58:43,airpaz.com
+2026-07-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:59:12,airpaz.com
+2026-07-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:59:12,airpaz.com
+2026-07-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:59:12,airpaz.com
+2026-07-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:59:12,airpaz.com
+2026-07-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:59:12,airpaz.com
+2026-07-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:59:12,airpaz.com
+2026-07-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 17:59:42,airpaz.com
+2026-07-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 17:59:42,airpaz.com
+2026-07-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 17:59:42,airpaz.com
+2026-07-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 17:59:42,airpaz.com
+2026-07-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 17:59:42,airpaz.com
+2026-07-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 17:59:42,airpaz.com
+2026-07-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:00:11,airpaz.com
+2026-07-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:00:11,airpaz.com
+2026-07-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:00:11,airpaz.com
+2026-07-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:00:11,airpaz.com
+2026-07-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:00:11,airpaz.com
+2026-07-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:00:11,airpaz.com
+2026-07-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:00:40,airpaz.com
+2026-07-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:00:40,airpaz.com
+2026-07-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:00:40,airpaz.com
+2026-07-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:00:40,airpaz.com
+2026-07-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:00:40,airpaz.com
+2026-07-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:00:40,airpaz.com
+2026-07-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:01:13,airpaz.com
+2026-07-12,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:01:13,airpaz.com
+2026-07-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:01:13,airpaz.com
+2026-07-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:01:13,airpaz.com
+2026-07-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:01:13,airpaz.com
+2026-07-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:01:13,airpaz.com
+2026-07-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:01:43,airpaz.com
+2026-07-13,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:01:43,airpaz.com
+2026-07-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:01:43,airpaz.com
+2026-07-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:01:43,airpaz.com
+2026-07-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:01:43,airpaz.com
+2026-07-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:01:43,airpaz.com
+2026-07-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:02:12,airpaz.com
+2026-07-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:02:12,airpaz.com
+2026-07-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:02:12,airpaz.com
+2026-07-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:02:12,airpaz.com
+2026-07-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:02:12,airpaz.com
+2026-07-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:02:12,airpaz.com
+2026-07-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:02:41,airpaz.com
+2026-07-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:02:41,airpaz.com
+2026-07-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:02:41,airpaz.com
+2026-07-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:02:41,airpaz.com
+2026-07-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:02:41,airpaz.com
+2026-07-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:02:41,airpaz.com
+2026-07-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:03:10,airpaz.com
+2026-07-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:03:10,airpaz.com
+2026-07-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:03:10,airpaz.com
+2026-07-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:03:10,airpaz.com
+2026-07-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:03:10,airpaz.com
+2026-07-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:03:10,airpaz.com
+2026-07-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:03:38,airpaz.com
+2026-07-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:03:38,airpaz.com
+2026-07-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:03:38,airpaz.com
+2026-07-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:03:39,airpaz.com
+2026-07-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:04:07,airpaz.com
+2026-07-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:04:07,airpaz.com
+2026-07-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:04:07,airpaz.com
+2026-07-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:04:07,airpaz.com
+2026-07-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:04:07,airpaz.com
+2026-07-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:04:07,airpaz.com
+2026-07-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:05:24,airpaz.com
+2026-07-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:05:24,airpaz.com
+2026-07-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:05:25,airpaz.com
+2026-07-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:05:25,airpaz.com
+2026-07-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:05:25,airpaz.com
+2026-07-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:05:25,airpaz.com
+2026-07-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:05:53,airpaz.com
+2026-07-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:05:53,airpaz.com
+2026-07-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:05:53,airpaz.com
+2026-07-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:05:53,airpaz.com
+2026-07-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:05:55,airpaz.com
+2026-07-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:05:55,airpaz.com
+2026-07-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:05:55,airpaz.com
+2026-07-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:05:55,airpaz.com
+2026-07-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:05:55,airpaz.com
+2026-07-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:05:56,airpaz.com
+2026-07-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:06:24,airpaz.com
+2026-07-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:06:24,airpaz.com
+2026-07-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:06:24,airpaz.com
+2026-07-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:06:24,airpaz.com
+2026-07-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:06:24,airpaz.com
+2026-07-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:06:24,airpaz.com
+2026-07-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:06:53,airpaz.com
+2026-07-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:06:53,airpaz.com
+2026-07-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:06:53,airpaz.com
+2026-07-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:06:53,airpaz.com
+2026-07-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:06:53,airpaz.com
+2026-07-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:06:53,airpaz.com
+2026-07-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:07:22,airpaz.com
+2026-07-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:07:22,airpaz.com
+2026-07-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:07:22,airpaz.com
+2026-07-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:07:22,airpaz.com
+2026-07-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:07:22,airpaz.com
+2026-07-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,2400,"฿2,400",2026-01-25 18:07:22,airpaz.com
+2026-07-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:07:51,airpaz.com
+2026-07-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:07:51,airpaz.com
+2026-07-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:07:51,airpaz.com
+2026-07-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:07:51,airpaz.com
+2026-07-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,2340,"฿2,340",2026-01-25 18:07:51,airpaz.com
+2026-07-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,2340,"฿2,340",2026-01-25 18:07:51,airpaz.com
+2026-07-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:08:20,airpaz.com
+2026-07-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:08:20,airpaz.com
+2026-07-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:08:20,airpaz.com
+2026-07-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:08:20,airpaz.com
+2026-07-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:08:20,airpaz.com
+2026-07-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:08:20,airpaz.com
+2026-07-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:08:49,airpaz.com
+2026-07-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1069,"฿1,069",2026-01-25 18:08:49,airpaz.com
+2026-07-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:08:49,airpaz.com
+2026-07-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:08:50,airpaz.com
+2026-07-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:08:50,airpaz.com
+2026-07-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,2400,"฿2,400",2026-01-25 18:08:50,airpaz.com
+2026-07-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:09:19,airpaz.com
+2026-07-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,1544,"฿1,544",2026-01-25 18:09:19,airpaz.com
+2026-07-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:09:19,airpaz.com
+2026-07-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:09:19,airpaz.com
+2026-07-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:09:19,airpaz.com
+2026-07-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,2340,"฿2,340",2026-01-25 18:09:19,airpaz.com
+2026-07-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:09:48,airpaz.com
+2026-07-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:09:48,airpaz.com
+2026-07-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:09:48,airpaz.com
+2026-07-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:09:48,airpaz.com
+2026-07-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:09:48,airpaz.com
+2026-07-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:09:48,airpaz.com
+2026-07-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:10:17,airpaz.com
+2026-07-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:10:17,airpaz.com
+2026-07-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:10:17,airpaz.com
+2026-07-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:10:17,airpaz.com
+2026-07-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:10:17,airpaz.com
+2026-07-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:10:17,airpaz.com
+2026-07-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:10:46,airpaz.com
+2026-07-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:10:46,airpaz.com
+2026-07-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:10:46,airpaz.com
+2026-07-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:10:46,airpaz.com
+2026-07-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:10:46,airpaz.com
+2026-07-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:10:46,airpaz.com
+2026-08-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:11:15,airpaz.com
+2026-08-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:11:15,airpaz.com
+2026-08-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:11:15,airpaz.com
+2026-08-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:11:15,airpaz.com
+2026-08-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1758,"฿1,758",2026-01-25 18:11:15,airpaz.com
+2026-08-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1758,"฿1,758",2026-01-25 18:11:15,airpaz.com
+2026-08-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:11:44,airpaz.com
+2026-08-02,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:11:44,airpaz.com
+2026-08-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:11:44,airpaz.com
+2026-08-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:11:44,airpaz.com
+2026-08-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:11:44,airpaz.com
+2026-08-02,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:11:44,airpaz.com
+2026-08-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:12:13,airpaz.com
+2026-08-03,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:12:13,airpaz.com
+2026-08-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:12:13,airpaz.com
+2026-08-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:12:13,airpaz.com
+2026-08-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:12:13,airpaz.com
+2026-08-03,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:12:13,airpaz.com
+2026-08-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:12:42,airpaz.com
+2026-08-04,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:12:42,airpaz.com
+2026-08-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:12:42,airpaz.com
+2026-08-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:12:42,airpaz.com
+2026-08-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:12:42,airpaz.com
+2026-08-04,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:12:42,airpaz.com
+2026-08-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:13:11,airpaz.com
+2026-08-05,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:13:11,airpaz.com
+2026-08-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:13:11,airpaz.com
+2026-08-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:13:11,airpaz.com
+2026-08-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:13:11,airpaz.com
+2026-08-05,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:13:11,airpaz.com
+2026-08-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:13:41,airpaz.com
+2026-08-06,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:13:41,airpaz.com
+2026-08-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:13:41,airpaz.com
+2026-08-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:13:41,airpaz.com
+2026-08-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:13:41,airpaz.com
+2026-08-06,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:13:41,airpaz.com
+2026-08-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:14:11,airpaz.com
+2026-08-07,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:14:11,airpaz.com
+2026-08-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:14:11,airpaz.com
+2026-08-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:14:11,airpaz.com
+2026-08-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:14:11,airpaz.com
+2026-08-07,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,2400,"฿2,400",2026-01-25 18:14:11,airpaz.com
+2026-08-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:14:40,airpaz.com
+2026-08-08,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:14:40,airpaz.com
+2026-08-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:14:40,airpaz.com
+2026-08-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:14:40,airpaz.com
+2026-08-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,2340,"฿2,340",2026-01-25 18:14:40,airpaz.com
+2026-08-08,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,2340,"฿2,340",2026-01-25 18:14:40,airpaz.com
+2026-08-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:15:09,airpaz.com
+2026-08-09,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:15:09,airpaz.com
+2026-08-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:15:09,airpaz.com
+2026-08-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:15:09,airpaz.com
+2026-08-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:15:09,airpaz.com
+2026-08-09,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:15:09,airpaz.com
+2026-08-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:15:37,airpaz.com
+2026-08-10,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:15:38,airpaz.com
+2026-08-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:15:38,airpaz.com
+2026-08-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:15:38,airpaz.com
+2026-08-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:15:38,airpaz.com
+2026-08-10,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:15:38,airpaz.com
+2026-08-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:16:06,airpaz.com
+2026-08-11,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:16:06,airpaz.com
+2026-08-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:16:06,airpaz.com
+2026-08-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:16:06,airpaz.com
+2026-08-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:16:06,airpaz.com
+2026-08-11,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,2400,"฿2,400",2026-01-25 18:16:07,airpaz.com
+2026-08-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:16:35,airpaz.com
+2026-08-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:16:35,airpaz.com
+2026-08-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,2340,"฿2,340",2026-01-25 18:16:35,airpaz.com
+2026-08-12,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,2340,"฿2,340",2026-01-25 18:16:35,airpaz.com
+2026-08-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:17:35,airpaz.com
+2026-08-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:17:35,airpaz.com
+2026-08-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,2340,"฿2,340",2026-01-25 18:17:35,airpaz.com
+2026-08-13,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,2340,"฿2,340",2026-01-25 18:17:35,airpaz.com
+2026-08-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:18:04,airpaz.com
+2026-08-14,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:18:04,airpaz.com
+2026-08-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:18:04,airpaz.com
+2026-08-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:18:04,airpaz.com
+2026-08-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:18:04,airpaz.com
+2026-08-14,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:18:04,airpaz.com
+2026-08-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:18:33,airpaz.com
+2026-08-15,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,1097,"฿1,097",2026-01-25 18:18:33,airpaz.com
+2026-08-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:18:33,airpaz.com
+2026-08-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:18:34,airpaz.com
+2026-08-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:18:34,airpaz.com
+2026-08-15,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:18:34,airpaz.com
+2026-08-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:19:02,airpaz.com
+2026-08-16,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:19:02,airpaz.com
+2026-08-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1922,"฿1,922",2026-01-25 18:19:02,airpaz.com
+2026-08-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1922,"฿1,922",2026-01-25 18:19:02,airpaz.com
+2026-08-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1971,"฿1,971",2026-01-25 18:19:03,airpaz.com
+2026-08-16,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,1973,"฿1,973",2026-01-25 18:19:03,airpaz.com
+2026-08-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:19:31,airpaz.com
+2026-08-17,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:19:31,airpaz.com
+2026-08-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:19:31,airpaz.com
+2026-08-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:19:31,airpaz.com
+2026-08-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:19:31,airpaz.com
+2026-08-17,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:19:31,airpaz.com
+2026-08-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:20:00,airpaz.com
+2026-08-18,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:20:00,airpaz.com
+2026-08-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:20:00,airpaz.com
+2026-08-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:20:00,airpaz.com
+2026-08-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:20:00,airpaz.com
+2026-08-18,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:20:00,airpaz.com
+2026-08-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:20:29,airpaz.com
+2026-08-19,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:20:29,airpaz.com
+2026-08-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:20:29,airpaz.com
+2026-08-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:20:29,airpaz.com
+2026-08-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:20:29,airpaz.com
+2026-08-19,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:20:29,airpaz.com
+2026-08-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:20:58,airpaz.com
+2026-08-20,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:20:58,airpaz.com
+2026-08-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:20:58,airpaz.com
+2026-08-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:20:58,airpaz.com
+2026-08-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:20:58,airpaz.com
+2026-08-20,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:20:58,airpaz.com
+2026-08-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:21:27,airpaz.com
+2026-08-21,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:21:27,airpaz.com
+2026-08-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:21:27,airpaz.com
+2026-08-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:21:27,airpaz.com
+2026-08-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:21:27,airpaz.com
+2026-08-21,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1804,"฿1,804",2026-01-25 18:21:27,airpaz.com
+2026-08-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:21:56,airpaz.com
+2026-08-22,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:21:56,airpaz.com
+2026-08-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:21:56,airpaz.com
+2026-08-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:21:56,airpaz.com
+2026-08-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1758,"฿1,758",2026-01-25 18:21:56,airpaz.com
+2026-08-22,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1758,"฿1,758",2026-01-25 18:21:56,airpaz.com
+2026-08-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:22:26,airpaz.com
+2026-08-23,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:22:26,airpaz.com
+2026-08-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:22:26,airpaz.com
+2026-08-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:22:26,airpaz.com
+2026-08-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:22:26,airpaz.com
+2026-08-23,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:22:26,airpaz.com
+2026-08-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:22:55,airpaz.com
+2026-08-24,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:22:55,airpaz.com
+2026-08-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:22:55,airpaz.com
+2026-08-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:22:55,airpaz.com
+2026-08-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:22:55,airpaz.com
+2026-08-24,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:22:55,airpaz.com
+2026-08-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:23:24,airpaz.com
+2026-08-25,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:23:24,airpaz.com
+2026-08-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:23:24,airpaz.com
+2026-08-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:23:24,airpaz.com
+2026-08-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:23:24,airpaz.com
+2026-08-25,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:23:24,airpaz.com
+2026-08-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:23:52,airpaz.com
+2026-08-26,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:23:52,airpaz.com
+2026-08-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:23:52,airpaz.com
+2026-08-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:23:53,airpaz.com
+2026-08-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:23:53,airpaz.com
+2026-08-26,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:23:53,airpaz.com
+2026-08-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:24:21,airpaz.com
+2026-08-27,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:24:21,airpaz.com
+2026-08-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:24:21,airpaz.com
+2026-08-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:24:21,airpaz.com
+2026-08-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:24:21,airpaz.com
+2026-08-27,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:24:21,airpaz.com
+2026-08-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:24:51,airpaz.com
+2026-08-28,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:24:51,airpaz.com
+2026-08-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:24:51,airpaz.com
+2026-08-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:24:51,airpaz.com
+2026-08-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:24:51,airpaz.com
+2026-08-28,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,1804,"฿1,804",2026-01-25 18:24:51,airpaz.com
+2026-08-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:25:20,airpaz.com
+2026-08-29,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:25:20,airpaz.com
+2026-08-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:25:20,airpaz.com
+2026-08-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:25:20,airpaz.com
+2026-08-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,1758,"฿1,758",2026-01-25 18:25:20,airpaz.com
+2026-08-29,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,1758,"฿1,758",2026-01-25 18:25:20,airpaz.com
+2026-08-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:25:49,airpaz.com
+2026-08-30,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:25:49,airpaz.com
+2026-08-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:25:49,airpaz.com
+2026-08-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:25:49,airpaz.com
+2026-08-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:25:49,airpaz.com
+2026-08-30,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:25:49,airpaz.com
+2026-08-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:26:19,airpaz.com
+2026-08-31,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:26:19,airpaz.com
+2026-08-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:26:19,airpaz.com
+2026-08-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:26:19,airpaz.com
+2026-08-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:26:19,airpaz.com
+2026-08-31,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,15:00,16:20,1ชม.20นาที,Direct,879,฿879,2026-01-25 18:26:19,airpaz.com
+2026-09-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,7:20,8:40,1ชม.20นาที,Direct,760,฿760,2026-01-25 18:26:48,airpaz.com
+2026-09-01,BKKA,DMK,KOP,KOP,Thai Lion Air,SL,17:25,18:45,1ชม.20นาที,Direct,780,฿780,2026-01-25 18:26:48,airpaz.com
+2026-09-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,7:45,9:10,1ชม.25นาที,Direct,856,฿856,2026-01-25 18:26:48,airpaz.com
+2026-09-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,12:45,14:05,1ชม.20นาที,Direct,856,฿856,2026-01-25 18:26:48,airpaz.com
+2026-09-01,BKKA,DMK,KOP,KOP,Thai AirAsia,FD,17:55,19:15,1ชม.20นาที,Direct,878,฿878,2026-01-25 18:26:48,airpaz.com
