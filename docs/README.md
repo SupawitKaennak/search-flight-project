@@ -367,11 +367,4 @@ cd backend && npm run dev
 
 ---
 
-<div align="center">
-
-**Happy Coding! ✈️**
-
-Made with ❤️ for Thai travelers
-
-</div>
 
